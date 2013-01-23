@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Filecalibur</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLineEdit" name="lineEdit_1">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineEdit_2">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTableView" name="tableView"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1200</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionOpen"/>
+    <addaction name="actionSettings"/>
+    <addaction name="actionClose"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuHashDeep">
+    <property name="title">
+     <string>hashDeep</string>
+    </property>
+    <addaction name="actionCalculate_Hashes"/>
+    <addaction name="actionPositive_Matching"/>
+    <addaction name="actionNegative_Matching"/>
+   </widget>
+   <widget class="QMenu" name="menuRsync">
+    <property name="title">
+     <string>rsync</string>
+    </property>
+    <addaction name="actionSync_Directories"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbout"/>
+    <addaction name="actionSourceforge"/>
+   </widget>
+   <widget class="QMenu" name="menuFileeditor">
+    <property name="title">
+     <string>Fileworker</string>
+    </property>
+    <addaction name="actionModify_Path"/>
+    <addaction name="separator"/>
+    <addaction name="actionRemove_Path"/>
+    <addaction name="actionExtract_Path"/>
+    <addaction name="separator"/>
+    <addaction name="actionJoin_Files"/>
+    <addaction name="separator"/>
+    <addaction name="actionCompare_Files"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuHashDeep"/>
+   <addaction name="menuFileeditor"/>
+   <addaction name="menuRsync"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionOpen">
+   <property name="text">
+    <string>Open</string>
+   </property>
+  </action>
+  <action name="actionCalculate_Hashes">
+   <property name="text">
+    <string>Calculate Hashes</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionClose">
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </action>
+  <action name="actionSettings">
+   <property name="text">
+    <string>Settings</string>
+   </property>
+  </action>
+  <action name="actionPositive_Matching">
+   <property name="text">
+    <string>Positive Matching</string>
+   </property>
+  </action>
+  <action name="actionNegative_Matching">
+   <property name="text">
+    <string>Negative Matching</string>
+   </property>
+  </action>
+  <action name="actionSync_Directories">
+   <property name="text">
+    <string>Sync Directories</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionSourceforge">
+   <property name="text">
+    <string>Updates</string>
+   </property>
+  </action>
+  <action name="actionModify_Path">
+   <property name="text">
+    <string>Modify Path</string>
+   </property>
+  </action>
+  <action name="actionRemove_Path">
+   <property name="text">
+    <string>Remove Path</string>
+   </property>
+  </action>
+  <action name="actionJoin_Files">
+   <property name="text">
+    <string>Join Files</string>
+   </property>
+  </action>
+  <action name="actionExtract_Path">
+   <property name="text">
+    <string>Extract Path</string>
+   </property>
+  </action>
+  <action name="actionCompare_Files">
+   <property name="text">
+    <string>Compare Files</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
