@@ -33,7 +33,7 @@ void DialogRunRsync::setErrDB(DialogErrorMessage *err)
 
 void DialogRunRsync::runRsync()
 {
-    QString rsync_binPath = "C:\\_progs\\FileTool\\FileTool-build-desktop-Qt_4_8_1_for_Desktop_-_MinGW__Qt_SDK__Debug\\debug\\bin\\rsync.exe";
+    QString rsync_binPath = "C:\\_progs\\Filecalibur\\build\\debug\\bin\\rsync.exe";
 
     ui->plainTextEdit->appendPlainText("Hallo");
 

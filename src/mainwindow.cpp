@@ -27,7 +27,7 @@ void MainWindow::run_hashdeep(QStringList command, QString saFi)
 {
     hashdeep_saveFile = saFi;
 
-    QString hashDeep_binPath = "C:\\_progs\\FileTool\\FileTool-build-desktop-Qt_4_8_1_for_Desktop_-_MinGW__Qt_SDK__Debug\\debug\\bin\\hashdeep64.exe";
+    QString hashDeep_binPath = "C:\\_progs\\Filecalibur\\build\\debug\\bin\\hashdeep64.exe";
 
     hashdeep_bin.setStandardOutputFile(hashdeep_saveFile, QIODevice::Truncate);
     hashdeep_bin.start(hashDeep_binPath, command);
