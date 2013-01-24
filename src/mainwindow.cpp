@@ -99,9 +99,9 @@ void MainWindow::readFileToMem(QString fileSt)
         return;
     }
     hashdeep_saveFile = fileSt;
-    int head_count = 0;
     table_cols = 0;
     QString lineString;
+    QString topText;
     QFile file(hashdeep_saveFile);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
         error->newErr(tr("Error opening results file: "));
@@ -109,9 +109,11 @@ void MainWindow::readFileToMem(QString fileSt)
     } else {
         if (!file.atEnd()) {
             QByteArray line = file.readLine();
+            topText.append(QString::fromLocal8Bit(line));
         }
         if (!file.atEnd()) {
             QByteArray line = file.readLine();
+            topText.append(QString::fromLocal8Bit(line));
             table_cols = line.count(",") + 1;
             line.remove(0,5);
             lineString = QString::fromLocal8Bit(line);
@@ -122,26 +124,15 @@ void MainWindow::readFileToMem(QString fileSt)
         while (!file.atEnd()) {
             QByteArray line = file.readLine();
 
-            if (line.at(0) == '#') {
-                line.remove(0,3);
-                if (head_count == 0) {
-                    table_line1 = QString::fromLocal8Bit(line);
-                    ui->lineEdit_1->setText(table_line1);
-                }
-                if (head_count == 1) {
-                    table_line2 = QString::fromLocal8Bit(line);
-                    ui->lineEdit_2->setText(table_line2);
-                }
-                head_count++;
-                continue;
-            }
-            if (line.at(0) == '%') {
+            if ((line.at(0) == '#') or (line.at(0) == '%')) {
+                topText.append(QString::fromLocal8Bit(line));
                 continue;
             }
             table_content << QString::fromLocal8Bit(line);
         }
         file.close();
         table_used = true;
+        ui->plainTextEdit->appendPlainText(topText);
     }
     error->checkForErrors();
 }
