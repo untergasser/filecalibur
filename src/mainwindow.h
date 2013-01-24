@@ -11,6 +11,7 @@
 #include "dialogmodifypath.h"
 #include "dialogextractpath.h"
 #include "dialogremovepath.h"
+#include "dialogjoinfiles.h"
 #include "dialogrsync.h"
 #include "filedatamodel.h"
 
@@ -59,6 +60,12 @@ private slots:
 
     void on_actionExtract_Path_triggered();
 
+    void on_actionJoin_Files_triggered();
+
+    void on_actionPositive_Hashing_triggered();
+
+    void on_actionNegative_Hashing_triggered();
+
 private:
     Ui::MainWindow *ui;
     DialogErrorMessage *error;
@@ -69,6 +76,7 @@ private:
     DialogRunHasDeep *hashRun;
     DialogRemovePath *removePath;
     DialogExtractPath *extractPath;
+    DialogJoinFiles *joinFiles;
 
     QString  hashdeep_saveFile;
 

@@ -84,6 +84,9 @@
     <addaction name="separator"/>
     <addaction name="actionJoin_Files"/>
     <addaction name="separator"/>
+    <addaction name="actionPositive_Hashing"/>
+    <addaction name="actionNegative_Hashing"/>
+    <addaction name="separator"/>
     <addaction name="actionCompare_Files"/>
    </widget>
    <addaction name="menuFile"/>
@@ -166,6 +169,16 @@
   <action name="actionCompare_Files">
    <property name="text">
     <string>Compare Files</string>
+   </property>
+  </action>
+  <action name="actionPositive_Hashing">
+   <property name="text">
+    <string>Positive Hashing</string>
+   </property>
+  </action>
+  <action name="actionNegative_Hashing">
+   <property name="text">
+    <string>Negative Hashing</string>
    </property>
   </action>
  </widget>

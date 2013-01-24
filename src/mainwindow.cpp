@@ -211,3 +211,22 @@ void MainWindow::on_actionExtract_Path_triggered()
     extractPath->setLoadFile(hashdeep_saveFile);
     extractPath->show();
 }
+
+void MainWindow::on_actionJoin_Files_triggered()
+{
+    joinFiles = new DialogJoinFiles(this);
+    joinFiles->setErrDB(error);
+    joinFiles->setLoadFile(hashdeep_saveFile);
+    joinFiles->show();
+
+}
+
+void MainWindow::on_actionPositive_Hashing_triggered()
+{
+
+}
+
+void MainWindow::on_actionNegative_Hashing_triggered()
+{
+
+}

@@ -22,7 +22,8 @@ SOURCES += main.cpp\
     dialogrunrsync.cpp \
     dialogmodifypath.cpp \
     dialogremovepath.cpp \
-    dialogextractpath.cpp
+    dialogextractpath.cpp \
+    dialogjoinfiles.cpp
 
 HEADERS  += mainwindow.h \
     dialogcalchash.h \
@@ -35,7 +36,8 @@ HEADERS  += mainwindow.h \
     dialogrunrsync.h \
     dialogmodifypath.h \
     dialogremovepath.h \
-    dialogextractpath.h
+    dialogextractpath.h \
+    dialogjoinfiles.h
 
 FORMS    += mainwindow.ui \
     dialogcalchash.ui \
@@ -47,4 +49,5 @@ FORMS    += mainwindow.ui \
     dialogrunrsync.ui \
     dialogmodifypath.ui \
     dialogremovepath.ui \
-    dialogextractpath.ui
+    dialogextractpath.ui \
+    dialogjoinfiles.ui
