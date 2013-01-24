@@ -23,6 +23,12 @@ MainWindow::~MainWindow()
 }
 
 
+void MainWindow::on_actionSettings_triggered()
+{
+    optionen = new DialogOptionen(this);
+    optionen->show();
+}
+
 void MainWindow::run_hashdeep(QStringList command, QString saFi)
 {
     hashdeep_saveFile = saFi;
@@ -209,7 +215,6 @@ void MainWindow::on_actionJoin_Files_triggered()
     joinFiles->setErrDB(error);
     joinFiles->setLoadFile(hashdeep_saveFile);
     joinFiles->show();
-
 }
 
 void MainWindow::on_actionPositive_Hashing_triggered()
@@ -221,3 +226,4 @@ void MainWindow::on_actionNegative_Hashing_triggered()
 {
 
 }
+

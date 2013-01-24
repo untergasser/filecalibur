@@ -3,11 +3,12 @@
 
 #include <QMainWindow>
 
+#include "dialogoptionen.h"
+#include "dialogerrormessage.h"
 #include "dialogcalchash.h"
 #include "dialogposmatch.h"
 #include "dialognegmatch.h"
 #include "dialogrunhasdeep.h"
-#include "dialogerrormessage.h"
 #include "dialogmodifypath.h"
 #include "dialogextractpath.h"
 #include "dialogremovepath.h"
@@ -66,8 +67,11 @@ private slots:
 
     void on_actionNegative_Hashing_triggered();
 
+    void on_actionSettings_triggered();
+
 private:
     Ui::MainWindow *ui;
+    DialogOptionen *optionen;
     DialogErrorMessage *error;
     DialogCalcHash *hashIt;
     DialogPosMatch *hashPos;
