@@ -15,6 +15,13 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(&hashdeep_bin, SIGNAL(readyReadStandardError()), this, SLOT(hashDeepUpdateError()));
     connect(&hashdeep_bin, SIGNAL(finished(int,QProcess::ExitStatus)), this, SLOT(hashDeepFinished(int,QProcess::ExitStatus)));
     connect(&hashdeep_bin, SIGNAL(error(QProcess::ProcessError)), this, SLOT(hashDeepError(QProcess::ProcessError)));
+
+    QSettings settings("A. Untergasser", "Filecalibur");
+    int setup = settings.value("Initial Setup").toInt();
+    if (setup != 1) {
+        settings.setValue("Initial Setup", 1);
+        on_actionSettings_triggered();
+    }
 }
 
 MainWindow::~MainWindow()
@@ -32,8 +39,8 @@ void MainWindow::on_actionSettings_triggered()
 void MainWindow::run_hashdeep(QStringList command, QString saFi)
 {
     hashdeep_saveFile = saFi;
-
-    QString hashDeep_binPath = "C:\\_progs\\Filecalibur\\build\\debug\\bin\\hashdeep64.exe";
+    QSettings settings("A. Untergasser", "Filecalibur");
+    QString hashDeep_binPath = settings.value("hashdeep").toString();
 
     hashdeep_bin.setStandardOutputFile(hashdeep_saveFile, QIODevice::Truncate);
     hashdeep_bin.start(hashDeep_binPath, command);

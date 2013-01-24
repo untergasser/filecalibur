@@ -9,6 +9,9 @@ DialogRunRsync::DialogRunRsync(QWidget *parent) :
 
     rsync_running = false;
 
+    QSettings settings("A. Untergasser", "Filecalibur");
+
+
     connect(&rsync_bin, SIGNAL(readyReadStandardOutput()), this, SLOT(rsyncUpdateText()));
     connect(&rsync_bin, SIGNAL(readyReadStandardError()), this, SLOT(rsyncUpdateError()));
     connect(&rsync_bin, SIGNAL(finished(int,QProcess::ExitStatus)), this, SLOT(rsyncFinished(int,QProcess::ExitStatus)));
@@ -33,7 +36,8 @@ void DialogRunRsync::setErrDB(DialogErrorMessage *err)
 
 void DialogRunRsync::runRsync()
 {
-    QString rsync_binPath = "C:\\_progs\\Filecalibur\\build\\debug\\bin\\rsync.exe";
+    QSettings settings("A. Untergasser", "Filecalibur");
+    QString rsync_binPath = settings.value("rsync").toString();
 
     ui->plainTextEdit->appendPlainText("Hallo");
 
