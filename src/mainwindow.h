@@ -14,6 +14,8 @@
 #include "dialogextractpath.h"
 #include "dialogremovepath.h"
 #include "dialogjoinfiles.h"
+#include "dialogpositivehashing.h"
+#include "dialognegativehashing.h"
 #include "dialogrsync.h"
 #include "filedatamodel.h"
 
@@ -53,21 +55,13 @@ private slots:
     void on_actionOpen_triggered();
     void on_actionPositive_Matching_triggered();
     void on_actionNegative_Matching_triggered();
-
     void on_actionSync_Directories_triggered();
-
     void on_actionModify_Path_triggered();
-
     void on_actionRemove_Path_triggered();
-
     void on_actionExtract_Path_triggered();
-
     void on_actionJoin_Files_triggered();
-
     void on_actionPositive_Hashing_triggered();
-
     void on_actionNegative_Hashing_triggered();
-
     void on_actionSettings_triggered();
 
 private:
@@ -82,6 +76,8 @@ private:
     DialogRemovePath *removePath;
     DialogExtractPath *extractPath;
     DialogJoinFiles *joinFiles;
+    DialogPositiveHashing *positiveHashing;
+    DialogNegativeHashing *negativeHashing;
 
     QString  hashdeep_saveFile;
 

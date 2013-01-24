@@ -18,6 +18,7 @@ public:
 
     void newErr(QString err);
     void addLast(QString err);
+    void addLast(int err);
     void checkForErrors();
 
 private:

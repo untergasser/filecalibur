@@ -226,11 +226,17 @@ void MainWindow::on_actionJoin_Files_triggered()
 
 void MainWindow::on_actionPositive_Hashing_triggered()
 {
-
+    positiveHashing = new DialogPositiveHashing(this);
+    positiveHashing->setErrDB(error);
+    positiveHashing->setLoadFile(hashdeep_saveFile);
+    positiveHashing->show();
 }
 
 void MainWindow::on_actionNegative_Hashing_triggered()
 {
-
+    negativeHashing = new DialogNegativeHashing(this);
+    negativeHashing->setErrDB(error);
+    negativeHashing->setLoadFile(hashdeep_saveFile);
+    negativeHashing->show();
 }
 

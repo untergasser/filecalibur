@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>DialogPosMatch</class>
- <widget class="QDialog" name="DialogPosMatch">
+ <class>DialogNegativeHashing</class>
+ <widget class="QDialog" name="DialogNegativeHashing">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>450</width>
-    <height>350</height>
+    <height>300</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Positive Matching</string>
+   <string>Negative Hashing</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -24,7 +24,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Positive Matching: Only the file information of files will be written into the output file if the hash IS present in the input file. </string>
+      <string>Negative Matching: Only the file information of files will be written into the output file if the hash is NOT present in the input file.</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>
@@ -32,48 +32,14 @@
     </widget>
    </item>
    <item>
-    <spacer name="verticalSpacer_2">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>40</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item>
     <widget class="QLabel" name="label_2">
      <property name="text">
-      <string>Select Directory to hash:</string>
+      <string>Select File with file information to test:</string>
      </property>
     </widget>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_3">
-     <item>
-      <widget class="QLineEdit" name="lineEditPath"/>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pushButtonDir">
-       <property name="text">
-        <string>Select Dir</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item>
-    <widget class="QLabel" name="label">
-     <property name="text">
-      <string>Select Input File for Matching:</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <layout class="QHBoxLayout" name="horizontalLayout">
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
       <widget class="QLineEdit" name="lineEditLoadFile"/>
      </item>
@@ -87,11 +53,18 @@
     </layout>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QCheckBox" name="checkRecusive">
+      <widget class="QRadioButton" name="radioMD5">
        <property name="text">
-        <string>Hash Subdirectories (Recusive)</string>
+        <string>MD5</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="radioSHA1">
+       <property name="text">
+        <string>SHA1</string>
        </property>
        <property name="checked">
         <bool>true</bool>
@@ -99,29 +72,51 @@
       </widget>
      </item>
      <item>
-      <spacer name="horizontalSpacer">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
+      <widget class="QRadioButton" name="radioSHA256">
+       <property name="text">
+        <string>SHA256</string>
        </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
+      </widget>
      </item>
      <item>
-      <widget class="QCheckBox" name="checkRelPath">
+      <widget class="QRadioButton" name="radioTIGER">
        <property name="text">
-        <string>Use Relative Path in Output File</string>
+        <string>TIGER</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="radioWHIRLPOOL">
+       <property name="text">
+        <string>WHIRLPOOL</string>
        </property>
       </widget>
      </item>
     </layout>
    </item>
    <item>
-    <spacer name="verticalSpacer">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Select Input File with the HASH-values for Matching:</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="QLineEdit" name="lineEditLoadHash"/>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButtonLoadHash">
+       <property name="text">
+        <string>Select File</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <spacer name="verticalSpacer_2">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>
@@ -155,7 +150,7 @@
     </layout>
    </item>
    <item>
-    <spacer name="verticalSpacer_3">
+    <spacer name="verticalSpacer">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>
@@ -184,32 +179,32 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>DialogPosMatch</receiver>
+   <receiver>DialogNegativeHashing</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>224</x>
-     <y>329</y>
+     <x>248</x>
+     <y>254</y>
     </hint>
     <hint type="destinationlabel">
-     <x>224</x>
-     <y>174</y>
+     <x>157</x>
+     <y>274</y>
     </hint>
    </hints>
   </connection>
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>DialogPosMatch</receiver>
+   <receiver>DialogNegativeHashing</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>224</x>
-     <y>329</y>
+     <x>316</x>
+     <y>260</y>
     </hint>
     <hint type="destinationlabel">
-     <x>224</x>
-     <y>174</y>
+     <x>286</x>
+     <y>274</y>
     </hint>
    </hints>
   </connection>

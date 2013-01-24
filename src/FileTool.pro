@@ -24,7 +24,9 @@ SOURCES += main.cpp\
     dialogremovepath.cpp \
     dialogextractpath.cpp \
     dialogjoinfiles.cpp \
-    dialogoptionen.cpp
+    dialogoptionen.cpp \
+    dialogpositivehashing.cpp \
+    dialognegativehashing.cpp
 
 HEADERS  += mainwindow.h \
     dialogcalchash.h \
@@ -39,7 +41,9 @@ HEADERS  += mainwindow.h \
     dialogremovepath.h \
     dialogextractpath.h \
     dialogjoinfiles.h \
-    dialogoptionen.h
+    dialogoptionen.h \
+    dialogpositivehashing.h \
+    dialognegativehashing.h
 
 FORMS    += mainwindow.ui \
     dialogcalchash.ui \
@@ -53,4 +57,6 @@ FORMS    += mainwindow.ui \
     dialogremovepath.ui \
     dialogextractpath.ui \
     dialogjoinfiles.ui \
-    dialogoptionen.ui
+    dialogoptionen.ui \
+    dialogpositivehashing.ui \
+    dialognegativehashing.ui

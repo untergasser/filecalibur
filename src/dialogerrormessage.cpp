@@ -26,6 +26,16 @@ void DialogErrorMessage::addLast(QString err)
     error.replace(error.size()-1, modify);
 }
 
+void DialogErrorMessage::addLast(int err)
+{
+    QString modify;
+    QString number;
+    modify = error.at(error.size()-1);
+    number.setNum(err);
+    modify.append(number);
+    error.replace(error.size()-1, modify);
+}
+
 void DialogErrorMessage::checkForErrors()
 {
     if (error.size() != 0) {
