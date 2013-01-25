@@ -16,6 +16,7 @@
 #include "dialogjoinfiles.h"
 #include "dialogpositivehashing.h"
 #include "dialognegativehashing.h"
+#include "dialogfindduplicates.h"
 #include "dialogrsync.h"
 #include "filedatamodel.h"
 
@@ -63,6 +64,8 @@ private slots:
     void on_actionPositive_Hashing_triggered();
     void on_actionNegative_Hashing_triggered();
     void on_actionSettings_triggered();
+    void on_actionFind_Duplicates_triggered();
+    void on_actionCompare_Files_triggered();
 
 private:
     Ui::MainWindow *ui;
@@ -78,6 +81,7 @@ private:
     DialogJoinFiles *joinFiles;
     DialogPositiveHashing *positiveHashing;
     DialogNegativeHashing *negativeHashing;
+    DialogFindDuplicates *findDuplicates;
 
     QString  hashdeep_saveFile;
 

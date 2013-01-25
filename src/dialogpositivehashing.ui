@@ -24,7 +24,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Positive Matching: Only the file information of files will be written into the output file if their hash IS present in the input file. </string>
+      <string>Positive Matching: Only  information of files will be written into the output file if their hash is present in both files. </string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>
@@ -34,7 +34,7 @@
    <item>
     <widget class="QLabel" name="label_2">
      <property name="text">
-      <string>Select File with file information to test:</string>
+      <string>Select Test-File with file information to test:</string>
      </property>
     </widget>
    </item>
@@ -97,7 +97,7 @@
    <item>
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>Select Input File with the HASH-values for Matching:</string>
+      <string>Select Hash-File with the HASH-values for Matching:</string>
      </property>
     </widget>
    </item>

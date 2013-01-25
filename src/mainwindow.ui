@@ -89,6 +89,8 @@
     <addaction name="actionPositive_Hashing"/>
     <addaction name="actionNegative_Hashing"/>
     <addaction name="separator"/>
+    <addaction name="actionFind_Duplicates"/>
+    <addaction name="separator"/>
     <addaction name="actionCompare_Files"/>
    </widget>
    <addaction name="menuFile"/>
@@ -181,6 +183,11 @@
   <action name="actionNegative_Hashing">
    <property name="text">
     <string>Negative Hashing</string>
+   </property>
+  </action>
+  <action name="actionFind_Duplicates">
+   <property name="text">
+    <string>Find Duplicates</string>
    </property>
   </action>
  </widget>

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>DialogNegativeHashing</class>
- <widget class="QDialog" name="DialogNegativeHashing">
+ <class>DialogFindDuplicates</class>
+ <widget class="QDialog" name="DialogFindDuplicates">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>450</width>
-    <height>300</height>
+    <height>250</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Negative Hashing</string>
+   <string>Find Doublicates</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -24,7 +24,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Negative Matching: Only information of files will be written into the output file if the hash is prsent in the Hash-file and NOT present in the test file.</string>
+      <string>Find Duplicates: Only information of files will be written into the output file if the hash is present MORE THAN ONCE in the input file.</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>
@@ -34,7 +34,7 @@
    <item>
     <widget class="QLabel" name="label_2">
      <property name="text">
-      <string>Select Test-File with file information to test:</string>
+      <string>Select File with file information to test:</string>
      </property>
     </widget>
    </item>
@@ -95,28 +95,7 @@
     </layout>
    </item>
    <item>
-    <widget class="QLabel" name="label">
-     <property name="text">
-      <string>Select Hash-File with the HASH-values for Matching:</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_3">
-     <item>
-      <widget class="QLineEdit" name="lineEditLoadHash"/>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pushButtonLoadHash">
-       <property name="text">
-        <string>Select File</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item>
-    <spacer name="verticalSpacer_2">
+    <spacer name="verticalSpacer">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>
@@ -150,7 +129,7 @@
     </layout>
    </item>
    <item>
-    <spacer name="verticalSpacer">
+    <spacer name="verticalSpacer_2">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>
@@ -179,7 +158,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>DialogNegativeHashing</receiver>
+   <receiver>DialogFindDuplicates</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -195,7 +174,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>DialogNegativeHashing</receiver>
+   <receiver>DialogFindDuplicates</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">

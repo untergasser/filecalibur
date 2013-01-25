@@ -240,3 +240,16 @@ void MainWindow::on_actionNegative_Hashing_triggered()
     negativeHashing->show();
 }
 
+
+void MainWindow::on_actionFind_Duplicates_triggered()
+{
+    findDuplicates = new DialogFindDuplicates(this);
+    findDuplicates->setErrDB(error);
+    findDuplicates->setLoadFile(hashdeep_saveFile);
+    findDuplicates->show();
+}
+
+void MainWindow::on_actionCompare_Files_triggered()
+{
+
+}
