@@ -23,9 +23,7 @@ public:
 
 private slots:
     void on_pushButtonDirSource_clicked();
-
     void on_pushButtonDirTarget_clicked();
-
     void on_buttonBox_accepted();
 
 private:

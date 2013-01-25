@@ -251,5 +251,8 @@ void MainWindow::on_actionFind_Duplicates_triggered()
 
 void MainWindow::on_actionCompare_Files_triggered()
 {
-
+    diffTool = new DialogDiffTool(this);
+    diffTool->setErrDB(error);
+    diffTool->setLoadFile(hashdeep_saveFile);
+    diffTool->show();
 }

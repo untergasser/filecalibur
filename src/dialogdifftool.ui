@@ -1,92 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>DialogOptionen</class>
- <widget class="QDialog" name="DialogOptionen">
+ <class>DialogDiffTool</class>
+ <widget class="QDialog" name="DialogDiffTool">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>450</width>
-    <height>210</height>
+    <height>190</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Options</string>
+   <string>Compare Two Files</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QLabel" name="label">
+    <widget class="QLabel" name="label_4">
      <property name="font">
       <font>
-       <pointsize>8</pointsize>
+       <pointsize>10</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
       </font>
      </property>
      <property name="text">
-      <string>Path to hasdeep binary:</string>
+      <string>Compare two Files: Show differences between two selected files.</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Select First File:</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QLineEdit" name="lineEditLoadFile"/>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButtonLoadFile">
+       <property name="text">
+        <string>Select File</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_5">
+     <property name="text">
+      <string>Select Second File:</string>
      </property>
     </widget>
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_3">
      <item>
-      <widget class="QLineEdit" name="lineEditHashdeep"/>
+      <widget class="QLineEdit" name="lineEditLoadFile_2"/>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButtonHashdeep">
+      <widget class="QPushButton" name="pushButtonLoadFile_2">
        <property name="text">
-        <string>Select Executable</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item>
-    <widget class="QLabel" name="label_2">
-     <property name="font">
-      <font>
-       <pointsize>8</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Path to Rsync binary:</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_4">
-     <item>
-      <widget class="QLineEdit" name="lineEditRsync"/>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pushButtonRsync">
-       <property name="text">
-        <string>Select Executable</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item>
-    <widget class="QLabel" name="label_3">
-     <property name="font">
-      <font>
-       <pointsize>8</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Path to Diff binary:</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_5">
-     <item>
-      <widget class="QLineEdit" name="lineEditDiff"/>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pushButtonDiff">
-       <property name="text">
-        <string>Select Executable</string>
+        <string>Select File</string>
        </property>
       </widget>
      </item>
@@ -100,7 +81,7 @@
      <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
-       <height>40</height>
+       <height>18</height>
       </size>
      </property>
     </spacer>
@@ -122,7 +103,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>DialogOptionen</receiver>
+   <receiver>DialogDiffTool</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -138,7 +119,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>DialogOptionen</receiver>
+   <receiver>DialogDiffTool</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">

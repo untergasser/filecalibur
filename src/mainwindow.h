@@ -18,6 +18,7 @@
 #include "dialognegativehashing.h"
 #include "dialogfindduplicates.h"
 #include "dialogrsync.h"
+#include "dialogdifftool.h"
 #include "filedatamodel.h"
 
 #include <QProcess>
@@ -74,6 +75,7 @@ private:
     DialogCalcHash *hashIt;
     DialogPosMatch *hashPos;
     DialogNegMatch *hashNeg;
+    DialogDiffTool *diffTool;
     DialogModifyPath *modifyPath;
     DialogRunHasDeep *hashRun;
     DialogRemovePath *removePath;

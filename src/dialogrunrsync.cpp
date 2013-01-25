@@ -9,9 +9,6 @@ DialogRunRsync::DialogRunRsync(QWidget *parent) :
 
     rsync_running = false;
 
-    QSettings settings("A. Untergasser", "Filecalibur");
-
-
     connect(&rsync_bin, SIGNAL(readyReadStandardOutput()), this, SLOT(rsyncUpdateText()));
     connect(&rsync_bin, SIGNAL(readyReadStandardError()), this, SLOT(rsyncUpdateError()));
     connect(&rsync_bin, SIGNAL(finished(int,QProcess::ExitStatus)), this, SLOT(rsyncFinished(int,QProcess::ExitStatus)));
