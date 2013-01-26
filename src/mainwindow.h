@@ -20,12 +20,15 @@
 #include "dialogdifftool.h"
 #include "dialogrsync.h"
 #include "dialogdeletefiles.h"
+#include "dialogdelemptdir.h"
 #include "filedatamodel.h"
 
 #include <QProcess>
 #include <QFile>
 #include <QTableWidget>
 #include <QFileDialog>
+#include <QUrl>
+#include <QDesktopServices>
 
 namespace Ui {
 class MainWindow;
@@ -68,8 +71,13 @@ private slots:
     void on_actionSettings_triggered();
     void on_actionFind_Duplicates_triggered();
     void on_actionCompare_Files_triggered();
-
     void on_actionDelete_Files_from_List_triggered();
+    void on_actionDelete_Empty_Directories_triggered();
+    void on_actionSupport_triggered();
+    void on_actionHashdeep_triggered();
+    void on_actionRsync_triggered();
+    void on_actionWinmerge_triggered();
+    void on_actionTutorials_triggered();
 
 private:
     Ui::MainWindow *ui;
@@ -88,6 +96,7 @@ private:
     DialogNegativeHashing *negativeHashing;
     DialogFindDuplicates *findDuplicates;
     DialogDeleteFiles *deleteFiles;
+    DialogDelEmptDir *delEmptDir;
 
     QString  hashdeep_saveFile;
 

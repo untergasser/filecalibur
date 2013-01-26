@@ -263,5 +263,41 @@ void MainWindow::on_actionDelete_Files_from_List_triggered()
     deleteFiles->setErrDB(error);
     deleteFiles->setLoadFile(hashdeep_saveFile);
     deleteFiles->show();
+}
 
+void MainWindow::on_actionDelete_Empty_Directories_triggered()
+{
+    delEmptDir = new DialogDelEmptDir(this);
+    delEmptDir->setErrDB(error);
+    delEmptDir->show();
+}
+
+void MainWindow::on_actionSupport_triggered()
+{
+    QUrl urlLink("http://www.filecalibur.com");
+    QDesktopServices::openUrl(urlLink);
+}
+
+void MainWindow::on_actionHashdeep_triggered()
+{
+    QUrl urlLink("http://md5deep.sourceforge.net/");
+    QDesktopServices::openUrl(urlLink);
+}
+
+void MainWindow::on_actionRsync_triggered()
+{
+    QUrl urlLink("http://it-em.net/joomla/index.php?option=com_content&view=article&id=49&Itemid=54cms/front_content.php");
+    QDesktopServices::openUrl(urlLink);
+}
+
+void MainWindow::on_actionWinmerge_triggered()
+{
+    QUrl urlLink("http://winmerge.org/");
+    QDesktopServices::openUrl(urlLink);
+}
+
+void MainWindow::on_actionTutorials_triggered()
+{
+    QUrl urlLink("http://www.filecalibur.com/tutorials");
+    QDesktopServices::openUrl(urlLink);
 }

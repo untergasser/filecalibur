@@ -84,7 +84,8 @@
      <addaction name="actionWinmerge"/>
     </widget>
     <addaction name="actionAbout"/>
-    <addaction name="actionSourceforge"/>
+    <addaction name="actionTutorials"/>
+    <addaction name="actionSupport"/>
     <addaction name="menuRequired_Software"/>
    </widget>
    <widget class="QMenu" name="menuFileeditor">
@@ -225,6 +226,16 @@
   <action name="actionWinmerge">
    <property name="text">
     <string>WinMerge</string>
+   </property>
+  </action>
+  <action name="actionSupport">
+   <property name="text">
+    <string>Support</string>
+   </property>
+  </action>
+  <action name="actionTutorials">
+   <property name="text">
+    <string>Tutorials</string>
    </property>
   </action>
  </widget>
