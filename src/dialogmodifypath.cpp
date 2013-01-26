@@ -43,6 +43,10 @@ void DialogModifyPath::on_pushButtonSaveFile_clicked()
 void DialogModifyPath::on_buttonBox_accepted()
 {
     int toPathCols = 0;
+    QMap<QString, QString> map;
+
+    bool sort = false;
+    sort = ui->checkBoxSortOutput->isChecked();
 
     QFile lFile(ui->lineEditLoadFile->text());
     QFile sFile(ui->lineEditSaveFile->text());
@@ -71,38 +75,54 @@ void DialogModifyPath::on_buttonBox_accepted()
                 }
                 QString linStr = QString::fromLocal8Bit(line);
                 QString delStr = ui->lineEditTextRemove->text();
-                QString rightStr = "";
-                QString resStr = "";
+                QString completeLine = "";
+                QString oldFileName = "";
+                QString fileName = "";
                 int pos = 0;
                 for (int i = 1; i < toPathCols; i++){
                     pos = linStr.indexOf(",", pos + 1);
                 }
                 pos++;
 
-                resStr.append(linStr.left(pos));
+                completeLine.append(linStr.left(pos));
 
-                resStr.append(ui->lineEditTextAdd->text());
+                fileName.append(ui->lineEditTextAdd->text());
 
-                rightStr.append(linStr.right((linStr.length() - pos)));
-                if (rightStr.startsWith(delStr) == true) {
-                    rightStr.remove(0, delStr.length());
+                oldFileName.append(linStr.right((linStr.length() - pos)));
+                if (oldFileName.startsWith(delStr) == true) {
+                    oldFileName.remove(0, delStr.length());
                 } else {
                     error->newErr(tr("Path Modification was unabe to remove \""));
                     error->addLast(delStr);
                     error->addLast(tr("\" at: "));
-                    error->addLast(rightStr);
+                    error->addLast(oldFileName);
                 }
 
                 if (ui->rB_back_for->isChecked() == true) {
-                    rightStr.replace(QString("\\"),QString("/"));
+                    oldFileName.replace(QString("\\"),QString("/"));
                 }
                 if (ui->rb_for_back->isChecked() == true) {
-                    rightStr.replace(QString("/"),QString("\\"));
+                    oldFileName.replace(QString("/"),QString("\\"));
                 }
 
-                resStr.append(rightStr);
-                //resStr.append("\n");
-                sFile.write(resStr.toLocal8Bit());
+                fileName.append(oldFileName);
+                completeLine.append(fileName);
+
+                if (sort == true) {
+                    map.insert(fileName, completeLine);
+                } else {
+                    //resStr.append("\n");
+                    sFile.write(completeLine.toLocal8Bit());
+                }
+            }
+            // Sort the array if required and then save it
+            if (sort == true) {
+                QMapIterator<QString, QString> i(map);
+                 while (i.hasNext()) {
+                     i.next();
+                     QString ret = i.value();
+                     sFile.write(ret.toLocal8Bit());
+                 }
             }
             sFile.close();
         }

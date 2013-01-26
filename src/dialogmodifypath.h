@@ -3,6 +3,8 @@
 
 #include <QDialog>
 #include <QFileDialog>
+#include <QMap>
+#include <QMapIterator>
 
 #include "dialogerrormessage.h"
 
