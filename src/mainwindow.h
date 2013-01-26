@@ -17,8 +17,9 @@
 #include "dialogpositivehashing.h"
 #include "dialognegativehashing.h"
 #include "dialogfindduplicates.h"
-#include "dialogrsync.h"
 #include "dialogdifftool.h"
+#include "dialogrsync.h"
+#include "dialogdeletefiles.h"
 #include "filedatamodel.h"
 
 #include <QProcess>
@@ -68,6 +69,8 @@ private slots:
     void on_actionFind_Duplicates_triggered();
     void on_actionCompare_Files_triggered();
 
+    void on_actionDelete_Files_from_List_triggered();
+
 private:
     Ui::MainWindow *ui;
     DialogOptionen *optionen;
@@ -84,6 +87,7 @@ private:
     DialogPositiveHashing *positiveHashing;
     DialogNegativeHashing *negativeHashing;
     DialogFindDuplicates *findDuplicates;
+    DialogDeleteFiles *deleteFiles;
 
     QString  hashdeep_saveFile;
 

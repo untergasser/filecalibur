@@ -28,7 +28,8 @@ SOURCES += main.cpp\
     dialogpositivehashing.cpp \
     dialognegativehashing.cpp \
     dialogfindduplicates.cpp \
-    dialogdifftool.cpp
+    dialogdifftool.cpp \
+    dialogdeletefiles.cpp
 
 HEADERS  += mainwindow.h \
     dialogcalchash.h \
@@ -47,7 +48,8 @@ HEADERS  += mainwindow.h \
     dialogpositivehashing.h \
     dialognegativehashing.h \
     dialogfindduplicates.h \
-    dialogdifftool.h
+    dialogdifftool.h \
+    dialogdeletefiles.h
 
 FORMS    += mainwindow.ui \
     dialogcalchash.ui \
@@ -65,4 +67,5 @@ FORMS    += mainwindow.ui \
     dialogpositivehashing.ui \
     dialognegativehashing.ui \
     dialogfindduplicates.ui \
-    dialogdifftool.ui
+    dialogdifftool.ui \
+    dialogdeletefiles.ui

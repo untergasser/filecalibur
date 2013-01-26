@@ -256,3 +256,12 @@ void MainWindow::on_actionCompare_Files_triggered()
     diffTool->setLoadFile(hashdeep_saveFile);
     diffTool->show();
 }
+
+void MainWindow::on_actionDelete_Files_from_List_triggered()
+{
+    deleteFiles = new DialogDeleteFiles(this);
+    deleteFiles->setErrDB(error);
+    deleteFiles->setLoadFile(hashdeep_saveFile);
+    deleteFiles->show();
+
+}
