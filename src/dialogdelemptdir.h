@@ -4,6 +4,9 @@
 #include <QDialog>
 #include <QFileDialog>
 #include <QFile>
+#include <QDir>
+#include <QFileInfo>
+#include <QFileInfoList>
 
 #include "dialogerrormessage.h"
 
@@ -27,7 +30,11 @@ private slots:
     void on_buttonBox_accepted();
 
 private:
+    void travelDirs(QString dirCurr);
+
     DialogErrorMessage *error;
+
+    QStringList logData;
 
     Ui::DialogDelEmptDir *ui;
 };
