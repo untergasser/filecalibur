@@ -115,6 +115,7 @@ void MainWindow::readFileToMem(QString fileSt)
     table_cols = 0;
     QString lineString;
     QString topText;
+    QString title;
     QFile file(hashdeep_saveFile);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
         error->newErr(tr("Error opening results file: "));
@@ -147,6 +148,13 @@ void MainWindow::readFileToMem(QString fileSt)
         table_used = true;
         ui->plainTextEdit->appendPlainText(topText);
     }
+
+    title = fileSt;
+    title.append(" - ");
+    title.append(QString("%1").arg(table_content.count()));
+    title.append(tr(" files"));
+    setWindowTitle(title);
+
     error->checkForErrors();
 }
 

@@ -43,7 +43,7 @@ void DialogModifyPath::on_pushButtonSaveFile_clicked()
 void DialogModifyPath::on_buttonBox_accepted()
 {
     int toPathCols = 0;
-    QMap<QString, QString> map;
+    QMultiMap<QString, QString> map;
 
     bool sort = false;
     sort = ui->checkBoxSortOutput->isChecked();
@@ -86,10 +86,15 @@ void DialogModifyPath::on_buttonBox_accepted()
 
                 completeLine.append(linStr.left(pos));
 
-                fileName.append(ui->lineEditTextAdd->text());
+                if (ui->checkBoxReplace->isChecked() == false) {
+                    fileName.append(ui->lineEditTextAdd->text());
+                }
 
                 oldFileName.append(linStr.right((linStr.length() - pos)));
                 if (oldFileName.startsWith(delStr) == true) {
+                    if (ui->checkBoxReplace->isChecked() == true) {
+                        fileName.append(ui->lineEditTextAdd->text());
+                    }
                     oldFileName.remove(0, delStr.length());
                 } else {
                     error->newErr(tr("Path Modification was unabe to remove \""));

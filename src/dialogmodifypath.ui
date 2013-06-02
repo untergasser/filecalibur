@@ -73,6 +73,13 @@
     <widget class="QLineEdit" name="lineEditTextAdd"/>
    </item>
    <item>
+    <widget class="QCheckBox" name="checkBoxReplace">
+     <property name="text">
+      <string>REPLACE instead of ADD</string>
+     </property>
+    </widget>
+   </item>
+   <item>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
       <widget class="QRadioButton" name="rB_back_for">
