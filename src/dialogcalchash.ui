@@ -92,7 +92,7 @@
      <item>
       <widget class="QCheckBox" name="checkRecusive">
        <property name="text">
-        <string>Hash Subdirectories (Recusive)</string>
+        <string>Hash Subdirectories (Recursive)</string>
        </property>
        <property name="checked">
         <bool>true</bool>

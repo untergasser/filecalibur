@@ -1,13 +1,16 @@
 #include <QtGui/QApplication>
+#include <QTranslator>
+#include <QLocale>
 #include "mainwindow.h"
 
 
 int main(int argc, char *argv[])
 {
-    QString hashDeep_Path = "\\bin\\";
-    QString hashDeep_Executable = "hasdeep64.exe";
-
     QApplication a(argc, argv);
+
+    QTranslator appTranslator;
+//    appTranslator.load("spreadsheet_" + QLocale::system().name(), ":");
+    a.installTranslator(&appTranslator);
     MainWindow w;
     w.show();
 

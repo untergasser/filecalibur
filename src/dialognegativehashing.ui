@@ -24,7 +24,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Negative Matching: Only information of files will be written into the output file if the hash is present in the Hash-file and NOT present in the test file.</string>
+      <string>Negative Matching: Only information of files will be written into the output file if the hash is present in the Test-file and NOT present in the Hash-file.</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>

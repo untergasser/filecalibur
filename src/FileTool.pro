@@ -72,3 +72,8 @@ FORMS    += mainwindow.ui \
     dialogdifftool.ui \
     dialogdeletefiles.ui \
     dialogdelemptdir.ui
+
+TRANSLATIONS    = spreadsheet_de.ts
+
+RESOURCES += \
+    translations.qrc
