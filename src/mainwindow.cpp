@@ -322,5 +322,6 @@ void MainWindow::on_actionExit_triggered()
 
 void MainWindow::on_actionAbout_triggered()
 {
- 
+    DialogAbout *about = new DialogAbout(this);
+    about->show();
 }

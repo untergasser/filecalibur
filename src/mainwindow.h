@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QSettings>
 
+#include "dialogabout.h"
 #include "dialogoptionen.h"
 #include "dialogerrormessage.h"
 #include "dialogcalchash.h"

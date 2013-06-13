@@ -30,7 +30,8 @@ SOURCES += main.cpp\
     dialogfindduplicates.cpp \
     dialogdifftool.cpp \
     dialogdeletefiles.cpp \
-    dialogdelemptdir.cpp
+    dialogdelemptdir.cpp \
+    dialogabout.cpp
 
 HEADERS  += mainwindow.h \
     dialogcalchash.h \
@@ -51,7 +52,8 @@ HEADERS  += mainwindow.h \
     dialogfindduplicates.h \
     dialogdifftool.h \
     dialogdeletefiles.h \
-    dialogdelemptdir.h
+    dialogdelemptdir.h \
+    dialogabout.h
 
 FORMS    += mainwindow.ui \
     dialogcalchash.ui \
@@ -71,7 +73,8 @@ FORMS    += mainwindow.ui \
     dialogfindduplicates.ui \
     dialogdifftool.ui \
     dialogdeletefiles.ui \
-    dialogdelemptdir.ui
+    dialogdelemptdir.ui \
+    dialogabout.ui
 
 TRANSLATIONS    = spreadsheet_de.ts
 
