@@ -309,3 +309,18 @@ void MainWindow::on_actionTutorials_triggered()
     QUrl urlLink("http://www.filecalibur.com/tutorials");
     QDesktopServices::openUrl(urlLink);
 }
+
+void MainWindow::on_actionClose_triggered()
+{
+    this->close();
+}
+
+void MainWindow::on_actionExit_triggered()
+{
+    this->close();
+}
+
+void MainWindow::on_actionAbout_triggered()
+{
+ 
+}

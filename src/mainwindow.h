@@ -78,6 +78,9 @@ private slots:
     void on_actionRsync_triggered();
     void on_actionWinmerge_triggered();
     void on_actionTutorials_triggered();
+    void on_actionClose_triggered();
+    void on_actionExit_triggered();
+    void on_actionAbout_triggered();
 
 private:
     Ui::MainWindow *ui;
