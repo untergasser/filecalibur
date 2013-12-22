@@ -27,24 +27,30 @@ void DialogPositiveHashing::setLoadFile(QString suggestion)
 
 void DialogPositiveHashing::on_pushButtonLoadFile_clicked()
 {
+    QSettings settings("A. Untergasser", "Filecalibur");
     ui->lineEditLoadFile->setText(
                 QFileDialog::getOpenFileName
-                    (this, tr("Select a File"), ".", tr("Text Files (*.txt);;All Files (*.*)")));
+                    (this, tr("Select a File"),
+                     settings.value("dataPlace").toString(), tr("Text Files (*.txt);;All Files (*.*)")));
 }
 
 void DialogPositiveHashing::on_pushButtonLoadHash_clicked()
 {
+    QSettings settings("A. Untergasser", "Filecalibur");
     ui->lineEditLoadHash->setText(
                 QFileDialog::getOpenFileName
-                    (this, tr("Select a File"), ".", tr("Text Files (*.txt);;All Files (*.*)")));
+                    (this, tr("Select a File"),
+                     settings.value("dataPlace").toString(), tr("Text Files (*.txt);;All Files (*.*)")));
 
 }
 
 void DialogPositiveHashing::on_pushButtonSaveFile_clicked()
 {
+    QSettings settings("A. Untergasser", "Filecalibur");
     ui->lineEditSaveFile->setText(
                 QFileDialog::getSaveFileName
-                    (this, tr("Select a new File"), ".", tr("Text Files (*.txt)")));
+                    (this, tr("Select a new File"),
+                     settings.value("dataPlace").toString(), tr("Text Files (*.txt)")));
 }
 
 void DialogPositiveHashing::on_buttonBox_accepted()
@@ -139,6 +145,9 @@ void DialogPositiveHashing::on_buttonBox_accepted()
             error->newErr(tr("Positive Hashing: Error opening OUTPUT file: "));
             error->addLast(ui->lineEditSaveFile->text());
         } else {
+            QSettings settings("A. Untergasser", "Filecalibur");
+            settings.setValue("dataPlace", ui->lineEditSaveFile->text());
+
             if (!lFile.atEnd()) {
                 QByteArray line = lFile.readLine();
                 sFile.write(line);

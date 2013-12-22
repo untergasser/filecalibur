@@ -4,7 +4,9 @@
 #
 #-------------------------------------------------
 
-QT       += widgets
+QT       += core gui
+
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = Filecalibur
 TEMPLATE = app
@@ -76,7 +78,7 @@ FORMS    += mainwindow.ui \
     dialogdelemptdir.ui \
     dialogabout.ui
 
-TRANSLATIONS    = spreadsheet_de.ts
+TRANSLATIONS    += spreadsheet_de.ts
 
 RESOURCES += \
     translations.qrc

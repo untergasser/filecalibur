@@ -25,23 +25,29 @@ void DialogDeleteFiles::setLoadFile(QString suggestion)
 
 void DialogDeleteFiles::on_pushButtonLoadFile_clicked()
 {
+    QSettings settings("A. Untergasser", "Filecalibur");
     ui->lineEditLoadFile->setText(
                 QFileDialog::getOpenFileName
-                    (this, tr("Select a File"), ".", tr("Text Files (*.txt);;All Files (*.*)")));
+                    (this, tr("Select a File"),
+                     settings.value("dataPlace").toString(), tr("Text Files (*.txt);;All Files (*.*)")));
 }
 
 void DialogDeleteFiles::on_pushButtonDir_clicked()
 {
+    QSettings settings("A. Untergasser", "Filecalibur");
     ui->lineEditPath->setText(
                 QFileDialog::getExistingDirectory
-                    (this, tr("Select Directory to Hash"), ".", QFileDialog::ShowDirsOnly));
+                    (this, tr("Select Directory to Hash"),
+                     settings.value("workPlace").toString(), QFileDialog::ShowDirsOnly));
 }
 
 void DialogDeleteFiles::on_pushButtonSaveFile_clicked()
 {
+    QSettings settings("A. Untergasser", "Filecalibur");
     ui->lineEditSaveFile->setText(
                 QFileDialog::getSaveFileName
-                    (this, tr("Select a new File"), ".", tr("Text Files (*.txt)")));
+                    (this, tr("Select a new File"),
+                     settings.value("dataPlace").toString(), tr("Text Files (*.txt)")));
 }
 
 void DialogDeleteFiles::on_buttonBox_accepted()
@@ -51,6 +57,10 @@ void DialogDeleteFiles::on_buttonBox_accepted()
 
     QFile lFile(ui->lineEditLoadFile->text());
     QFile sFile(ui->lineEditSaveFile->text());
+
+    QSettings settings("A. Untergasser", "Filecalibur");
+    settings.setValue("workPlace", ui->lineEditPath->text());
+
     if (!lFile.open(QIODevice::ReadOnly | QIODevice::Text)){
         error->newErr(tr("Delete Files: Error opening INPUT file: "));
         error->addLast(ui->lineEditLoadFile->text());
@@ -60,6 +70,7 @@ void DialogDeleteFiles::on_buttonBox_accepted()
                 error->newErr(tr("Delete Files: Error opening OUTPUT file: "));
                 error->addLast(ui->lineEditSaveFile->text());
             } else {
+                settings.setValue("dataPlace", ui->lineEditSaveFile->text());
                 saveLog = true;
             }
         }

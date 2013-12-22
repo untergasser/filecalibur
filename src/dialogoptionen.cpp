@@ -10,13 +10,13 @@ DialogOptionen::DialogOptionen(QWidget *parent) :
     QSettings settings("A. Untergasser", "Filecalibur");
     QString hashprog = settings.value("hashdeep").toString();
     if (hashprog.isEmpty()) {
-        ui->lineEditHashdeep->setText("C:\\_progs\\Filecalibur\\build\\debug\\bin\\hashdeep64.exe");
+        ui->lineEditHashdeep->setText("C:\\Program Files (x86)\\filecalibur\\md5deep\\hashdeep64.exe");
     } else {
         ui->lineEditHashdeep->setText(hashprog);
     }
     QString syncprog = settings.value("rsync").toString();
     if (syncprog.isEmpty()) {
-        ui->lineEditRsync->setText("C:\\_progs\\Filecalibur\\build\\debug\\bin\\rsync.exe");
+        ui->lineEditRsync->setText("C:\\Program Files (x86)\\filecalibur\\rsync\\rsync.exe");
     } else {
         ui->lineEditRsync->setText(syncprog);
     }
@@ -36,7 +36,8 @@ DialogOptionen::~DialogOptionen()
 void DialogOptionen::on_pushButtonHashdeep_clicked()
 {
     QString hashprog = QFileDialog::getOpenFileName
-                    (this, tr("Select an Executables"), ".", tr("Executables (*.exe);;All Files (*.*)"));
+                    (this, tr("Select an Executables"),
+                     ui->lineEditHashdeep->text(), tr("Executables (*.exe);;All Files (*.*)"));
     hashprog.replace(QString("/"),QString("\\"));
     ui->lineEditHashdeep->setText(hashprog);
 }
@@ -44,7 +45,8 @@ void DialogOptionen::on_pushButtonHashdeep_clicked()
 void DialogOptionen::on_pushButtonRsync_clicked()
 {
     QString syncprog = QFileDialog::getOpenFileName
-                    (this, tr("Select an Executables"), ".", tr("Executables (*.exe);;All Files (*.*)"));
+                    (this, tr("Select an Executables"),
+                     ui->lineEditRsync->text(), tr("Executables (*.exe);;All Files (*.*)"));
     syncprog.replace(QString("/"),QString("\\"));
     ui->lineEditRsync->setText(syncprog);
 }
@@ -52,7 +54,8 @@ void DialogOptionen::on_pushButtonRsync_clicked()
 void DialogOptionen::on_pushButtonDiff_clicked()
 {
     QString diffprog = QFileDialog::getOpenFileName
-                    (this, tr("Select an Executables"), ".", tr("Executables (*.exe);;All Files (*.*)"));
+                    (this, tr("Select an Executables"),
+                     ui->lineEditDiff->text(), tr("Executables (*.exe);;All Files (*.*)"));
     diffprog.replace(QString("/"),QString("\\"));
     ui->lineEditDiff->setText(diffprog);
 }

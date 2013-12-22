@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QFileDialog>
+#include <QSettings>
 
 namespace Ui {
 class DialogPosMatch;

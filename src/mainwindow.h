@@ -28,6 +28,7 @@
 #include <QFile>
 #include <QTableWidget>
 #include <QFileDialog>
+#include <QSettings>
 #include <QUrl>
 #include <QDesktopServices>
 
@@ -82,6 +83,8 @@ private slots:
     void on_actionClose_triggered();
     void on_actionExit_triggered();
     void on_actionAbout_triggered();
+
+    void on_actionSourceforge_triggered();
 
 private:
     Ui::MainWindow *ui;

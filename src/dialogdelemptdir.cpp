@@ -20,27 +20,36 @@ void DialogDelEmptDir::setErrDB(DialogErrorMessage *err)
 
 void DialogDelEmptDir::on_pushButtonDir_clicked()
 {
+    QSettings settings("A. Untergasser", "Filecalibur");
     ui->lineEditPath->setText(
                 QFileDialog::getExistingDirectory
-                    (this, tr("Select Directory"), ".", QFileDialog::ShowDirsOnly));
+                    (this, tr("Select Directory"),
+                     settings.value("workPlace").toString(), QFileDialog::ShowDirsOnly));
 }
 
 void DialogDelEmptDir::on_pushButtonSaveFile_clicked()
 {
+    QSettings settings("A. Untergasser", "Filecalibur");
     ui->lineEditSaveFile->setText(
                 QFileDialog::getSaveFileName
-                    (this, tr("Select a new File"), ".", tr("Text Files (*.txt)")));
+                    (this, tr("Select a new File"),
+                     settings.value("dataPlace").toString(), tr("Text Files (*.txt)")));
 }
 
 void DialogDelEmptDir::on_buttonBox_accepted()
 {
     QFile sFile(ui->lineEditSaveFile->text());
     bool saveLog = false;
+
+    QSettings settings("A. Untergasser", "Filecalibur");
+    settings.setValue("workPlace", ui->lineEditPath->text());
+
     if (ui->lineEditSaveFile->text().isEmpty() == false) {
         if (!sFile.open(QIODevice::WriteOnly | QIODevice::Text)){
             error->newErr(tr("Delete Empty Dirs: Error opening OUTPUT file: "));
             error->addLast(ui->lineEditSaveFile->text());
         } else {
+            settings.setValue("dataPlace", ui->lineEditSaveFile->text());
             saveLog = true;
         }
     }

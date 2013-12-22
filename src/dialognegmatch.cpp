@@ -17,9 +17,11 @@ DialogNegMatch::~DialogNegMatch()
 
 void DialogNegMatch::on_pushButtonDir_clicked()
 {
+    QSettings settings("A. Untergasser", "Filecalibur");
     ui->lineEditPath->setText(
                 QFileDialog::getExistingDirectory
-                    (this, tr("Select Directory to Hash"), ".", QFileDialog::ShowDirsOnly));
+                    (this, tr("Select Directory to Hash"),
+                     settings.value("workPlace").toString(), QFileDialog::ShowDirsOnly));
 }
 
 void DialogNegMatch::setLoadFile(QString suggestion)
@@ -29,20 +31,28 @@ void DialogNegMatch::setLoadFile(QString suggestion)
 
 void DialogNegMatch::on_pushButtonLoadFile_clicked()
 {
+    QSettings settings("A. Untergasser", "Filecalibur");
     ui->lineEditLoadFile->setText(
                 QFileDialog::getOpenFileName
-                    (this, tr("Select a File"), ".", tr("Text Files (*.txt);;All Files (*.*)")));
+                    (this, tr("Select a File"),
+                     settings.value("dataPlace").toString(), tr("Text Files (*.txt);;All Files (*.*)")));
 }
 
 void DialogNegMatch::on_pushButtonSaveFile_clicked()
 {
+    QSettings settings("A. Untergasser", "Filecalibur");
     ui->lineEditSaveFile->setText(
                 QFileDialog::getSaveFileName
-                    (this, tr("Select a new File"), ".", tr("Text Files (*.txt)")));
+                    (this, tr("Select a new File"),
+                     settings.value("dataPlace").toString(), tr("Text Files (*.txt)")));
 }
 
 void DialogNegMatch::on_buttonBox_accepted()
 {
+    QSettings settings("A. Untergasser", "Filecalibur");
+    settings.setValue("workPlace", ui->lineEditPath->text());
+    settings.setValue("dataPlace", ui->lineEditSaveFile->text());
+
     QStringList command;
     bool error = false;
 

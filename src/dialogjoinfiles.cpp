@@ -27,23 +27,29 @@ void DialogJoinFiles::setLoadFile(QString suggestion)
 
 void DialogJoinFiles::on_pushButtonLoadFile_clicked()
 {
+    QSettings settings("A. Untergasser", "Filecalibur");
     ui->lineEditLoadFile->setText(
                 QFileDialog::getOpenFileName
-                    (this, tr("Select a File"), ".", tr("Text Files (*.txt);;All Files (*.*)")));
+                    (this, tr("Select a File"),
+                     settings.value("dataPlace").toString(), tr("Text Files (*.txt);;All Files (*.*)")));
 }
 
 void DialogJoinFiles::on_pushButtonLoadFile_2_clicked()
 {
+    QSettings settings("A. Untergasser", "Filecalibur");
     ui->lineEditLoadFile_2->setText(
                 QFileDialog::getOpenFileName
-                    (this, tr("Select a File"), ".", tr("Text Files (*.txt);;All Files (*.*)")));
+                    (this, tr("Select a File"),
+                     settings.value("dataPlace").toString(), tr("Text Files (*.txt);;All Files (*.*)")));
 }
 
 void DialogJoinFiles::on_pushButtonSaveFile_clicked()
 {
+    QSettings settings("A. Untergasser", "Filecalibur");
     ui->lineEditSaveFile->setText(
                 QFileDialog::getSaveFileName
-                    (this, tr("Select a new File"), ".", tr("Text Files (*.txt)")));
+                    (this, tr("Select a new File"),
+                     settings.value("dataPlace").toString(), tr("Text Files (*.txt)")));
 }
 
 void DialogJoinFiles::on_buttonBox_accepted()
@@ -63,6 +69,9 @@ void DialogJoinFiles::on_buttonBox_accepted()
                 error->newErr(tr("Join Files created Error opening OUTPUT file: "));
                 error->addLast(ui->lineEditSaveFile->text());
             } else {
+                QSettings settings("A. Untergasser", "Filecalibur");
+                settings.setValue("dataPlace", ui->lineEditSaveFile->text());
+
                 QByteArray line;
                 QByteArray line_2;
                 if (!lFile.atEnd()) {

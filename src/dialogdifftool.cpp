@@ -28,21 +28,27 @@ void DialogDiffTool::setLoadFile(QString suggestion)
 
 void DialogDiffTool::on_pushButtonLoadFile_clicked()
 {
+    QSettings settings("A. Untergasser", "Filecalibur");
     ui->lineEditLoadFile->setText(
                 QFileDialog::getOpenFileName
-                    (this, tr("Select a File"), ".", tr("Text Files (*.txt);;All Files (*.*)")));
+                    (this, tr("Select a File"),
+                     settings.value("dataPlace").toString(), tr("Text Files (*.txt);;All Files (*.*)")));
 }
 
 void DialogDiffTool::on_pushButtonLoadFile_2_clicked()
 {
+    QSettings settings("A. Untergasser", "Filecalibur");
     ui->lineEditLoadFile_2->setText(
                 QFileDialog::getOpenFileName
-                    (this, tr("Select a File"), ".", tr("Text Files (*.txt);;All Files (*.*)")));
+                    (this, tr("Select a File"),
+                     settings.value("dataPlace").toString(), tr("Text Files (*.txt);;All Files (*.*)")));
 }
 
 void DialogDiffTool::on_buttonBox_accepted()
 {
     QSettings settings("A. Untergasser", "Filecalibur");
+    settings.setValue("dataPlace", ui->lineEditLoadFile->text());
+
     QString diff_binPath = settings.value("diff").toString();
 
     command << ui->lineEditLoadFile->text();

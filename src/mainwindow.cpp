@@ -166,8 +166,12 @@ void MainWindow::setFile(QString file_String)
 
 void MainWindow::on_actionOpen_triggered()
 {
-    hashdeep_saveFile = QFileDialog::getOpenFileName(this, tr("Select a File"), ".", tr("Text Files (*.txt);;All Files (*.*)"));
+    QSettings settings("A. Untergasser", "Filecalibur");
+    hashdeep_saveFile = settings.value("dataPlace").toString();
+
+    hashdeep_saveFile = QFileDialog::getOpenFileName(this, tr("Select a File"), hashdeep_saveFile, tr("Text Files (*.txt);;All Files (*.*)"));
     if (hashdeep_saveFile != 0) {
+        settings.setValue("dataPlace", hashdeep_saveFile);
         updateTable();
     }
 }
@@ -324,4 +328,9 @@ void MainWindow::on_actionAbout_triggered()
 {
     DialogAbout *about = new DialogAbout(this);
     about->show();
+}
+
+void MainWindow::on_actionSourceforge_triggered()
+{
+
 }

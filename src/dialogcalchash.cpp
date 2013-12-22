@@ -18,22 +18,26 @@ DialogCalcHash::~DialogCalcHash()
 
 void DialogCalcHash::on_pushButtonDir_clicked()
 {
-    ui->lineEditPath->setText(
-                QFileDialog::getExistingDirectory
-                    (this, tr("Select Directory to Hash"), ".", QFileDialog::ShowDirsOnly));
+    QSettings settings("A. Untergasser", "Filecalibur");
+    ui->lineEditPath->setText(QFileDialog::getExistingDirectory
+            (this, tr("Select Directory to Hash"),
+             settings.value("workPlace").toString(), QFileDialog::ShowDirsOnly));
 }
 
 void DialogCalcHash::on_pushButtonSaveFile_clicked()
 {
-    ui->lineEditSaveFile->setText(
-                QFileDialog::getSaveFileName
-                    (this, tr("Select a new File"), ".", tr("Text Files (*.txt)")));
+    QSettings settings("A. Untergasser", "Filecalibur");
+    ui->lineEditSaveFile->setText(QFileDialog::getSaveFileName
+            (this, tr("Select a new File"),
+             settings.value("dataPlace").toString(), tr("Text Files (*.txt)")));
 }
 
 void DialogCalcHash::on_buttonBox_accepted()
 {
     QStringList command;
     QString hashCom;
+    QSettings settings("A. Untergasser", "Filecalibur");
+
     bool error = false;
     bool HashUsed = false;
 
@@ -78,11 +82,14 @@ void DialogCalcHash::on_buttonBox_accepted()
     if (ui->lineEditPath->text() == "") {
         error = true;
     } else {
+        settings.setValue("workPlace", ui->lineEditPath->text());
         command << ui->lineEditPath->text();
     }
 
     if (ui->lineEditSaveFile->text() == "") {
         error = true;
+    } else {
+        settings.setValue("dataPlace", ui->lineEditSaveFile->text());
     }
 
     if (error == false) {

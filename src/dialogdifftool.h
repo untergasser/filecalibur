@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QFileDialog>
+#include <QSettings>
 #include <QProcess>
 #include <QSettings>
 
@@ -35,9 +36,10 @@ private slots:
 private:
     DialogErrorMessage *error;
 
-    Ui::DialogDiffTool *ui;
     QStringList command;
     QProcess diff_bin;
+
+    Ui::DialogDiffTool *ui;
 };
 
 #endif // DIALOGDIFFTOOL_H

@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QFileDialog>
+#include <QSettings>
 #include <QFile>
 #include <QDir>
 #include <QFileInfo>

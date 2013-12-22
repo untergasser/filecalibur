@@ -28,16 +28,20 @@ void DialogModifyPath::setLoadFile(QString suggestion)
 
 void DialogModifyPath::on_pushButtonLoadFile_clicked()
 {
+    QSettings settings("A. Untergasser", "Filecalibur");
     ui->lineEditLoadFile->setText(
                 QFileDialog::getOpenFileName
-                    (this, tr("Select a File"), ".", tr("Text Files (*.txt);;All Files (*.*)")));
+                    (this, tr("Select a File"),
+                     settings.value("dataPlace").toString(), tr("Text Files (*.txt);;All Files (*.*)")));
 }
 
 void DialogModifyPath::on_pushButtonSaveFile_clicked()
 {
+    QSettings settings("A. Untergasser", "Filecalibur");
     ui->lineEditSaveFile->setText(
                 QFileDialog::getSaveFileName
-                    (this, tr("Select a new File"), ".", tr("Text Files (*.txt)")));
+                    (this, tr("Select a new File"),
+                     settings.value("dataPlace").toString(), tr("Text Files (*.txt)")));
 }
 
 void DialogModifyPath::on_buttonBox_accepted()
@@ -58,6 +62,9 @@ void DialogModifyPath::on_buttonBox_accepted()
             error->newErr(tr("Path Modification created Error opening OUTPUT file: "));
             error->addLast(ui->lineEditSaveFile->text());
         } else {
+            QSettings settings("A. Untergasser", "Filecalibur");
+            settings.setValue("dataPlace", ui->lineEditSaveFile->text());
+
             if (!lFile.atEnd()) {
                 QByteArray line = lFile.readLine();
                 sFile.write(line);

@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QFileDialog>
+#include <QSettings>
 #include <QMap>
 #include <QMapIterator>
 
