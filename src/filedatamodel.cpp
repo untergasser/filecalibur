@@ -14,11 +14,13 @@ void FileDataModel::setup(const int cols, const QStringList head, QStringList *d
 
 int FileDataModel::rowCount(const QModelIndex &parent) const
 {
+    Q_UNUSED (parent);
     return rows;
 }
 
 int FileDataModel::columnCount(const QModelIndex &parent) const
 {
+    Q_UNUSED (parent);
     return colums;
 }
 
