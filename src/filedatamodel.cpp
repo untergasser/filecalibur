@@ -14,7 +14,7 @@ void FileDataModel::setup(const int cols, const QStringList head, QStringList *d
 
 int FileDataModel::rowCount(const QModelIndex &parent) const
 {
-    Q_UNUSED (parent);
+    Q_UNUSED  (parent);
     return rows;
 }
 
