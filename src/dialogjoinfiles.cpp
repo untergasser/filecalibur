@@ -6,7 +6,7 @@ DialogJoinFiles::DialogJoinFiles(QWidget *parent) :
     ui(new Ui::DialogJoinFiles)
 {
     ui->setupUi(this);
-
+    this->setAttribute(Qt::WA_DeleteOnClose);
     connect(this, SIGNAL(openResults(QString)), this->parent(), SLOT(updateTable(QString)));
 }
 

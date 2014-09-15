@@ -7,7 +7,7 @@ DialogCalcHash::DialogCalcHash(QWidget *parent) :
     ui(new Ui::DialogCalcHash)
 {
     ui->setupUi(this);
-
+    this->setAttribute(Qt::WA_DeleteOnClose);
     connect(this, SIGNAL(runHashDeep(QStringList,QString)), this->parent(), SLOT(run_hashdeep(QStringList,QString)));
 }
 

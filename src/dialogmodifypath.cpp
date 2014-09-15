@@ -6,7 +6,7 @@ DialogModifyPath::DialogModifyPath(QWidget *parent) :
     ui(new Ui::DialogModifyPath)
 {
     ui->setupUi(this);
-
+    this->setAttribute(Qt::WA_DeleteOnClose);
     connect(this, SIGNAL(openResults(QString)), this->parent(), SLOT(updateTable(QString)));
 }
 

@@ -6,7 +6,7 @@ DialogDiffTool::DialogDiffTool(QWidget *parent) :
     ui(new Ui::DialogDiffTool)
 {
     ui->setupUi(this);
-
+    this->setAttribute(Qt::WA_DeleteOnClose);
     connect(&diff_bin, SIGNAL(readyReadStandardError()), this, SLOT(diffUpdateError()));
     connect(&diff_bin, SIGNAL(error(QProcess::ProcessError)), this, SLOT(diffError(QProcess::ProcessError)));
 }

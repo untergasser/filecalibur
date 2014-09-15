@@ -6,7 +6,7 @@ DialogPosMatch::DialogPosMatch(QWidget *parent) :
     ui(new Ui::DialogPosMatch)
 {
     ui->setupUi(this);
-
+    this->setAttribute(Qt::WA_DeleteOnClose);
     connect(this, SIGNAL(runHashDeep(QStringList,QString)), this->parent(), SLOT(run_hashdeep(QStringList,QString)));
 }
 

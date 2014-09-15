@@ -2,7 +2,7 @@ How to compile RSYNC on windows:
 
 1. Install Cygwin.
 
-2. Install the packages: make, gcc, gcc-core, gcc-g++, binutils and vim
+2. Install the packages: make, (gcc,) gcc-core, gcc-g++, binutils and vim
 
 3. cd to your rsync directory in Cygwin.
 

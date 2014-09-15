@@ -6,9 +6,8 @@ DialogRunRsync::DialogRunRsync(QWidget *parent) :
     ui(new Ui::DialogRunRsync)
 {
     ui->setupUi(this);
-
+    this->setAttribute(Qt::WA_DeleteOnClose);
     rsync_running = false;
-
     connect(&rsync_bin, SIGNAL(readyReadStandardOutput()), this, SLOT(rsyncUpdateText()));
     connect(&rsync_bin, SIGNAL(readyReadStandardError()), this, SLOT(rsyncUpdateError()));
     connect(&rsync_bin, SIGNAL(finished(int,QProcess::ExitStatus)), this, SLOT(rsyncFinished(int,QProcess::ExitStatus)));

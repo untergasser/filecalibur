@@ -118,6 +118,7 @@ private:
     QStringList table_content;
     FileDataModel table_model;
     bool table_used;
+    QString programVersion;
 };
 
 #endif // MAINWINDOW_H

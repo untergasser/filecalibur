@@ -5,6 +5,8 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+    programVersion = "Version 0.5.0 BETA";
+
     ui->setupUi(this);
 
     hashdeep_saveFile  = "";
@@ -326,7 +328,7 @@ void MainWindow::on_actionExit_triggered()
 
 void MainWindow::on_actionAbout_triggered()
 {
-    DialogAbout *about = new DialogAbout(this);
+    DialogAbout *about = new DialogAbout(programVersion, this);
     about->show();
 }
 

@@ -12,7 +12,7 @@ class DialogAbout : public QDialog
     Q_OBJECT
     
 public:
-    explicit DialogAbout(QWidget *parent = 0);
+    explicit DialogAbout(QString ver, QWidget *parent = 0);
     ~DialogAbout();
     
 private slots:

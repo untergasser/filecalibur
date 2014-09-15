@@ -6,7 +6,7 @@ DialogExtractPath::DialogExtractPath(QWidget *parent) :
     ui(new Ui::DialogExtractPath)
 {
     ui->setupUi(this);
-
+    this->setAttribute(Qt::WA_DeleteOnClose);
     connect(this, SIGNAL(openResults(QString)), this->parent(), SLOT(updateTable(QString)));
 }
 
