@@ -29,11 +29,20 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    Q_INIT_RESOURCE(resource);
 
     QTranslator appTranslator;
     appTranslator.load("spreadsheet_" + QLocale::system().name(), ":");
     a.installTranslator(&appTranslator);
     MainWindow w;
+
+#ifndef __APPLE__
+    w.setWindowIcon(QIcon(":icon_128.ico"));
+#endif
+#ifdef __APPLE__
+    w.setWindowIcon(QIcon(":icon_mac.icns"));
+#endif
+
     w.show();
 
     return a.exec();

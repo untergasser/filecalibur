@@ -11,6 +11,15 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = Filecalibur
 TEMPLATE = app
 
+mac {
+    ICON = files/Logo_mac.icns
+    QMAKE_INFO_PLIST += Info.plist
+}
+
+win32 {
+    RC_FILE = filecalibur.rc
+}
+
 RESOURCES += resource.qrc
 
 SOURCES += main.cpp\
