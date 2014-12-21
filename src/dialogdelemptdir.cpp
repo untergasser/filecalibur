@@ -60,6 +60,10 @@ void DialogDelEmptDir::on_pushButtonSaveFile_clicked()
 
 void DialogDelEmptDir::on_buttonBox_accepted()
 {
+    if (ui->lineEditPath->text().isEmpty()) {
+        return;
+    }
+
     QFile sFile(ui->lineEditSaveFile->text());
     bool saveLog = false;
 

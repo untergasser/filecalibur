@@ -67,10 +67,16 @@ void DialogExtractPath::on_pushButtonSaveFile_clicked()
 
 void DialogExtractPath::on_buttonBox_accepted()
 {
+    if (ui->lineEditLoadFile->text().isEmpty() ||
+        ui->lineEditTextRemove->text().isEmpty() || ui->lineEditSaveFile->text().isEmpty()) {
+        return;
+    }
+
     int toPathCols = 0;
 
     QFile lFile(ui->lineEditLoadFile->text());
     QFile sFile(ui->lineEditSaveFile->text());
+
     if (!lFile.open(QIODevice::ReadOnly | QIODevice::Text)){
         error->newErr(tr("Path Modification created Error opening INPUT file: "));
         error->addLast(ui->lineEditLoadFile->text());

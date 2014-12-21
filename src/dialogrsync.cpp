@@ -57,6 +57,10 @@ void DialogRsync::on_pushButtonDirTarget_clicked()
 
 void DialogRsync::on_buttonBox_accepted()
 {
+    if (ui->lineEditPathSource->text().isEmpty() || ui->lineEditPathTarget->text().isEmpty()) {
+        return;
+    }
+
     QStringList command;
     QString source;
     QString target;

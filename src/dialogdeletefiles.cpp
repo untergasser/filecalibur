@@ -74,6 +74,10 @@ void DialogDeleteFiles::on_pushButtonSaveFile_clicked()
 
 void DialogDeleteFiles::on_buttonBox_accepted()
 {
+    if (ui->lineEditLoadFile->text().isEmpty() || ui->lineEditPath->text().isEmpty()) {
+        return;
+    }
+
     int toPathCols = 0;
     bool saveLog = false;
 

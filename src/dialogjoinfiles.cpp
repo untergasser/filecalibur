@@ -76,6 +76,11 @@ void DialogJoinFiles::on_pushButtonSaveFile_clicked()
 
 void DialogJoinFiles::on_buttonBox_accepted()
 {
+    if (ui->lineEditLoadFile->text().isEmpty() ||
+        ui->lineEditLoadFile_2->text().isEmpty() || ui->lineEditSaveFile->text().isEmpty()) {
+        return;
+    }
+
     QFile lFile(ui->lineEditLoadFile->text());
     QFile lFile_2(ui->lineEditLoadFile_2->text());
     QFile sFile(ui->lineEditSaveFile->text());

@@ -77,6 +77,11 @@ void DialogNegativeHashing::on_pushButtonSaveFile_clicked()
 
 void DialogNegativeHashing::on_buttonBox_accepted()
 {
+    if (ui->lineEditLoadFile->text().isEmpty() ||
+            ui->lineEditLoadHash->text().isEmpty() || ui->lineEditSaveFile->text().isEmpty()) {
+        return;
+    }
+
     QHash<QString, int> hash;
     int comma = 0;
     bool run = true;

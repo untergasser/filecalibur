@@ -71,6 +71,11 @@ void DialogPosMatch::on_pushButtonSaveFile_clicked()
 
 void DialogPosMatch::on_buttonBox_accepted()
 {
+    if (ui->lineEditLoadFile->text().isEmpty() ||
+            ui->lineEditPath->text().isEmpty() || ui->lineEditSaveFile->text().isEmpty()) {
+        return;
+    }
+
     QSettings settings("A. Untergasser", "Filecalibur");
     settings.setValue("workPlace", ui->lineEditPath->text());
     settings.setValue("dataPlace", ui->lineEditSaveFile->text());

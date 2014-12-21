@@ -67,6 +67,10 @@ void DialogDiffTool::on_pushButtonLoadFile_2_clicked()
 
 void DialogDiffTool::on_buttonBox_accepted()
 {
+    if (ui->lineEditLoadFile->text().isEmpty() || ui->lineEditLoadFile_2->text().isEmpty()) {
+        return;
+    }
+
     QSettings settings("A. Untergasser", "Filecalibur");
     settings.setValue("dataPlace", ui->lineEditLoadFile->text());
 

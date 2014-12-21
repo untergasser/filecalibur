@@ -56,6 +56,10 @@ void DialogCalcHash::on_pushButtonSaveFile_clicked()
 
 void DialogCalcHash::on_buttonBox_accepted()
 {
+    if (ui->lineEditPath->text().isEmpty() || ui->lineEditSaveFile->text().isEmpty()) {
+        return;
+    }
+
     QStringList command;
     QString hashCom;
     QSettings settings("A. Untergasser", "Filecalibur");

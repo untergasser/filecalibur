@@ -68,6 +68,10 @@ void DialogModifyPath::on_pushButtonSaveFile_clicked()
 
 void DialogModifyPath::on_buttonBox_accepted()
 {
+    if (ui->lineEditLoadFile->text().isEmpty() || ui->lineEditSaveFile->text().isEmpty()) {
+        return;
+    }
+
     int toPathCols = 0;
     QMultiMap<QString, QString> map;
 
