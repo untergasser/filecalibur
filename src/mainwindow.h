@@ -26,6 +26,7 @@
 
 #include <QProcess>
 #include <QFile>
+#include <QFileInfo>
 #include <QTableWidget>
 #include <QFileDialog>
 #include <QSettings>
@@ -85,6 +86,8 @@ private slots:
     void on_actionAbout_triggered();
 
     void on_actionSourceforge_triggered();
+
+    void on_tableView_doubleClicked(const QModelIndex &index);
 
 private:
     Ui::MainWindow *ui;

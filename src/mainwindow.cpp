@@ -5,7 +5,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-    programVersion = "Version 0.5.0 BETA";
+    programVersion = "Version 0.5.2 BETA";
 
     ui->setupUi(this);
 
@@ -335,4 +335,19 @@ void MainWindow::on_actionAbout_triggered()
 void MainWindow::on_actionSourceforge_triggered()
 {
 
+}
+
+void MainWindow::on_tableView_doubleClicked(const QModelIndex &index)
+{
+    if (index.column() != 0) {
+        return;
+    }
+    QString filePath = table_model.data(index, Qt::DisplayRole).toString();
+    filePath.chop(1);
+    QFileInfo checkFile(filePath);
+    if (checkFile.exists() && checkFile.isFile()) {
+        QString urlFile = "file:///";
+        urlFile.append(checkFile.canonicalFilePath());
+        QDesktopServices::openUrl(QUrl(urlFile, QUrl::TolerantMode));
+    }
 }

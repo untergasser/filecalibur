@@ -6,7 +6,6 @@ DialogRunHasDeep::DialogRunHasDeep(QWidget *parent) :
     ui(new Ui::DialogRunHasDeep)
 {
     ui->setupUi(this);
-    this->setAttribute(Qt::WA_DeleteOnClose);
     connect(ui->pushButton, SIGNAL(released()), this->parent(), SLOT(killHashDeep()));
 }
 
