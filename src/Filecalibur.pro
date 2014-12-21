@@ -11,6 +11,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = Filecalibur
 TEMPLATE = app
 
+RESOURCES += resource.qrc
 
 SOURCES += main.cpp\
     mainwindow.cpp \
