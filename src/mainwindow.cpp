@@ -27,7 +27,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-    programVersion = "Version 0.5.5 BETA";
+    programVersion = "Version 0.6.0 BETA";
 
     ui->setupUi(this);
 

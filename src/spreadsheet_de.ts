@@ -1,6 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="de_DE">
+<TS version="2.1" language="de_DE">
+<context>
+    <name>DialogAbout</name>
+    <message>
+        <location filename="dialogabout.ui" line="20"/>
+        <source>About</source>
+        <translation>Über</translation>
+    </message>
+    <message>
+        <location filename="dialogabout.ui" line="43"/>
+        <source>Filecalibur</source>
+        <translation>Filecalibur</translation>
+    </message>
+    <message>
+        <location filename="dialogabout.ui" line="60"/>
+        <source>Version </source>
+        <translation>Version</translation>
+    </message>
+    <message>
+        <location filename="dialogabout.ui" line="90"/>
+        <source>Copyright 2014 by Dr. Andreas Untergasser</source>
+        <translation>Copyright 2014 bei Dr. Andreas Untergasser</translation>
+    </message>
+    <message>
+        <location filename="dialogabout.ui" line="107"/>
+        <source>All rights reserved.</source>
+        <translation>Alle Rechte vorbehalten.</translation>
+    </message>
+    <message>
+        <location filename="dialogabout.ui" line="137"/>
+        <source>Filecalibur links to third party software for hash calculation, file synchonisation and comparison:</source>
+        <translation>Filecalibur nutzt Drittsoftware für die Hashberechnung, Filesynchonisation und Vergleich:</translation>
+    </message>
+    <message>
+        <location filename="dialogabout.ui" line="154"/>
+        <source> Hashdeep, Rsync and WinMerge</source>
+        <translation>Hashdeep, Rsync and WinMerge</translation>
+    </message>
+    <message>
+        <location filename="dialogabout.ui" line="184"/>
+        <source>Filecalibur is free software:</source>
+        <translation>Filecalibur ist freie Software:</translation>
+    </message>
+    <message>
+        <location filename="dialogabout.ui" line="201"/>
+        <source>You can redistribute it and/or modify it under the terms of the GNU General Public License:</source>
+        <translation>Sie können es weitergeben und/oder modifizieren gemäß der GNU Public Lizenz:</translation>
+    </message>
+</context>
 <context>
     <name>DialogCalcHash</name>
     <message>
@@ -70,17 +118,17 @@
         <translation>Wähle Datei</translation>
     </message>
     <message>
-        <location filename="dialogcalchash.cpp" line="23"/>
+        <location filename="dialogcalchash.cpp" line="45"/>
         <source>Select Directory to Hash</source>
         <translation>Wähle Verzeichnis zur Berechnung der Hashes aus</translation>
     </message>
     <message>
-        <location filename="dialogcalchash.cpp" line="30"/>
+        <location filename="dialogcalchash.cpp" line="53"/>
         <source>Select a new File</source>
         <translation>Wähle neue Datei</translation>
     </message>
     <message>
-        <location filename="dialogcalchash.cpp" line="30"/>
+        <location filename="dialogcalchash.cpp" line="54"/>
         <source>Text Files (*.txt)</source>
         <translation>Text Datei (*.txt)</translation>
     </message>
@@ -125,22 +173,22 @@ ACHTUNG: Dieses Tool ändert die Daten auf der Festplatte und es gibt keine Undo
         <translation>Wähle Datei</translation>
     </message>
     <message>
-        <location filename="dialogdelemptdir.cpp" line="25"/>
+        <location filename="dialogdelemptdir.cpp" line="48"/>
         <source>Select Directory</source>
         <translation>Wähle Ordner</translation>
     </message>
     <message>
-        <location filename="dialogdelemptdir.cpp" line="32"/>
+        <location filename="dialogdelemptdir.cpp" line="57"/>
         <source>Select a new File</source>
         <translation>Wähle neue Datei</translation>
     </message>
     <message>
-        <location filename="dialogdelemptdir.cpp" line="32"/>
+        <location filename="dialogdelemptdir.cpp" line="58"/>
         <source>Text Files (*.txt)</source>
         <translation>Text Datei (*.txt)</translation>
     </message>
     <message>
-        <location filename="dialogdelemptdir.cpp" line="41"/>
+        <location filename="dialogdelemptdir.cpp" line="75"/>
         <source>Delete Empty Dirs: Error opening OUTPUT file: </source>
         <translation>Lösche leere Ordner: Fehler beim Öffnen der OUTPUT Datei:</translation>
     </message>
@@ -186,47 +234,47 @@ ACHTUNG: Dieses Tool ändert die Daten auf der Festplatte und es gibt keine Undo
         <translation>Optional: Speichere das Ergebnis jedes Löschversuches in Datei:</translation>
     </message>
     <message>
-        <location filename="dialogdeletefiles.cpp" line="30"/>
+        <location filename="dialogdeletefiles.cpp" line="53"/>
         <source>Select a File</source>
         <translation>Wähle neue Datei</translation>
     </message>
     <message>
-        <location filename="dialogdeletefiles.cpp" line="30"/>
+        <location filename="dialogdeletefiles.cpp" line="54"/>
         <source>Text Files (*.txt);;All Files (*.*)</source>
         <translation>Text Datei (*.txt);;Alle Dateien (*.*)</translation>
     </message>
     <message>
-        <location filename="dialogdeletefiles.cpp" line="37"/>
+        <location filename="dialogdeletefiles.cpp" line="62"/>
         <source>Select Directory to Hash</source>
         <translation>Wähle Verzeichnis zur Berechnung der Hashes aus</translation>
     </message>
     <message>
-        <location filename="dialogdeletefiles.cpp" line="44"/>
+        <location filename="dialogdeletefiles.cpp" line="71"/>
         <source>Select a new File</source>
         <translation>Wähle neue Datei</translation>
     </message>
     <message>
-        <location filename="dialogdeletefiles.cpp" line="44"/>
+        <location filename="dialogdeletefiles.cpp" line="72"/>
         <source>Text Files (*.txt)</source>
         <translation>Text Datei (*.txt)</translation>
     </message>
     <message>
-        <location filename="dialogdeletefiles.cpp" line="55"/>
+        <location filename="dialogdeletefiles.cpp" line="91"/>
         <source>Delete Files: Error opening INPUT file: </source>
         <translation>Lösche Dateien: Fehler beim Öffnen der INPUT Datei: </translation>
     </message>
     <message>
-        <location filename="dialogdeletefiles.cpp" line="60"/>
+        <location filename="dialogdeletefiles.cpp" line="96"/>
         <source>Delete Files: Error opening OUTPUT file: </source>
         <translation>Lösche Dateien: Fehler beim Öffnen der OUTPUT Datei: </translation>
     </message>
     <message>
-        <location filename="dialogdeletefiles.cpp" line="90"/>
+        <location filename="dialogdeletefiles.cpp" line="127"/>
         <source>Delete Files: file outside authorized folder: </source>
         <translation>Lösche Dateien: Datei außerhalb erlaubten Ordner: </translation>
     </message>
     <message>
-        <location filename="dialogdeletefiles.cpp" line="106"/>
+        <location filename="dialogdeletefiles.cpp" line="143"/>
         <source>Delete Files: Error deleting file: </source>
         <translation>Lösche Dateien: Fehler beim Löschen der Datei: </translation>
     </message>
@@ -260,19 +308,19 @@ ACHTUNG: Dieses Tool ändert die Daten auf der Festplatte und es gibt keine Undo
         <translation>Wähle zweite Datei aus:</translation>
     </message>
     <message>
-        <location filename="dialogdifftool.cpp" line="33"/>
-        <location filename="dialogdifftool.cpp" line="40"/>
+        <location filename="dialogdifftool.cpp" line="55"/>
+        <location filename="dialogdifftool.cpp" line="64"/>
         <source>Select a File</source>
         <translation>Wähle Datei</translation>
     </message>
     <message>
-        <location filename="dialogdifftool.cpp" line="33"/>
-        <location filename="dialogdifftool.cpp" line="40"/>
+        <location filename="dialogdifftool.cpp" line="56"/>
+        <location filename="dialogdifftool.cpp" line="65"/>
         <source>Text Files (*.txt);;All Files (*.*)</source>
         <translation>Text Datei (*.txt);;Alle Dateien (*.*)</translation>
     </message>
     <message>
-        <location filename="dialogdifftool.cpp" line="67"/>
+        <location filename="dialogdifftool.cpp" line="98"/>
         <source>Diff Binary not found</source>
         <translation>Programm zum Vergleich nicht gefunden</translation>
     </message>
@@ -319,32 +367,32 @@ ACHTUNG: Dieses Tool ändert die Daten auf der Festplatte und es gibt keine Undo
         <translation>Speichere Ergebnisse in Output Datei:</translation>
     </message>
     <message>
-        <location filename="dialogextractpath.cpp" line="32"/>
+        <location filename="dialogextractpath.cpp" line="55"/>
         <source>Select a File</source>
         <translation>Wähle Datei</translation>
     </message>
     <message>
-        <location filename="dialogextractpath.cpp" line="32"/>
+        <location filename="dialogextractpath.cpp" line="56"/>
         <source>Text Files (*.txt);;All Files (*.*)</source>
         <translation>Text Datei (*.txt);;Alle Dateien (*.*)</translation>
     </message>
     <message>
-        <location filename="dialogextractpath.cpp" line="39"/>
+        <location filename="dialogextractpath.cpp" line="64"/>
         <source>Select a new File</source>
         <translation>Wähle neue Datei</translation>
     </message>
     <message>
-        <location filename="dialogextractpath.cpp" line="39"/>
+        <location filename="dialogextractpath.cpp" line="65"/>
         <source>Text Files (*.txt)</source>
         <translation>Text Datei (*.txt)</translation>
     </message>
     <message>
-        <location filename="dialogextractpath.cpp" line="49"/>
+        <location filename="dialogextractpath.cpp" line="81"/>
         <source>Path Modification created Error opening INPUT file: </source>
         <translation>Pfad Modification: Fehler beim Öffnen der INPUT Datei: </translation>
     </message>
     <message>
-        <location filename="dialogextractpath.cpp" line="53"/>
+        <location filename="dialogextractpath.cpp" line="85"/>
         <source>Path Modification created Error opening OUTPUT file: </source>
         <translation>Pfad Modification: Fehler beim Öffnen der OUTPUT Datei:</translation>
     </message>
@@ -403,47 +451,47 @@ ACHTUNG: Dieses Tool ändert die Daten auf der Festplatte und es gibt keine Undo
         <translation>Speichere Hashwerte in Output Datei:</translation>
     </message>
     <message>
-        <location filename="dialogfindduplicates.cpp" line="32"/>
+        <location filename="dialogfindduplicates.cpp" line="55"/>
         <source>Select a File</source>
         <translation>Wähle Datei</translation>
     </message>
     <message>
-        <location filename="dialogfindduplicates.cpp" line="32"/>
+        <location filename="dialogfindduplicates.cpp" line="56"/>
         <source>Text Files (*.txt);;All Files (*.*)</source>
         <translation>Text Datei (*.txt);;Alle Dateien (*.*)</translation>
     </message>
     <message>
-        <location filename="dialogfindduplicates.cpp" line="39"/>
+        <location filename="dialogfindduplicates.cpp" line="64"/>
         <source>Select a new File</source>
         <translation>Wähle neue Datei</translation>
     </message>
     <message>
-        <location filename="dialogfindduplicates.cpp" line="39"/>
+        <location filename="dialogfindduplicates.cpp" line="65"/>
         <source>Text Files (*.txt)</source>
         <translation>Text Datei (*.txt)</translation>
     </message>
     <message>
-        <location filename="dialogfindduplicates.cpp" line="67"/>
+        <location filename="dialogfindduplicates.cpp" line="97"/>
         <source>Find Duplicates: Error opening file: </source>
         <translation>Finde Duplikate: Fehler beim Öffnen der Datei: </translation>
     </message>
     <message>
-        <location filename="dialogfindduplicates.cpp" line="79"/>
+        <location filename="dialogfindduplicates.cpp" line="109"/>
         <source>Find Duplicates: Selected HASH not existent in file: </source>
         <translation>Finde Duplikate: Ausgewählter HASH existiert nicht in Datei:</translation>
     </message>
     <message>
-        <location filename="dialogfindduplicates.cpp" line="128"/>
+        <location filename="dialogfindduplicates.cpp" line="158"/>
         <source>Find Duplicates: Error opening INPUT file: </source>
         <translation>Finde Duplikate: Fehler beim Öffnen der INPUT Datei: </translation>
     </message>
     <message>
-        <location filename="dialogfindduplicates.cpp" line="132"/>
+        <location filename="dialogfindduplicates.cpp" line="162"/>
         <source>Find Duplicates: Error opening OUTPUT file: </source>
         <translation>Finde Duplikate: Fehler beim Öffnen der OUTPUT Datei: </translation>
     </message>
     <message>
-        <location filename="dialogfindduplicates.cpp" line="144"/>
+        <location filename="dialogfindduplicates.cpp" line="177"/>
         <source>Find Duplicates: Selected HASH not existent in INPUT file: </source>
         <translation>Finde Duplikate: Ausgewählter HASH existiert nicht in INPUT Datei:</translation>
     </message>
@@ -483,49 +531,49 @@ ACHTUNG: Dieses Tool ändert die Daten auf der Festplatte und es gibt keine Undo
         <translation>Speichere Ergebnisse in Output Datei:</translation>
     </message>
     <message>
-        <location filename="dialogjoinfiles.cpp" line="32"/>
-        <location filename="dialogjoinfiles.cpp" line="39"/>
+        <location filename="dialogjoinfiles.cpp" line="55"/>
+        <location filename="dialogjoinfiles.cpp" line="64"/>
         <source>Select a File</source>
         <translation>Wähle neue Datei</translation>
     </message>
     <message>
-        <location filename="dialogjoinfiles.cpp" line="32"/>
-        <location filename="dialogjoinfiles.cpp" line="39"/>
+        <location filename="dialogjoinfiles.cpp" line="56"/>
+        <location filename="dialogjoinfiles.cpp" line="65"/>
         <source>Text Files (*.txt);;All Files (*.*)</source>
         <translation>Text Datei (*.txt);;Alle Dateien (*.*)</translation>
     </message>
     <message>
-        <location filename="dialogjoinfiles.cpp" line="46"/>
+        <location filename="dialogjoinfiles.cpp" line="73"/>
         <source>Select a new File</source>
         <translation>Wähle neue Datei</translation>
     </message>
     <message>
-        <location filename="dialogjoinfiles.cpp" line="46"/>
+        <location filename="dialogjoinfiles.cpp" line="74"/>
         <source>Text Files (*.txt)</source>
         <translation>Text Datei (*.txt)</translation>
     </message>
     <message>
-        <location filename="dialogjoinfiles.cpp" line="55"/>
+        <location filename="dialogjoinfiles.cpp" line="88"/>
         <source>Join Files created Error opening FIRST INPUT file: </source>
         <translation>Kombiniere Dateien: Fehler beim Öffnen der ersten INPUT Datei: </translation>
     </message>
     <message>
-        <location filename="dialogjoinfiles.cpp" line="59"/>
+        <location filename="dialogjoinfiles.cpp" line="92"/>
         <source>Join Files created Error opening SECOND INPUT file: </source>
         <translation>Kombiniere Dateien: Fehler beim Öffnen derzweiten INPUT Datei: </translation>
     </message>
     <message>
-        <location filename="dialogjoinfiles.cpp" line="63"/>
+        <location filename="dialogjoinfiles.cpp" line="96"/>
         <source>Join Files created Error opening OUTPUT file: </source>
         <translation>Kombiniere Dateien: Fehler beim Öffnen der OUTPUT Datei: </translation>
     </message>
     <message>
-        <location filename="dialogjoinfiles.cpp" line="86"/>
+        <location filename="dialogjoinfiles.cpp" line="122"/>
         <source>Join Files can not join files with different hashes.</source>
         <translation>Kombiniere Dateien: Dateien haben unterschiedliche Hashwerte und können nicht kombiniert werden.</translation>
     </message>
     <message>
-        <location filename="dialogjoinfiles.cpp" line="99"/>
+        <location filename="dialogjoinfiles.cpp" line="135"/>
         <source>Join Files detected untypical input files.</source>
         <translation>Kombiniere Dateien: Fehler aufgrund des untypischen Dateiformates.</translation>
     </message>
@@ -594,42 +642,42 @@ ACHTUNG: Dieses Tool ändert die Daten auf der Festplatte und es gibt keine Undo
         <translation></translation>
     </message>
     <message>
-        <location filename="dialogmodifypath.cpp" line="33"/>
+        <location filename="dialogmodifypath.cpp" line="56"/>
         <source>Select a File</source>
         <translation>Wähle neue Datei</translation>
     </message>
     <message>
-        <location filename="dialogmodifypath.cpp" line="33"/>
+        <location filename="dialogmodifypath.cpp" line="57"/>
         <source>Text Files (*.txt);;All Files (*.*)</source>
         <translation>Text Datei (*.txt);;Alle Dateien (*.*)</translation>
     </message>
     <message>
-        <location filename="dialogmodifypath.cpp" line="40"/>
+        <location filename="dialogmodifypath.cpp" line="65"/>
         <source>Select a new File</source>
         <translation>Wähle neue Datei</translation>
     </message>
     <message>
-        <location filename="dialogmodifypath.cpp" line="40"/>
+        <location filename="dialogmodifypath.cpp" line="66"/>
         <source>Text Files (*.txt)</source>
         <translation>Text Datei (*.txt)</translation>
     </message>
     <message>
-        <location filename="dialogmodifypath.cpp" line="54"/>
+        <location filename="dialogmodifypath.cpp" line="84"/>
         <source>Path Modification created Error opening INPUT file: </source>
         <translation>Ändere Pfad: Fehler beim Öffnen der INPUT Datei: </translation>
     </message>
     <message>
-        <location filename="dialogmodifypath.cpp" line="58"/>
+        <location filename="dialogmodifypath.cpp" line="88"/>
         <source>Path Modification created Error opening OUTPUT file: </source>
         <translation>Ändere Pfad: Fehler beim Öffnen der OUTPUT Datei:</translation>
     </message>
     <message>
-        <location filename="dialogmodifypath.cpp" line="100"/>
+        <location filename="dialogmodifypath.cpp" line="133"/>
         <source>Path Modification was unabe to remove &quot;</source>
         <translation>Ändere Pfad: &quot;</translation>
     </message>
     <message>
-        <location filename="dialogmodifypath.cpp" line="102"/>
+        <location filename="dialogmodifypath.cpp" line="135"/>
         <source>&quot; at: </source>
         <translation>&quot; konnte nicht entfernt werden in: </translation>
     </message>
@@ -683,27 +731,27 @@ ACHTUNG: Dieses Tool ändert die Daten auf der Festplatte und es gibt keine Undo
         <translation>Speichere Hashwerte in Output Datei:</translation>
     </message>
     <message>
-        <location filename="dialognegmatch.cpp" line="22"/>
+        <location filename="dialognegmatch.cpp" line="45"/>
         <source>Select Directory to Hash</source>
         <translation>Wähle Verzeichnis zur Berechnung der Hashes aus</translation>
     </message>
     <message>
-        <location filename="dialognegmatch.cpp" line="34"/>
+        <location filename="dialognegmatch.cpp" line="59"/>
         <source>Select a File</source>
         <translation>Wähle Datei</translation>
     </message>
     <message>
-        <location filename="dialognegmatch.cpp" line="34"/>
+        <location filename="dialognegmatch.cpp" line="60"/>
         <source>Text Files (*.txt);;All Files (*.*)</source>
         <translation>Text Datei (*.txt);;Alle Dateien (*.*)</translation>
     </message>
     <message>
-        <location filename="dialognegmatch.cpp" line="41"/>
+        <location filename="dialognegmatch.cpp" line="68"/>
         <source>Select a new File</source>
         <translation>Wähle neue Datei</translation>
     </message>
     <message>
-        <location filename="dialognegmatch.cpp" line="41"/>
+        <location filename="dialognegmatch.cpp" line="69"/>
         <source>Text Files (*.txt)</source>
         <translation>Text Datei (*.txt)</translation>
     </message>
@@ -768,49 +816,49 @@ ACHTUNG: Dieses Tool ändert die Daten auf der Festplatte und es gibt keine Undo
         <translation>Speichere Hashwerte in Output Datei:</translation>
     </message>
     <message>
-        <location filename="dialognegativehashing.cpp" line="32"/>
-        <location filename="dialognegativehashing.cpp" line="39"/>
+        <location filename="dialognegativehashing.cpp" line="55"/>
+        <location filename="dialognegativehashing.cpp" line="64"/>
         <source>Select a File</source>
         <translation>Wähle neue Datei</translation>
     </message>
     <message>
-        <location filename="dialognegativehashing.cpp" line="32"/>
-        <location filename="dialognegativehashing.cpp" line="39"/>
+        <location filename="dialognegativehashing.cpp" line="56"/>
+        <location filename="dialognegativehashing.cpp" line="65"/>
         <source>Text Files (*.txt);;All Files (*.*)</source>
         <translation>Text Datei (*.txt);;Alle Dateien (*.*)</translation>
     </message>
     <message>
-        <location filename="dialognegativehashing.cpp" line="47"/>
+        <location filename="dialognegativehashing.cpp" line="74"/>
         <source>Select a new File</source>
         <translation>Wähle neue Datei</translation>
     </message>
     <message>
-        <location filename="dialognegativehashing.cpp" line="47"/>
+        <location filename="dialognegativehashing.cpp" line="75"/>
         <source>Text Files (*.txt)</source>
         <translation>Text Datei (*.txt)</translation>
     </message>
     <message>
-        <location filename="dialognegativehashing.cpp" line="75"/>
+        <location filename="dialognegativehashing.cpp" line="108"/>
         <source>Positive Hashing: Error opening HASH file: </source>
         <translation>Negative Hashberechnung: Fehler beim Öffnen der HASH Datei:</translation>
     </message>
     <message>
-        <location filename="dialognegativehashing.cpp" line="87"/>
+        <location filename="dialognegativehashing.cpp" line="120"/>
         <source>Positive Hashing: Selected HASH not existent in HASH file: </source>
         <translation>Negative Hashberechnung: Ausgewählter HASH existiert nicht in HASH Datei:</translation>
     </message>
     <message>
-        <location filename="dialognegativehashing.cpp" line="135"/>
+        <location filename="dialognegativehashing.cpp" line="168"/>
         <source>Positive Hashing: Error opening INPUT file: </source>
         <translation>Negative Hashberechnung: Fehler beim Öffnen der INPUT Datei: </translation>
     </message>
     <message>
-        <location filename="dialognegativehashing.cpp" line="139"/>
+        <location filename="dialognegativehashing.cpp" line="172"/>
         <source>Positive Hashing: Error opening OUTPUT file: </source>
         <translation>Negative Hashberechnung: Fehler beim Öffnen der OUTPUT Datei:</translation>
     </message>
     <message>
-        <location filename="dialognegativehashing.cpp" line="151"/>
+        <location filename="dialognegativehashing.cpp" line="187"/>
         <source>Positive Hashing: Selected HASH not existent in INPUT file: </source>
         <translation>Negative Hashberechnung: Ausgewählter HASH existiert nicht in INPUT Datei:</translation>
     </message>
@@ -845,16 +893,16 @@ ACHTUNG: Dieses Tool ändert die Daten auf der Festplatte und es gibt keine Undo
         <translation>Pfad zu dem diff Programm:</translation>
     </message>
     <message>
-        <location filename="dialogoptionen.cpp" line="39"/>
-        <location filename="dialogoptionen.cpp" line="47"/>
-        <location filename="dialogoptionen.cpp" line="55"/>
+        <location filename="dialogoptionen.cpp" line="61"/>
+        <location filename="dialogoptionen.cpp" line="70"/>
+        <location filename="dialogoptionen.cpp" line="79"/>
         <source>Select an Executables</source>
         <translation>Wähle ein Programm</translation>
     </message>
     <message>
-        <location filename="dialogoptionen.cpp" line="39"/>
-        <location filename="dialogoptionen.cpp" line="47"/>
-        <location filename="dialogoptionen.cpp" line="55"/>
+        <location filename="dialogoptionen.cpp" line="62"/>
+        <location filename="dialogoptionen.cpp" line="71"/>
+        <location filename="dialogoptionen.cpp" line="80"/>
         <source>Executables (*.exe);;All Files (*.*)</source>
         <translation>Ausführbare Programme (*.exe);;Alle Dateien (*.*)</translation>
     </message>
@@ -908,27 +956,27 @@ ACHTUNG: Dieses Tool ändert die Daten auf der Festplatte und es gibt keine Undo
         <translation>Speichere Hashwerte in Output Datei:</translation>
     </message>
     <message>
-        <location filename="dialogposmatch.cpp" line="22"/>
+        <location filename="dialogposmatch.cpp" line="45"/>
         <source>Select Directory to Hash</source>
         <translation>Wähle Verzeichnis zur Berechnung der Hashes aus</translation>
     </message>
     <message>
-        <location filename="dialogposmatch.cpp" line="34"/>
+        <location filename="dialogposmatch.cpp" line="59"/>
         <source>Select a File</source>
         <translation>Wähle Datei</translation>
     </message>
     <message>
-        <location filename="dialogposmatch.cpp" line="34"/>
+        <location filename="dialogposmatch.cpp" line="60"/>
         <source>Text Files (*.txt);;All Files (*.*)</source>
         <translation>Text Datei (*.txt);;Alle Dateien (*.*)</translation>
     </message>
     <message>
-        <location filename="dialogposmatch.cpp" line="41"/>
+        <location filename="dialogposmatch.cpp" line="68"/>
         <source>Select a new File</source>
         <translation>Wähle neue Datei</translation>
     </message>
     <message>
-        <location filename="dialogposmatch.cpp" line="41"/>
+        <location filename="dialogposmatch.cpp" line="69"/>
         <source>Text Files (*.txt)</source>
         <translation>Text Datei (*.txt)</translation>
     </message>
@@ -993,49 +1041,49 @@ ACHTUNG: Dieses Tool ändert die Daten auf der Festplatte und es gibt keine Undo
         <translation>Speichere Hashwerte in Output Datei:</translation>
     </message>
     <message>
-        <location filename="dialogpositivehashing.cpp" line="32"/>
-        <location filename="dialogpositivehashing.cpp" line="39"/>
+        <location filename="dialogpositivehashing.cpp" line="55"/>
+        <location filename="dialogpositivehashing.cpp" line="64"/>
         <source>Select a File</source>
         <translation>Wähle Datei</translation>
     </message>
     <message>
-        <location filename="dialogpositivehashing.cpp" line="32"/>
-        <location filename="dialogpositivehashing.cpp" line="39"/>
+        <location filename="dialogpositivehashing.cpp" line="56"/>
+        <location filename="dialogpositivehashing.cpp" line="65"/>
         <source>Text Files (*.txt);;All Files (*.*)</source>
         <translation>Text Datei (*.txt);;Alle Dateien (*.*)</translation>
     </message>
     <message>
-        <location filename="dialogpositivehashing.cpp" line="47"/>
+        <location filename="dialogpositivehashing.cpp" line="74"/>
         <source>Select a new File</source>
         <translation>Wähle neue Datei</translation>
     </message>
     <message>
-        <location filename="dialogpositivehashing.cpp" line="47"/>
+        <location filename="dialogpositivehashing.cpp" line="75"/>
         <source>Text Files (*.txt)</source>
         <translation>Text Datei (*.txt)</translation>
     </message>
     <message>
-        <location filename="dialogpositivehashing.cpp" line="75"/>
+        <location filename="dialogpositivehashing.cpp" line="108"/>
         <source>Positive Hashing: Error opening HASH file: </source>
         <translation>Positive Hashberechnung: Fehler beim Öffnen der HASH Datei:</translation>
     </message>
     <message>
-        <location filename="dialogpositivehashing.cpp" line="87"/>
+        <location filename="dialogpositivehashing.cpp" line="120"/>
         <source>Positive Hashing: Selected HASH not existent in HASH file: </source>
         <translation>Positive Hashberechnung: Ausgewählter HASH existiert nicht in HASH Datei:</translation>
     </message>
     <message>
-        <location filename="dialogpositivehashing.cpp" line="135"/>
+        <location filename="dialogpositivehashing.cpp" line="168"/>
         <source>Positive Hashing: Error opening INPUT file: </source>
         <translation>Positive Hashberechnung: Fehler beim Öffnen der INPUT Datei: </translation>
     </message>
     <message>
-        <location filename="dialogpositivehashing.cpp" line="139"/>
+        <location filename="dialogpositivehashing.cpp" line="172"/>
         <source>Positive Hashing: Error opening OUTPUT file: </source>
         <translation>Positive Hashberechnung: Fehler beim Öffnen der OUTPUT Datei:</translation>
     </message>
     <message>
-        <location filename="dialogpositivehashing.cpp" line="151"/>
+        <location filename="dialogpositivehashing.cpp" line="187"/>
         <source>Positive Hashing: Selected HASH not existent in INPUT file: </source>
         <translation>Positive Hashberechnung: Ausgewählter HASH existiert nicht in INPUT Datei:</translation>
     </message>
@@ -1074,32 +1122,32 @@ ACHTUNG: Dieses Tool ändert die Daten auf der Festplatte und es gibt keine Undo
         <translation>Speichere Ergebnisse in Output Datei:</translation>
     </message>
     <message>
-        <location filename="dialogremovepath.cpp" line="32"/>
+        <location filename="dialogremovepath.cpp" line="55"/>
         <source>Select a File</source>
         <translation>Wähle Datei</translation>
     </message>
     <message>
-        <location filename="dialogremovepath.cpp" line="32"/>
+        <location filename="dialogremovepath.cpp" line="56"/>
         <source>Text Files (*.txt);;All Files (*.*)</source>
         <translation>Text Datei (*.txt);;Alle Dateien (*.*)</translation>
     </message>
     <message>
-        <location filename="dialogremovepath.cpp" line="39"/>
+        <location filename="dialogremovepath.cpp" line="64"/>
         <source>Select a new File</source>
         <translation>Wähle neue Datei</translation>
     </message>
     <message>
-        <location filename="dialogremovepath.cpp" line="39"/>
+        <location filename="dialogremovepath.cpp" line="65"/>
         <source>Text Files (*.txt)</source>
         <translation>Text Datei (*.txt)</translation>
     </message>
     <message>
-        <location filename="dialogremovepath.cpp" line="49"/>
+        <location filename="dialogremovepath.cpp" line="80"/>
         <source>Path Modification created Error opening INPUT file: </source>
         <translation>Entferne Pfad: Fehler beim Öffnen der INPUT Datei: </translation>
     </message>
     <message>
-        <location filename="dialogremovepath.cpp" line="53"/>
+        <location filename="dialogremovepath.cpp" line="84"/>
         <source>Path Modification created Error opening OUTPUT file: </source>
         <translation>Entferne Pfad: Fehler beim Öffnen der OUTPUT Datei:</translation>
     </message>
@@ -1143,12 +1191,12 @@ ACHTUNG: Dieses Tool ändert die Daten auf der Festplatte und es gibt keine Undo
         <translation>Nutze keine Superuserrechte</translation>
     </message>
     <message>
-        <location filename="dialogrsync.cpp" line="25"/>
+        <location filename="dialogrsync.cpp" line="47"/>
         <source>Select Source Directory</source>
         <translation>Wähle QUELL-Ordner</translation>
     </message>
     <message>
-        <location filename="dialogrsync.cpp" line="32"/>
+        <location filename="dialogrsync.cpp" line="54"/>
         <source>Select Target Directory</source>
         <translation>Wähle ZIEL-Ordner</translation>
     </message>
@@ -1192,17 +1240,17 @@ Damit Hashwerte berechnet werden können, müssen alle Dateien komplett gelesen 
         <translation>Beende rsync (nicht empfohlen)</translation>
     </message>
     <message>
-        <location filename="dialogrunrsync.cpp" line="68"/>
+        <location filename="dialogrunrsync.cpp" line="88"/>
         <source>rsync crashed</source>
         <translation>rsync crashed</translation>
     </message>
     <message>
-        <location filename="dialogrunrsync.cpp" line="70"/>
+        <location filename="dialogrunrsync.cpp" line="90"/>
         <source>rsync terminated in an unusual way</source>
         <translation>rsync wurde auf einem unüblichen Weg beendet</translation>
     </message>
     <message>
-        <location filename="dialogrunrsync.cpp" line="80"/>
+        <location filename="dialogrunrsync.cpp" line="100"/>
         <source>rsync Binary not found</source>
         <translation>Das rsync Programm wurde nicht gefunden</translation>
     </message>
@@ -1366,42 +1414,42 @@ Damit Hashwerte berechnet werden können, müssen alle Dateien komplett gelesen 
         <translation>Support</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="61"/>
+        <location filename="mainwindow.cpp" line="85"/>
         <source>HashDeep created error:</source>
         <translation>HashDeep verursachte Fehler:</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="68"/>
+        <location filename="mainwindow.cpp" line="92"/>
         <source>HashDeep crashed</source>
         <translation>HashDeep crashed</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="70"/>
+        <location filename="mainwindow.cpp" line="94"/>
         <source>HashDeep terminated in an unusual way</source>
         <translation>HashDeep wurde auf einem unüblichen Weg beendet</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="80"/>
+        <location filename="mainwindow.cpp" line="104"/>
         <source>Hashdeep Binary not found</source>
         <translation>Das hashdeep Programm wurde nicht gefunden</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="121"/>
+        <location filename="mainwindow.cpp" line="145"/>
         <source>Error opening results file: </source>
         <translation>Fehler beim Öffnen der Datei: </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="155"/>
+        <location filename="mainwindow.cpp" line="179"/>
         <source> files</source>
         <translation> Dateien</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="169"/>
+        <location filename="mainwindow.cpp" line="196"/>
         <source>Select a File</source>
         <translation>Wähle Datei</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="169"/>
+        <location filename="mainwindow.cpp" line="196"/>
         <source>Text Files (*.txt);;All Files (*.*)</source>
         <translation>Text Datei (*.txt);;Alle Dateien (*.*)</translation>
     </message>

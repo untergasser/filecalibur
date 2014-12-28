@@ -32,19 +32,19 @@ DialogOptionen::DialogOptionen(QWidget *parent) :
     QSettings settings("A. Untergasser", "Filecalibur");
     QString hashprog = settings.value("hashdeep").toString();
     if (hashprog.isEmpty()) {
-        ui->lineEditHashdeep->setText("C:\\Program Files (x86)\\filecalibur\\md5deep\\hashdeep64.exe");
+        ui->lineEditHashdeep->setText("C:\\Program Files\\filecalibur\\hashdeep\\hashdeep.exe");
     } else {
         ui->lineEditHashdeep->setText(hashprog);
     }
     QString syncprog = settings.value("rsync").toString();
     if (syncprog.isEmpty()) {
-        ui->lineEditRsync->setText("C:\\Program Files (x86)\\filecalibur\\rsync\\rsync.exe");
+        ui->lineEditRsync->setText("C:\\Program Files\\filecalibur\\rsync\\rsync.exe");
     } else {
         ui->lineEditRsync->setText(syncprog);
     }
     QString diffprog = settings.value("diff").toString();
     if (diffprog.isEmpty()) {
-        ui->lineEditDiff->setText("C:\\Program Files (x86)\\WinMerge\\WinMergeU.exe");
+        ui->lineEditDiff->setText("C:\\Program Files\\WinMerge\\WinMergeU.exe");
     } else {
         ui->lineEditDiff->setText(diffprog);
     }
