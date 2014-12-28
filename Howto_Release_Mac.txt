@@ -1,0 +1,23 @@
+1. Update System, Xcode, Qt (install in Application Folder - else error while build)
+
+2. svn checkout via console: 
+
+       svn checkout https://svn.code.sf.net/p/filecalibur/code-0/trunk filecalibur
+
+       svn update
+
+
+3. Delete build folder (else crash on build)
+
+4. QMAKE, Build Debug, Build Release
+
+5. Deploy App
+
+       cd /Users/untergasser/_progs/filecalibur/build_rel/
+
+       /Users/untergasser/Qt5.3.1/5.3/clang_64/bin/macdeployqt Filecalibur.app -dmg
+
+6. Update Repository
+
+       svn status
+       svn commit --username=XXX -m "mac changes"
