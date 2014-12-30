@@ -32,6 +32,10 @@ The power of Filecalibur lies in the unlimited possibilities to combine these op
 Finally Dangerous Functions allow to manipulate your files. Filecalibur can use a collection to delete each single file in the collection from the storage system. At this point the files are looked up and files are removed from the storage system.
 
 
+Important: I develop software in my spare time for fun and without any financial interest. This software is provided under Gnu Public License (GPL) conditions and might have bugs. There is no gurantee for anything - use at own risk! I use this tool since years without any error, but different computers may result in strange stuff. Try it out on uncritical data before using it for anything important. If you find bugs contact me with a description so I can reproduce the bug. 
+It also uses hashdeep, rsync and WinMerge which are provided under their licenses available in the respective folder of Filecalibur. 
+
+
 Functions
 
 In this section we walk through the essential functionality of Filecalibur.
@@ -78,12 +82,38 @@ Select Dangerous Tools->Delete Empty Directories from the menue. In the dialog w
 This is handy in combination with Delete Files from List. After all files are deleted, many empty folders may exist and the folders with files may be hard to find. After the removal only folders with files remain.
 
 
-
-
-
 Examples of Usage
 
 In this section we focus on scenarios were Filecalibur might be useful.
+
+Backup
+
+There are two types of backups in this world, one done with advanced programms and the other by copying files to a external drive without any special software. While the first is usually fast, automatized and easy it comes at the disadvantage of the dependency of the software to access the files. The second aproach is easy but you have to do it yourself and copying huge amounts of data may require quite some time. The advantage is a copy of your file system that can be accessed without any further software.
+Filcalibur can help with the second type of backup. If you dont have any backup on the external drive, just copy the files in the regular filmanager - its faster then rsync. Once this is done, you just want to update the changes from your system to your external backup. Here rsync is much faster and will copy only changed files to your external drive (see Dangerous Tools - Rsync Directories).
+Now the question remaining is - Are both copies identical? Therefore we calculate the hashes of each drive/folder (see Hash Calculation). That takes time, but once done it can be saved to the backup drive as well. Now we remove the absolute path part in both files so the path/filename information of both locations is identical. Dont forget to sort the output (see Collection - Modify Path). Last we can compare both files and the only difference should be within the header information (see Collection - Compare Files).
+
+Crazy Ultrasave Backup
+Imagen we have really valuable data like pictures of the kids when they were joung and copies of our diploma. Here we dont want to miss anything ever ever. First we need more than one backup drive, best would be three usb drives from different producers (to avoid processing errors). Store this backups at different places and update them one by one. Never bring them back to the same place (to avoid disasters as fire).
+The very first backup is performed as described in Backup above. Save the result of the hash calculation (the collection file) on the drive as well.
+Next time we perform a backup, we are really careful. This is done in four steps:
+1) Is the data we want to copy still OK? We calculate the hash for the source data (see Hash Calculation). We remove the extra path information (see Collection - Modify Path) and do negative Hashing with the collection file of the old Backup (see Collection - Negative Hashing). Only the new files and the changed files which will be overwritten are displayed using the current collection as test collection and the old backup collection as hash library collection. The old files which will be deleted in the backup as well as the changed files which will be overwritten are displayed using the old backup collection as test collection and the current collection as hash library collection. We can also compare the old collection with the current version using WinMerge and jump from change to change (see Collection - Compare Files). If we are happy with the result (no files modified that should be identical, no files missing that should be there and only new files present which were added by us), we can move to the next step.
+Step 2 and 4 are performed for each hard drive independently:
+2) Are there errors on the data of the external drive. The answer should be no so you might skip this step, but its best to catch errors early. So we calculate the hashes of the drive/folder (see Hash Calculation). Now we remove the absolute path part in the files and sort the output (see Collection - Modify Path). Finally we compare the current files with the old collection saved on the backup volume (see Collection - Compare Files). All difference should be within the header information or the backup was changed during storage, which is not a good sign.
+3) Now we sync the data. We use rsync to copy the changes to your external drive (see Dangerous Tools - Rsync Directories). Be really careful with the source and target folder. If you go wrong you sync your backup to the new folder and loose all new changes.
+4) Again the question remaining is - Is the copies identical? Therefore we calculate the hashes of the external drive/folder (see Hash Calculation), remove the absolute path part in the files and sort the output (see Collection - Modify Path). Now we can compare the eternal drive collection file with the original collection file and the only difference should be within the header information (see Collection - Compare Files). Dont forget to save this file on the external drive for the next backup.
+Using this backup a loss of data is almost impossible. But keep in mind that this software might have bugs and that there is no gurantee for anything - use at own risk! I use this tool since years without an error, but different computers may result in strange stuff. 
+
+Find new Stuff
+
+
+
+
+
+
+
+
+
+
 
 
 
