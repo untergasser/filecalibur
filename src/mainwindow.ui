@@ -90,7 +90,7 @@
    </widget>
    <widget class="QMenu" name="menuFileeditor">
     <property name="title">
-     <string>Fileworker</string>
+     <string>Collection</string>
     </property>
     <addaction name="actionModify_Path"/>
     <addaction name="separator"/>

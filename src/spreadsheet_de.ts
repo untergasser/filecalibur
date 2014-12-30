@@ -1288,9 +1288,13 @@ Damit Hashwerte berechnet werden können, müssen alle Dateien komplett gelesen 
         <translation>Benötigte Software</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="93"/>
         <source>Fileworker</source>
-        <translation>Dateiarbeiter</translation>
+        <translation type="vanished">Dateiarbeiter</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="93"/>
+        <source>Collection</source>
+        <translation>Collection</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="118"/>

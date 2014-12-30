@@ -1,1 +1,6 @@
-- Fix the sort Function to human expected sorting
+
+- Fix the sort function to human expected sorting
+
+- Copy filenames possibility
+
+- Extract files to a folder
