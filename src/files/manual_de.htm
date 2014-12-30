@@ -27,8 +27,9 @@ One collection A is checked hash by hash if the hash IS present in collection B.
 Negative Matching
 One collection A is checked hash by hash if the hash is NOT present in collection B. Only if the hash is NOT present, the file information is written in collection C. This function is useful to identify unique files in a collection. Be aware that in the example above we only find files present in collection A but not present in collection B. Files present in collection B that are not present in collection A are lost/ignored. If this files are of interest, the collections have to be switched.
 
-Dangerous Functions
-Ultimately, Filecalibur can use such a collection to delete each single file in the collection. At this point the files are looked up and files are removed from the drive or were they are stored.
+The power of Filecalibur lies in the unlimited possibilities to combine these operations to extract exactly hat you want even with big data collections.
+
+Finally Dangerous Functions allow to manipulate your files. Filecalibur can use a collection to delete each single file in the collection from the storage system. At this point the files are looked up and files are removed from the storage system.
 
 
 Functions
@@ -57,6 +58,24 @@ Select Collection->Positive Hashing from the menue. In the dialog window you hav
 Collection - Negative Hashing
 Select Collection->Negative Hashing from the menue. In the dialog window you have to provide the test collection file which is usually prefilled with the current file. Second you provide the hash library collection. Last the file were to save the collection data needs to be provided. The test collection is checked hash by hash if the hash is NOT present in hash library collection. Only if the hash is NOT present, the file information is written in the new collection. Useful to identify unknown files in the test collection. Be aware that in the example above we only find files present in the test collection but not present in hash library collection. Files present in hash library collection that are not present in test collection are lost/ignored. If this files are of interest, the collections have to be switched.
 
+Collection - Find Duplicates
+Select Collection->Find Duplicates from the menue. In the dialog window you have to provide the collection file which is usually prefilled with the current file. Last the file were to save the collection data needs to be provided. The collection is checked hash by hash if a hash occurs more than once. Only if the hash is present more then once, the file information is written in the new collection. Useful to identify duplicate files within a collections.
+
+Collection - Compare Files
+Select Collection->Compare Files from the menue. In the dialog window you have to provide one collection file which is usually prefilled with the current file. Additionally a second collection file needs to be provided. Both files are compared by the tool WinMerge. Useful to identify tiny changes between collections.
+For best success, the path information sould be identical. If comparing two folders on different drives, remove first the absolute path information that differs with the Modify Path function to obtain relative path information. Sort also the files before to have the same order in both collections. Now the comparison is more informative.
+
+Dangerous Tools - Rsync Directories
+Select Dangerous Tools->Rsync Directories from the menue. In the dialog window you have to provide a source folder and a target folder. Filecalibur will use Rsync to copy all files from the source folder to the target folder. If "Delete Files..." is selected, all the files absent in source are deleted in the target folder. Usefull to sync folders between backups. If only a few files changed rsync is much faster than copying folders.
+Be extremly cautious with this function, if the folders are confused and an empty folder (now source) is synced to your backup (now target) all your backup data is deleted! Both folders will be in sync as both will be empty now!
+
+Dangerous Tools - Delete Files from List
+Select Dangerous Tools->Delete Files from List from the menue. In the dialog window you have to provide the collection file. For security and to avoid the accidential selection of a wrong collection, the path has to be provided were Filecalibur is allowed to delete files. This path has to match the path of the files in the collection. Filcalibur will remove each single file provided in the collection from the storage system.
+Be extremly cautious with this function as there is no undo.
+
+Dangerous Tools - Delete Empty Directories
+Select Dangerous Tools->Delete Empty Directories from the menue. In the dialog window you have to provide a source folder. Filecalibur will seach through all subfolders and delete them in case they are empty. 
+This is handy in combination with Delete Files from List. After all files are deleted, many empty folders may exist and the folders with files may be hard to find. After the removal only folders with files remain.
 
 
 

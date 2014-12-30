@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Find Doublicates</string>
+   <string>Find Duplicates</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
