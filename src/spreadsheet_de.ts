@@ -1390,7 +1390,7 @@ Damit Hashwerte berechnet werden können, müssen alle Dateien komplett gelesen 
     <message>
         <location filename="mainwindow.ui" line="208"/>
         <source>Delete Files from List</source>
-        <translation>Lösche Datein nach Listeneinträgen</translation>
+        <translation>Lösche Dateien nach Listeneinträgen</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="213"/>

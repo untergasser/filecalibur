@@ -41,49 +41,44 @@ Funktionen
 In diesem Abschnitt werden die wichtigsten Funktionen von Filecalibur vorgestellt.
 
 hashDeep - Berechne Hashes
-Im Menü hashDeep->Berechne Hashes auswählen.
+Im Menü hashDeep->Berechne Hashes auswählen. Im Dialogfenster muss der Ordner angegeben werden, in dem die Dateien gehashed werden sollen und eine Datei, in der die Collection gespeichert werden soll. Basierend auf diesen Informationen berechnet hashdeep die Hashes der Dateien. Filcalibur wird das Ergebnis darstellen wenn hashdeep die brechnung beendet hat. Bedenke, dass jede einzelne Datei komplett eingelesen werden muss, um den Hash zu berechnen. Wenn Terabytes an Daten verarbeitet werden müssen kann diese Berechnung schon Tage dauern. In diesem Fall kann es sinnvoll sein, die Berechnung über Nacht laufen zu lassen.
 
+Collection - Ändere Pfad
+Im Menü Collection->Ändere Pfad auswählen. Im Dialogfenster muss die zu bearbeitende Collectiondatei angegeben werden, in der Regel ist schon die aktuelle Datei eingetragen. Zuletzt muss die Collectiondatei angegeben werden, in der das Ergebnis gespeichert wird. Die Felder dazwischen können genutzt werden, um die Namen/Pfad-Information durch Hinzufügen oder Entfernen zu verändern. Beachte, dass du im linken Bereich des Pfades arbeitest der den obersten Ordnern entspricht. Es kann genutzt werden um den Namen des Root-Ordners zu ändern oder um die absoluten Pfadangaben in relative umzuwandeln. Oder man kann den Laufwerksbuchstaben ändern.
+Außerdem lässt sich die Reihenfolge der Dateien sortieren. Das ist notwendig, da die Reihenfolge auch von der Dauer der Hashberechnung abhängt. Durch die Sortierung in Kombination mit der Anpassung der Trennzeichen erhält man eine Reihenfolge die für den Vergleich verschiedener Collections geeignet ist.
 
-Hash Calculation
-Select hashDeep->Calculate Hashes from the menue. In the dialog window you have to provide the folder to hash and the file were to save the collection data. Based on this information hashdeep calculates the hashes. Filecalibur will display the collection once hashdeep is ready. Be aware that each file has to be read completely to calculate the hash information. If Terabytes of data are processed this calculation may run several hours or days. In this case it may be apropriate to run the hash calculation over night.
+Collection - Entferne Pfad
+Im Menü Collection->Entferne Pfad auswählen. Im Dialogfenster muss die zu bearbeitende Collectiondatei angegeben werden, in der Regel ist schon die aktuelle Datei eingetragen. Zuletzt muss die Collectiondatei angegeben werden, in der das Ergebnis gespeichert wird. Im Feld dazwischen muss der Pfad angegeben werden, der entfernt werden soll. Alle Dateien mit passender Namen/Pfad-Information werden entfernt und die restlichen Dateien in der neuen Collection gespeichert. Es ist nützlich, um einen Unterordner aus einer Collection zu entfernen und den Rest zu behalten.
 
-Collection - Modify Path
-Select Collection->Modify Path from the menue. In the dialog window you have to provide the collection file which is usually prefilled with the current file. Last the file were to save the collection data needs to be provided. The fields in between can be used to modify the path/name information by removing or adding something to it. Keep in mind that you work on the left part of the text which corespond to the top level folders. This can be used to modify the root folder name or remove it to get relative information. Or the letter of the drive can be changed.
-Finally the order of the files can be sorted. This is useful because files may get out of order due to the time required for hashing. Sorting in combination with switching the slashes can get the file into order suitable for comparison.
+Collection - Extrahiere Pfad
+Im Menü Collection->Extrahiere Pfad auswählen. Im Dialogfenster muss die zu bearbeitende Collectiondatei angegeben werden, in der Regel ist schon die aktuelle Datei eingetragen. Zuletzt muss die Collectiondatei angegeben werden, in der das Ergebnis gespeichert wird. Im Feld dazwischen muss der Pfad angegeben werden, der extrahiert werden soll. Alle Dateien mit passender Namen/Pfad-Information werden in der neuen Collection gespeichert und der Rest entfernt. Es ist nützlich, um einen Unterordner aus einer Collection zu extrahieren.
 
-Collection - Remove Path
-Select Collection->Remove Path from the menue. In the dialog window you have to provide the collection file which is usually prefilled with the current file. Last the file were to save the collection data needs to be provided. The fields in the middle you have to provide the path to remove. All entries with the same path/name information are removed and only the non matching are saved in the new collection. Usefull to remove a subfolder from a collection and keep the rest.
+Collection - Kombiniere Dateien
+Im Menü Collection->Kombiniere Dateien auswählen. Im Dialogfenster muss die zu bearbeitende Collectiondatei und eine zweite Collectiondatei angegeben werden. Zuletzt muss die Collectiondatei angegeben werden, in der das Ergebnis gespeichert wird. Der Inhalt beider Collections wird zusammengeführt und in der neuen Collection gespeichert. Es ist nützlich, um Ordner zu einer Collection hinzuzufügen.
 
-Collection - Extract Path
-Select Collection->Extract Path from the menue. In the dialog window you have to provide the collection file which is usually prefilled with the current file. Last the file were to save the collection data needs to be provided. The fields in the middle you have to provide the path to extract. All entries with the same path/name information are saved in the new collection and all non matching are discarded. Usefull to extract only a subfolder into a new collection.
+Collection - Positive Hashberechnung
+Im Menü Collection->Positive Hashberechnung auswählen. Im Dialogfenster muss eine Test-Collectiondatei angegeben werden, in der Regel ist schon die aktuelle Datei eingetragen. Zusätzlich muss eine Hash-Bibliothekcollection ausgewählt werden. Zuletzt muss die Collectiondatei angegeben werden, in der das Ergebnis gespeichert wird. Alle Hashwerte der Dateien in der Test-Collection werden mit den Hashwerten der Hash-Bibliothekcollection verglichen. Nur wenn ein Hashwert in der Hash-Bibliothekcollection vorhanden ist, werden die Dateiinformationen der Test-Collection in der neuen Collection gespeichert. Es ist nützlich, um identische Dateien in verschiedenen Collection zu finden.
 
-Collection - Join Files
-Select Collection->Join Files from the menue. In the dialog window you have to provide the collection file which is usually prefilled with the current file and a second input file. Last the file were to save the collection data needs to be provided. Both files are joined and saved in the new collection. Usefull to add a folder to a collection.
+Collection - Negative Hashberechnung
+Im Menü Collection->Negative Hashberechnung auswählen. Im Dialogfenster muss eine Test-Collectiondatei angegeben werden, in der Regel ist schon die aktuelle Datei eingetragen. Zusätzlich muss eine Hash-Bibliothekcollection ausgewählt werden. Zuletzt muss die Collectiondatei angegeben werden, in der das Ergebnis gespeichert wird. Alle Hashwerte der Dateien in der Test-Collection werden mit den Hashwerten der Hash-Bibliothekcollection verglichen. Nur wenn ein Hashwert in der Hash-Bibliothekcollection NICHT vorhanden ist, werden die Dateiinformationen der Test-Collection in der neuen Collection gespeichert. Es ist nützlich, um unbekannte Dateien in der Test-Collection zu finden, die nicht in der Hash-Bibliothekcollection sind. Diese Funktion findet nur Dateien, die in der Test-Collection sind und nicht in der Hash-Bibliothekcollection. Dateien die nur in der Hash-Bibliothekcollection werden ignoriert und finden sich nicht in der Ergebniscollection. Sollten diese gefunden werden muss man die Test-Collection und Hash-Bibliothekcollection vertauschen.
 
-Collection - Positive Hashing
-Select Collection->Positive Hashing from the menue. In the dialog window you have to provide the test collection file which is usually prefilled with the current file. Second you provide the hash library collection. Last the file were to save the collection data needs to be provided. The test collection is checked hash by hash if the hash IS present in hash library collection. Only if the hash IS present, the file information is written in the new collection. Useful to identify identical files between different collections.
+Collection - Finde Duplikate
+Im Menü Collection->Finde Duplikate auswählen. Im Dialogfenster muss die zu bearbeitende Collectiondatei angegeben werden, in der Regel ist schon die aktuelle Datei eingetragen. Zuletzt muss die Collectiondatei angegeben werden, in der das Ergebnis gespeichert wird. Der Inhalt der Collection wird auf mehrfach vorhandene Hashwerte geprüft und nur diese in der neuen Collection gespeichert. Es ist nützlich, um Duplikate in einer Collection zu finden.
 
-Collection - Negative Hashing
-Select Collection->Negative Hashing from the menue. In the dialog window you have to provide the test collection file which is usually prefilled with the current file. Second you provide the hash library collection. Last the file were to save the collection data needs to be provided. The test collection is checked hash by hash if the hash is NOT present in hash library collection. Only if the hash is NOT present, the file information is written in the new collection. Useful to identify unknown files in the test collection. Be aware that in the example above we only find files present in the test collection but not present in hash library collection. Files present in hash library collection that are not present in test collection are lost/ignored. If this files are of interest, the collections have to be switched.
+Collection - Vergleiche zwei Dateien
+Im Menü Collection->Vergleiche zwei Dateien auswählen. Im Dialogfenster muss die zu bearbeitende Collectiondatei und eine zweite Collectiondatei angegeben werden. Beide Dateien werden mit der Software WinMerge verglichen und dargestellt. Es ist nützlich, um Unterschiede in zwei Collections zu finden und zu analysieren.
+Um beste Ergebnisse zu erhalten sollte die Pfadinformationen identisch sein. Falls zwei Ordner auf verschiedenen Laufwerken verglichen werden sollen, so empfielt es sich, die absoluten Pfade in relative Pfade mittes der Ändere Pfad Funktion umzuwandeln. Die Collections sollten auch sortiert werden, damit in beiden Collectionen die Dateien die gleiche Reihenfolge haben. Nun ist der Vergleich viel Aussagefähiger.
 
-Collection - Find Duplicates
-Select Collection->Find Duplicates from the menue. In the dialog window you have to provide the collection file which is usually prefilled with the current file. Last the file were to save the collection data needs to be provided. The collection is checked hash by hash if a hash occurs more than once. Only if the hash is present more then once, the file information is written in the new collection. Useful to identify duplicate files within a collections.
+Gefährliche Werkzeuge - Rsync Ordner
+Im Menü Gefährliche Werkzeuge->Rsync Ordner auswählen. Im Dialogfenster muss ein Quellordner und ein Zielordner angegeben werden. Filecalibur wird rsync benutzen, um alle Dateien vom Quellordner in den Zielordner zu kopieren. Wenn "Lösche Dateien..." ausgewählt ist, so werden alle Dateien die im Quellordner fehlen auch im Zielordner gelöscht. Es ist nützlich, um den Inhalt zweier Ordner abzugleichen.
+Achtung: Sei sehr vorsichtig mit dieser Funktion. Wenn die Ordner vertauscht werden und ein leerer Ordner als Quellordner und der Orginalordner als Zielordner angegeben werden löscht rsync alles in Zielordner! Dadurch werden beide Ordner leer und haben jetzt den gleichen Inhalt!
 
-Collection - Compare Files
-Select Collection->Compare Files from the menue. In the dialog window you have to provide one collection file which is usually prefilled with the current file. Additionally a second collection file needs to be provided. Both files are compared by the tool WinMerge. Useful to identify tiny changes between collections.
-For best success, the path information sould be identical. If comparing two folders on different drives, remove first the absolute path information that differs with the Modify Path function to obtain relative path information. Sort also the files before to have the same order in both collections. Now the comparison is more informative.
+Gefährliche Werkzeuge - Lösche Dateien nach Listeneinträgen
+Im Menü Gefährliche Werkzeuge->Lösche Dateien nach Listeneinträgen auswählen. Im Dialogfenster muss eine Collectiondatei angegeben werden. Zur Sicherheit und um verwechselte Collections auszuschließen muss der Zielordner angegeben werden, in dem Filecalibur Dateien löschen darf. Dieser Ordner muss dem Pfad der Dateien in der Collection entsprechen. Filecalibur löscht dann alle Dateien der Collection von dem Datenträger.
+Achtung: Sei sehr vorsichtig mit dieser Funktion da die Dateien ohne Undo gelöscht werden.
 
-Dangerous Tools - Rsync Directories
-Select Dangerous Tools->Rsync Directories from the menue. In the dialog window you have to provide a source folder and a target folder. Filecalibur will use Rsync to copy all files from the source folder to the target folder. If "Delete Files..." is selected, all the files absent in source are deleted in the target folder. Usefull to sync folders between backups. If only a few files changed rsync is much faster than copying folders.
-Be extremly cautious with this function, if the folders are confused and an empty folder (now source) is synced to your backup (now target) all your backup data is deleted! Both folders will be in sync as both will be empty now!
-
-Dangerous Tools - Delete Files from List
-Select Dangerous Tools->Delete Files from List from the menue. In the dialog window you have to provide the collection file. For security and to avoid the accidential selection of a wrong collection, the path has to be provided were Filecalibur is allowed to delete files. This path has to match the path of the files in the collection. Filcalibur will remove each single file provided in the collection from the storage system.
-Be extremly cautious with this function as there is no undo.
-
-Dangerous Tools - Delete Empty Directories
-Select Dangerous Tools->Delete Empty Directories from the menue. In the dialog window you have to provide a source folder. Filecalibur will seach through all subfolders and delete them in case they are empty. 
-This is handy in combination with Delete Files from List. After all files are deleted, many empty folders may exist and the folders with files may be hard to find. After the removal only folders with files remain.
+Gefährliche Werkzeuge - Lösche leere Ordner
+Im Menü Gefährliche Werkzeuge->Lösche leere Ordner auswählen. Im Dialogfenster muss ein Ordner angegeben werden. Filecalibur wird alle leeren Ordner und Unterordner in diesem Verzeichnis löschen, wenn sie leer sind. Diese Funktion ist praktisch in Kombination mit Lösche Dateien nach Listeneinträgen, da diese Funktion oft leere Ordner zurücklässt. Sind diese entfernt so bleiben nur die Ordner mit Dateien übrig.
 
 
 Examples of Usage
