@@ -5,46 +5,42 @@
 Introduction
 
 
-Filecalibur ist ein Werkzeug mit vielen Anwendungen im Bereich des Dateienmanagements. Der Schlüssel zum Verständnis von Filecaliburs Fähigkeiten ist die Unterscheidung zwischen Dateien und daraus brechneten Hashwerten:
+Filecalibur is a tool that can serve many purpuses, as long as files and folder structures are involved. The key to understand Filecaliburs capabilities is to seperate the concept of a file and its associated hash:
 
-Datei
-Eine Datei ist eine Ansammlung 0/1 Werte (Bits) in einem Speichersystem. Die Dateien werden in Ordnern strukturiert. Dateien können mit einigen Byte (Byte = 8 0/1 Werte) klein oder mit einigen Gigabyte (1 Gigabyte = 1 000 000 000 Byte) sehr groß sein. Wir sollten davon ausgehen, dass jedes einzelne Byte wichtig ist und wenn es verändert wurde, sich der Inhalt der Datei ändert. Im schlimmsten Fall wird die Datei fehlerhaft und der Inhalt unlesbar.
+File
+A file is a sequence of binary 0/1 numbers (Bits) on a storage system. Usually the files are structured in folders for a better overview. Files can be short as a few Byte (Byte = 8 0/1 binary numbers) or large as several Gigabyte (1 Gigabyte = 1 000 000 000 Byte). We should consider that each single Byte is important and if its modified the content of the file will change. Worst case, the file will be corrupt and the content will be useless.
 
 Hash
-Man kann sich einen Hashwert (kurz Hash) als einen Fingerabdruck einer Datei vorstellen. Es ist eine mathematische Funktion, welche die gesammte Datei einliest und aufsummiert, um daraus eine kryptische Zahlen/Buchstabenkombination zu berechnen. Es gibt verschiedene Rechenmethoden die unterschiedliche Ergebnisse produzieren. Ein Hash der Funktion md5 sieht etwa so aus d41d8cd98f00b204e9800998ecf8427e, der der Funktion sha1 so da39a3ee5e6b4b0d3255bfef95601890afd80709.
+I keep things simple here, so lets think of an Hash as a fingerprint of a file. Actually it is a mathematical function that sums up the entire file and the result is a cryptic number/letter combination. There are several hash functions which return different results , for example a hash with the function md5 might look as d41d8cd98f00b204e9800998ecf8427e and a hash of the function sha1 like da39a3ee5e6b4b0d3255bfef95601890afd80709. 
+Three things are essential here:
+1) The hash of a certain function is allways of the same length independent of the file size.
+2) Each single Bit is part of the hash and if it is changed, the  hash will be totally different.
+3) The hash is unique for each file, but identical for copies of files, independent of the file name.
+Actually, in extreme rare cases different files can have the same hash, what is called a collision. For this application collisions can be ignored.
 
-Drei Punkte sind besonders wichtig:
-1) Ein Hash einer bestimmten Funktion hat immer die selbe Länge, unabhängig von der Größe der Datei.
-2) Jedes einzelne Bit fließt in den Hash ein und, falls es geändert wird, ändert sich auch der Hash.
-3) Ein Hash ist einzigartig für jede Datei, jedoch haben identische Dateikopien identische Hashwerte.
-Tatsächlich können in extrem seltenen Fällen verschiedene Dateien den gleichen Hash haben, was mann eine Kollision nennt. Für unsere Anwendungen hier können Kollisionen ignoriert werden.
-
-Filecalibur kann die jeweiligen Hashwerte für alle Dateien in einem bestimmten Ordner berechnen inklusive aller Dateien in Unterordnern. Um genau zu sein sammelt Filecalibur nur die Eingaben und ruft das unabhängige Programm hashdeep auf, das die Hashberechnung vornimmt und das Ergebnis in eine Textdatei schreibt. Diese Textdatei nennen ich eine Collection. In dieser Collection entspricht jede Zeile einer Datei. Es stehen dort die Dateigröße, die verschiedenen Hashes und der Dateiname mit dem zugehörigen Pfad. Die Unabhängigkeit dieser Informationen von der Software, die zu der Berechnung benutzt wurde, ist eine praktische Eigenschaft dieser Informationen. Die gleiche Datei wird den selben Hash, Größe und Namen/Pfadinformation haben wenn man irgendeine andere Software zu der Berechnung benutzt. Filcalibur stellt die Collectiondateien als Tabelle dar.
-An dieser Stelle kann man aufhören, mit den tatsächlichen Dateien zu arbeiten und sich auf das Textdokument mit den Hashes, die Collection konzentrieren. Identische Dateien können über identische Hashwerte identifiziert werden. Unterordner können aus einer Collection extrahiert oder entfernt nur anhand ihrer Pfadinformationen. Das Hauptanwendungsgebiet liegt jedoch dem Vergleich verschiedener Collections durch positive and negative matching;
+Filecalibur can calculate this hashes for all files of a certain folder even including all files in subfolder. To be acurate, Filecalibur only collects your input and runs a independent software hashdeep which performes the hash calculation and writes its results in a text file, which I name a collection. In this collection, each line coresponds to one file. It has the information on the file size, the different hash information and the filename with the path. A nice feature is the independence of this information from the software used to calculate them. A file will have the same size, hash or path/name information if its calculated with any other software. Filecalibur can display this informations and manipulate them. 
+At this point, we stop working with the real files and focus on the text document with the fingerprints of the files, the hashes, instead. Identical files can be identified by screening for identical hashes calculated by different files. Subfolder can be extracted or removed based on the path/name information. But the real power is in comparison of different collections by positive and negative matching:
 
 Positive Matching
-Eine Collection A wird Hash für Hash mit Collection B verglichen. Nur wenn ein bestimmter Hash in beiden Collectionen gefunden wird, wird die Information in Collection C geschrieben. Diese Funktion ist nützlich um Dateien zu identifizieren, die in beiden Collections vrohanden sind.
+One collection A is checked hash by hash if the hash IS present in collection B. Only if the hash IS present, the file information is written in collection C. This function is useful to identify redundant files between different collections.
 
 Negative Matching
-Jeder Hash der Collection A wird mit den Hashes der Collection B verglichen. Nur wenn der Hash nicht in Collection B ist werden die jeweiligen Informationen in Collection C geschrieben. Diese Funktion ist nützlich um unbekannte Hashes in Collection A zu identifizieren. Wichtig ist hierbei, dass wir nur Dateien finden die in Collection A sind und nicht in Collection B. Dateien die nur in Collection B sind und nicht in Collection A gehen verloren oder werden ignoriert. Sollten diese Dateien von Interesse sein, so muss man die Collections vertauschen.
+One collection A is checked hash by hash if the hash is NOT present in collection B. Only if the hash is NOT present, the file information is written in collection C. This function is useful to identify unique files in a collection. Be aware that in the example above we only find files present in collection A but not present in collection B. Files present in collection B that are not present in collection A are lost/ignored. If this files are of interest, the collections have to be switched.
 
-Die Stärke von Filecalibur liegt in der vielfäligen Möglichkeiten diese Operationen zu kombinieren, um exakt die Gruppe Dateien zu erhalten, die man sehen möchte, selbst bei sehr großen Datenmengen.
+The power of Filecalibur lies in the unlimited possibilities to combine these operations to extract exactly hat you want even with big data collections.
 
-Zuletzt bietet Filecalibur mit den "Gefährlichen Werkzeugen" die Möglichkeit, die Dateien auf der Festplatte zu manipulieren. Filecalibur kann jede einzelne Datei einer Collection von dem Speichersystem löschen. Die Dateien werden an diesem Punkt wirklich und unwiederbringlich gelöscht.
-
-Achtung: Ich programmiere Software in meiner Freizeit zum Spaß und ohne komerzielles Interesse. Diese Software stelle ich unter den Bedingungen der Gnu Public License (GPL) zur Verfügung. Es gibt keine Garantie für Irgendetwas - Die Benutzung ist auf eigenes Risiko! Ich benutze die Software schon seit Jahren ohne Probleme, aber andere Computer können zu komischen Ergebnissen führen. Teste die Software erst an unkritischen Daten und verwende sie erst dann für irgendetwas wichtiges, wenn du sicher bist, dass sie so funktioniert wie sie soll. Sollte ein Bug auftreten kontaktiert mich bitte mit einer Beschreibung, so dass ich den Fehler reproduzieren kann.
-Diese Software nutzt hashdeep, rsync und WinMerge, deren Lizenzen in ihrem Unterordner in Filecalibur zu finden sind.
+Finally Dangerous Functions allow to manipulate your files. Filecalibur can use a collection to delete each single file in the collection from the storage system. At this point the files are looked up and files are removed from the storage system.
 
 
-Funktionen
-
-In diesem Abschnitt werden die wichtigsten Funktionen von Filecalibur vorgestellt.
-
-hashDeep - Berechne Hashes
-Im Menü hashDeep->Berechne Hashes auswählen.
+Important: I develop software in my spare time for fun and without any financial interest. This software is provided under Gnu Public License (GPL) conditions and might have bugs. There is no gurantee for anything - use at own risk! I use this tool since years without any error, but different computers may result in strange stuff. Try it out on uncritical data before and use it for anything important only if you are confident it works as intended. If you find bugs contact me with a description so I can reproduce the bug. 
+It also uses hashdeep, rsync and WinMerge which are provided under their licenses available in the respective folder of Filecalibur. 
 
 
-Hash Calculation
+Functions
+
+In this section we walk through the essential functionality of Filecalibur.
+
+hashDeep - Calculate Hashes
 Select hashDeep->Calculate Hashes from the menue. In the dialog window you have to provide the folder to hash and the file were to save the collection data. Based on this information hashdeep calculates the hashes. Filecalibur will display the collection once hashdeep is ready. Be aware that each file has to be read completely to calculate the hash information. If Terabytes of data are processed this calculation may run several hours or days. In this case it may be apropriate to run the hash calculation over night.
 
 Collection - Modify Path
