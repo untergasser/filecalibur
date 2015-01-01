@@ -27,7 +27,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-    programVersion = "Version 0.6.1 BETA";
+    programVersion = "Version 0.6.7 BETA";
 
     ui->setupUi(this);
 
@@ -310,7 +310,7 @@ void MainWindow::on_actionDelete_Empty_Directories_triggered()
 
 void MainWindow::on_actionSupport_triggered()
 {
-    QUrl urlLink("http://www.filecalibur.com");
+    QUrl urlLink("http://sourceforge.net/projects/filecalibur/files/");
     QDesktopServices::openUrl(urlLink);
 }
 
@@ -322,7 +322,7 @@ void MainWindow::on_actionHashdeep_triggered()
 
 void MainWindow::on_actionRsync_triggered()
 {
-    QUrl urlLink("http://it-em.net/joomla/index.php?option=com_content&view=article&id=49&Itemid=54cms/front_content.php");
+    QUrl urlLink("http://rsync.samba.org/");
     QDesktopServices::openUrl(urlLink);
 }
 
@@ -332,20 +332,40 @@ void MainWindow::on_actionWinmerge_triggered()
     QDesktopServices::openUrl(urlLink);
 }
 
-void MainWindow::on_actionTutorials_triggered()
+void MainWindow::on_actionFilecalibur_at_Souceforge_triggered()
 {
-    QUrl urlLink("http://www.filecalibur.com/tutorials");
+    QUrl urlLink("http://sourceforge.net/projects/filecalibur/");
     QDesktopServices::openUrl(urlLink);
 }
 
-void MainWindow::on_actionClose_triggered()
+void MainWindow::on_actionTutorials_triggered()
 {
-    this->close();
+    if (QLocale::system().name().startsWith("de") == true) {
+        QUrl urlLink("http://www.filecalibur.de/");
+        QDesktopServices::openUrl(urlLink);
+    } else {
+        QUrl urlLink("http://www.filecalibur.com");
+        QDesktopServices::openUrl(urlLink);
+    }
 }
 
-void MainWindow::on_actionExit_triggered()
+void MainWindow::on_actionManual_triggered()
 {
-    this->close();
+    DialogManual *manual = new DialogManual(this);
+    QString text = "";
+    if (QLocale::system().name().startsWith("de") == true) {
+        QFile file(":/manual_de.htm");
+        file.open(QIODevice::ReadOnly);
+        text = QString::fromUtf8(file.readAll());
+        file.close();
+    } else {
+        QFile file(":/manual_en.htm");
+        file.open(QIODevice::ReadOnly);
+        text = QString::fromUtf8(file.readAll());
+        file.close();
+    }
+    manual->setManual(text);
+    manual->show();
 }
 
 void MainWindow::on_actionAbout_triggered()
@@ -359,9 +379,14 @@ void MainWindow::on_actionAbout_triggered()
     about->show();
 }
 
-void MainWindow::on_actionSourceforge_triggered()
+void MainWindow::on_actionClose_triggered()
 {
+    this->close();
+}
 
+void MainWindow::on_actionExit_triggered()
+{
+    this->close();
 }
 
 void MainWindow::on_tableView_doubleClicked(const QModelIndex &index)
@@ -378,3 +403,4 @@ void MainWindow::on_tableView_doubleClicked(const QModelIndex &index)
         QDesktopServices::openUrl(QUrl(urlFile, QUrl::TolerantMode));
     }
 }
+

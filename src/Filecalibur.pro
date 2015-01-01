@@ -4,7 +4,8 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui\
+    webkitwidgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -43,7 +44,8 @@ SOURCES += main.cpp\
     dialogdifftool.cpp \
     dialogdeletefiles.cpp \
     dialogdelemptdir.cpp \
-    dialogabout.cpp
+    dialogabout.cpp \
+    dialogmanual.cpp
 
 HEADERS  += mainwindow.h \
     dialogcalchash.h \
@@ -65,7 +67,8 @@ HEADERS  += mainwindow.h \
     dialogdifftool.h \
     dialogdeletefiles.h \
     dialogdelemptdir.h \
-    dialogabout.h
+    dialogabout.h \
+    dialogmanual.h
 
 FORMS    += mainwindow.ui \
     dialogcalchash.ui \
@@ -86,7 +89,8 @@ FORMS    += mainwindow.ui \
     dialogdifftool.ui \
     dialogdeletefiles.ui \
     dialogdelemptdir.ui \
-    dialogabout.ui
+    dialogabout.ui \
+    dialogmanual.ui
 
 TRANSLATIONS    += spreadsheet_de.ts
 

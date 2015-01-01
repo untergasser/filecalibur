@@ -84,6 +84,8 @@
      <addaction name="actionWinmerge"/>
     </widget>
     <addaction name="actionAbout"/>
+    <addaction name="actionManual"/>
+    <addaction name="actionFilecalibur_at_Souceforge"/>
     <addaction name="actionTutorials"/>
     <addaction name="actionSupport"/>
     <addaction name="menuRequired_Software"/>
@@ -158,11 +160,6 @@
     <string>About</string>
    </property>
   </action>
-  <action name="actionSourceforge">
-   <property name="text">
-    <string>Tutorials</string>
-   </property>
-  </action>
   <action name="actionModify_Path">
    <property name="text">
     <string>Modify Path</string>
@@ -230,12 +227,22 @@
   </action>
   <action name="actionSupport">
    <property name="text">
-    <string>Support</string>
+    <string>Check for Updates</string>
    </property>
   </action>
   <action name="actionTutorials">
    <property name="text">
-    <string>Tutorials</string>
+    <string>Manual Online</string>
+   </property>
+  </action>
+  <action name="actionFilecalibur_at_Souceforge">
+   <property name="text">
+    <string>Filecalibur at Souceforge</string>
+   </property>
+  </action>
+  <action name="actionManual">
+   <property name="text">
+    <string>Manual</string>
    </property>
   </action>
  </widget>

@@ -1,7 +1,10 @@
 <!DOCTYPE RCC><RCC version="1.0">
 <qresource>
+    <file alias="Logo_128.png">files/Logo_128.png</file>
     <file alias="icon_128.ico">files/Logo_128.ico</file>
     <file alias="icon_mac.icns">files/Logo_mac.icns</file>
     <file alias="license.txt">files/license.txt</file>
+    <file alias="manual_de.htm">files/manual_de.htm</file>
+    <file alias="manual_en.htm">files/manual_en.htm</file>
 </qresource>
 </RCC>

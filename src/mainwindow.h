@@ -27,6 +27,7 @@
 #include <QSettings>
 
 #include "dialogabout.h"
+#include "dialogmanual.h"
 #include "dialogoptionen.h"
 #include "dialogerrormessage.h"
 #include "dialogcalchash.h"
@@ -106,10 +107,9 @@ private slots:
     void on_actionClose_triggered();
     void on_actionExit_triggered();
     void on_actionAbout_triggered();
-
-    void on_actionSourceforge_triggered();
-
     void on_tableView_doubleClicked(const QModelIndex &index);
+    void on_actionFilecalibur_at_Souceforge_triggered();
+    void on_actionManual_triggered();
 
 private:
     Ui::MainWindow *ui;
