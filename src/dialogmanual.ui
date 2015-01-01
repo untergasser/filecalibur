@@ -15,11 +15,11 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QWebView" name="webView">
-     <property name="url">
-      <url>
-       <string>about:blank</string>
-      </url>
+    <widget class="QTextEdit" name="textEdit">
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
      </property>
     </widget>
    </item>
@@ -35,13 +35,6 @@
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>QWebView</class>
-   <extends>QWidget</extends>
-   <header>QtWebKitWidgets/QWebView</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections>
   <connection>

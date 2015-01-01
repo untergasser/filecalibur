@@ -15,5 +15,5 @@ DialogManual::~DialogManual()
 
 void DialogManual::setManual(QString text)
 {
-    ui->webView->setHtml(text);
+    ui->textEdit->setHtml(text);
 }
