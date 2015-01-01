@@ -1,6 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <meta name="author" content="Andreas Untergasser">
+  <meta name="robots" content="index, follow">
+  <title>Filecalibur</title>
+  <style type="text/css">
+body {
+color: black; background-color: white;
+font-size: 100.01%;
+margin: 0; padding: 1em 0;
+text-align: center
+}
+div#seite { border: 1px dashed silver;
+margin: auto;
+width: 800px;
+background-color: rgb(255, 255, 230);
+}
+p { width: 700px;
+text-align: left;
+padding-left: 50px;
+padding-right: 30px;
+padding-top: 0px;
+padding-bottom: 15px;
+}
+h1 { text-align: left;
+padding-left: 20px;
+}
+h2 { text-align: left;
+padding-left: 20px;
+}
+h3 { text-align: left;
+padding-left: 35px;
+}
+  </style>
+</head>
+<body>
 
-Introduction
+<div id="seite">
+<h1 style="text-decoration: underline;">Filecalibur</h1>
 
+<h2 id="introduction" style="text-decoration: underline;">Introduction</h2>
 
 Filecalibur is a tool that can serve many purposes, as long as files and folder structures are involved. The key to understand Filecaliburs capabilities is to separate the concept of a file and its associated hash:
 
@@ -38,44 +78,44 @@ Functions
 In this section we walk through the essential functionality of Filecalibur.
 
 hashDeep - Calculate Hashes
-Select hashDeep->Calculate Hashes from the menu. In the dialog window you have to provide the folder to hash and the file were to save the collection data. Based on this information hashdeep calculates the hashes. Filecalibur will display the collection once hashdeep is ready. Be aware that each file has to be read completely to calculate the hash information. If Terabytes of data are processed this calculation may run several hours or days. In this case it may be apropriate to run the hash calculation over night.
+Select hashDeep &raquo; Calculate Hashes from the menu. In the dialog window you have to provide the folder to hash and the file were to save the collection data. Based on this information hashdeep calculates the hashes. Filecalibur will display the collection once hashdeep is ready. Be aware that each file has to be read completely to calculate the hash information. If Terabytes of data are processed this calculation may run several hours or days. In this case it may be apropriate to run the hash calculation over night.
 
 Collection - Modify Path
-Select Collection->Modify Path from the menu. In the dialog window you have to provide the collection file which is usually prefilled with the current file. Last the file where to save the collection data needs to be provided. The fields in between can be used to modify the path/name information by removing or adding something to it. Keep in mind that you work on the left part of the text which corresponds to the top level folders. This can be used to modify the root folder name or remove it to get relative information. Or the letter of the drive can be changed.
+Select Collection &raquo; Modify Path from the menu. In the dialog window you have to provide the collection file which is usually prefilled with the current file. Last the file where to save the collection data needs to be provided. The fields in between can be used to modify the path/name information by removing or adding something to it. Keep in mind that you work on the left part of the text which corresponds to the top level folders. This can be used to modify the root folder name or remove it to get relative information. Or the letter of the drive can be changed.
 Finally the order of the files can be sorted. This is useful because files may get out of order due to the time required for hashing. Sorting in combination with switching the slashes can get the file into order suitable for comparison.
 
 Collection - Remove Path
-Select Collection->Remove Path from the menu. In the dialog window you have to provide the collection file which is usually prefilled with the current file. Last the file where to save the collection data needs to be provided. The fields in the middle you have to provide the path to remove. All entries with the same path/name information are removed and only the non matching are saved in the new collection. Usefull to remove a subfolder from a collection and keep the rest.
+Select Collection &raquo; Remove Path from the menu. In the dialog window you have to provide the collection file which is usually prefilled with the current file. Last the file where to save the collection data needs to be provided. The fields in the middle you have to provide the path to remove. All entries with the same path/name information are removed and only the non matching are saved in the new collection. Usefull to remove a subfolder from a collection and keep the rest.
 
 Collection - Extract Path
-Select Collection->Extract Path from the menu. In the dialog window you have to provide the collection file which is usually prefilled with the current file. Last the file where to save the collection data needs to be provided. The fields in the middle you have to provide the path to extract. All entries with the same path/name information are saved in the new collection and all non-matching are discarded. Usefull to extract only one subfolder into a new collection.
+Select Collection &raquo; Extract Path from the menu. In the dialog window you have to provide the collection file which is usually prefilled with the current file. Last the file where to save the collection data needs to be provided. The fields in the middle you have to provide the path to extract. All entries with the same path/name information are saved in the new collection and all non-matching are discarded. Usefull to extract only one subfolder into a new collection.
 
 Collection - Join Files
-Select Collection->Join Files from the menu. In the dialog window you have to provide the collection file which is usually prefilled with the current file and a second input file. Last the file where to save the collection data needs to be provided. Both files are joined and saved in the new collection. Usefull to add a folder to a collection.
+Select Collection &raquo; Join Files from the menu. In the dialog window you have to provide the collection file which is usually prefilled with the current file and a second input file. Last the file where to save the collection data needs to be provided. Both files are joined and saved in the new collection. Usefull to add a folder to a collection.
 
 Collection - Positive Hashing
-Select Collection->Positive Hashing from the menu. In the dialog window you have to provide the test collection file which is usually prefilled with the current file. Second you provide the hash library collection. Last the file where to save the collection data needs to be provided. The test collection is checked hash by hash if the hash IS present in hash library collection. Only if the hash IS present, the file information is written in the new collection. Useful to identify identical files between different collections.
+Select Collection &raquo; Positive Hashing from the menu. In the dialog window you have to provide the test collection file which is usually prefilled with the current file. Second you provide the hash library collection. Last the file where to save the collection data needs to be provided. The test collection is checked hash by hash if the hash IS present in hash library collection. Only if the hash IS present, the file information is written in the new collection. Useful to identify identical files between different collections.
 
 Collection - Negative Hashing
-Select Collection->Negative Hashing from the menu. In the dialog window you have to provide the test collection file which is usually prefilled with the current file. Second you provide the hash library collection. Last the file where to save the collection data needs to be provided. The test collection is checked hash by hash if the hash is NOT present in hash library collection. Only if the hash is NOT present, the file information is written in the new collection. Useful to identify unknown files in the test collection. Be aware that in the example above we only find files present in the test collection but not present in hash library collection. Files present in hash library collection that are not present in test collection are lost/ignored. If these files are of interest, the collections have to be switched.
+Select Collection &raquo; Negative Hashing from the menu. In the dialog window you have to provide the test collection file which is usually prefilled with the current file. Second you provide the hash library collection. Last the file where to save the collection data needs to be provided. The test collection is checked hash by hash if the hash is NOT present in hash library collection. Only if the hash is NOT present, the file information is written in the new collection. Useful to identify unknown files in the test collection. Be aware that in the example above we only find files present in the test collection but not present in hash library collection. Files present in hash library collection that are not present in test collection are lost/ignored. If these files are of interest, the collections have to be switched.
 
 Collection - Find Duplicates
-Select Collection->Find Duplicates from the menu. In the dialog window you have to provide the collection file which is usually prefilled with the current file. Last the file where to save the collection data needs to be provided. The collection is checked hash by hash if a hash occurs more than once. Only if the hash is present more than once, the file information is written in the new collection. Useful to identify duplicate files within a collection.
+Select Collection &raquo; Find Duplicates from the menu. In the dialog window you have to provide the collection file which is usually prefilled with the current file. Last the file where to save the collection data needs to be provided. The collection is checked hash by hash if a hash occurs more than once. Only if the hash is present more than once, the file information is written in the new collection. Useful to identify duplicate files within a collection.
 
 Collection - Compare Files
-Select Collection->Compare Files from the menu. In the dialog window you have to provide one collection file which is usually prefilled with the current file. Additionally a second collection file needs to be provided. Both files are compared by the tool WinMerge. Useful to identify tiny changes between collections.
+Select Collection &raquo; Compare Files from the menu. In the dialog window you have to provide one collection file which is usually prefilled with the current file. Additionally a second collection file needs to be provided. Both files are compared by the tool WinMerge. Useful to identify tiny changes between collections.
 For best success, the path information should be identical. If comparing two folders on different drives, remove first the absolute path information that differs with the Modify Path function to obtain relative path information. Sort also the files before to have the same order in both collections. Now the comparison is more informative.
 
 Dangerous Tools - Rsync Directories
-Select Dangerous Tools->Rsync Directories from the menu. In the dialog window you have to provide a source folder and a target folder. Filecalibur will use rsync to copy all files from the source folder to the target folder. If "Delete Files..." is selected, all the files absent in source are deleted in the target folder. Usefull to sync folders between backups. If only a few files changed rsync is much faster than copying folders.
+Select Dangerous Tools &raquo; Rsync Directories from the menu. In the dialog window you have to provide a source folder and a target folder. Filecalibur will use rsync to copy all files from the source folder to the target folder. If "Delete Files..." is selected, all the files absent in source are deleted in the target folder. Usefull to sync folders between backups. If only a few files changed rsync is much faster than copying folders.
 Be extremely cautious with this function, if the folders are confused and an empty folder (now source) is synced to your backup (now target) all your backup data is deleted! Both folders will be in sync as both will be empty now!
 
 Dangerous Tools - Delete Files from List
-Select Dangerous Tools->Delete Files from List from the menu. In the dialog window you have to provide the collection file. For security and to avoid the accidental selection of a wrong collection, the path has to be provided were Filecalibur is allowed to delete files. This path has to match the path of the files in the collection. Filcalibur will remove each single file provided in the collection from the storage system.
+Select Dangerous Tools &raquo; Delete Files from List from the menu. In the dialog window you have to provide the collection file. For security and to avoid the accidental selection of a wrong collection, the path has to be provided were Filecalibur is allowed to delete files. This path has to match the path of the files in the collection. Filcalibur will remove each single file provided in the collection from the storage system.
 Be extremely cautious with this function as there is no undo.
 
 Dangerous Tools - Delete Empty Directories
-Select Dangerous Tools->Delete Empty Directories from the menu. In the dialog window you have to provide a source folder. Filecalibur will search through all subfolders and delete them in case they are empty. 
+Select Dangerous Tools &raquo; Delete Empty Directories from the menu. In the dialog window you have to provide a source folder. Filecalibur will search through all subfolders and delete them in case they are empty. 
 This is handy in combination with Delete Files from List. After all files are deleted, many empty folders may exist and the folders with files may be hard to find. After the removal only folders with files remain.
 
 
@@ -117,3 +157,7 @@ Frequently Asked Questions - FAQ
 The file did not change, why does it have a different hash?
 Microsoft Word/Excel, graphics files and mp3 files collect meta information additional to the content. So the content may be identical, but maybe some extra notes in word or the artist name in an mp3 file was changed. If only a bit changes, the hash will be totally different.
 
+</div>
+
+</body>
+</html>
