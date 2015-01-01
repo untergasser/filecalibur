@@ -43,12 +43,11 @@ padding-left: 35px;
 <p><img src="Logo_128.png" alt="Logo"></p>
 <p>
 <a href="http://sourceforge.net/projects/filecalibur/files/">Download Filecalibur</a><br><br>
-<a href="http://sourceforge.net/projects/filecalibur/">Filecalibur at Souceforge</a><br><br>
+<a href="http://sourceforge.net/projects/filecalibur/">Filecalibur auf Souceforge</a><br><br>
 <a href="http://www.filecalibur.com/">English Version of this Page</a><br>
 </p>
 
 <h2 id="introduction" style="text-decoration: underline;">Einleitung</h2>
-
 <p>Filecalibur ist ein Werkzeug mit vielen Anwendungen im Bereich des 
 Dateienmanagements. Der Schl&uuml;ssel zum Verst&auml;ndnis von Filecaliburs F&auml;higkeiten 
 ist die Unterscheidung zwischen Dateien und daraus berechneten Hashwerten:<br>
@@ -57,7 +56,7 @@ Datei<br>
 Eine Datei ist eine Ansammlung 0/1 Werte (Bits) in einem Speichersystem. Die 
 Dateien werden in Ordnern strukturiert. Dateien k&ouml;nnen mit einigen Byte (Byte = 8 
 0/1 Werte) klein oder mit einigen Gigabyte (1 Gigabyte = 1 000 000 000 Byte) 
-sehr groﬂ sein. Wir sollten davon ausgehen, dass jedes einzelne Byte wichtig 
+sehr gro&szlig; sein. Wir sollten davon ausgehen, dass jedes einzelne Byte wichtig 
 ist und wenn es ver&auml;ndert wurde, sich der Inhalt der Datei &auml;ndert. Im schlimmsten 
 Fall wird die Datei fehlerhaft und der Inhalt unlesbar.<br>
 <br>
@@ -72,8 +71,8 @@ da39a3ee5e6b4b0d3255bfef95601890afd80709.<br>
 <br>
 Drei Punkte sind besonders wichtig:<br>
 1) Ein Hash einer bestimmten Funktion hat immer dieselbe L&auml;nge, unabh&auml;ngig von 
-der Gr&ouml;ﬂe der Datei.<br>
-2) Jedes einzelne Bit flieﬂt in den Hash ein und, falls es ge&auml;ndert wird, &auml;ndert 
+der Gr&ouml;&szlig;e der Datei.<br>
+2) Jedes einzelne Bit flie&szlig;t in den Hash ein und, falls es ge&auml;ndert wird, &auml;ndert 
 sich auch der Hash.<br>
 3) Ein Hash ist einzigartig f&uuml;r jede Datei, jedoch haben identische Dateikopien 
 identische Hashwerte.<br>
@@ -86,10 +85,10 @@ Ordner berechnen inklusive aller Dateien in Unterordnern. Um genau zu sein samme
 Filecalibur nur die Eingaben und ruft das unabh&auml;ngige Programm hashdeep auf, 
 das die Hashberechnung vornimmt und das Ergebnis in eine Textdatei schreibt. Diese 
 Textdatei nenne ich eine Collection. In dieser Collection entspricht jede Zeile 
-einer Datei. Es stehen dort die Dateigr&ouml;ﬂe, die verschiedenen Hashes und der 
+einer Datei. Es stehen dort die Dateigr&ouml;&szlig;e, die verschiedenen Hashes und der 
 Dateiname mit dem zugeh&ouml;rigen Pfad. Die Unabh&auml;ngigkeit dieser Informationen von 
 der Software, die zu der Berechnung benutzt wurde, ist eine praktische 
-Eigenschaft dieser Informationen. Die gleiche Datei wird denselben Hash, Gr&ouml;ﬂe 
+Eigenschaft dieser Informationen. Die gleiche Datei wird denselben Hash, Gr&ouml;&szlig;e 
 und Namen/Pfadinformation haben wenn man irgendeine andere Software zu der 
 Berechnung benutzt. Filecalibur stellt die Collectiondateien als Tabelle dar.<br>
 An dieser Stelle kann man aufh&ouml;ren, mit den tats&auml;chlichen Dateien zu arbeiten 
@@ -117,7 +116,7 @@ vertauschen.<br>
 <br>
 Die St&auml;rke von Filecalibur liegt in der vielf&auml;ltigen M&ouml;glichkeiten diese 
 Operationen zu kombinieren, um exakt die Gruppe Dateien zu erhalten, die man 
-sehen m&ouml;chte, selbst bei sehr groﬂen Datenmengen.<br>
+sehen m&ouml;chte, selbst bei sehr gro&szlig;en Datenmengen.<br>
 <br>
 Zuletzt bietet Filecalibur mit den "Gef&auml;hrlichen Werkzeugen" die M&ouml;glichkeit, 
 die Dateien auf der Festplatte zu manipulieren. Filecalibur kann jede einzelne 
@@ -125,8 +124,8 @@ Datei einer Collection von dem Speichersystem l&ouml;schen. Die Dateien werden a
 diesem Punkt wirklich und unwiederbringlich gel&ouml;scht.<br>
 <br>
 </p>
-<h2 id="warning" style="text-decoration: underline;">Achtung:</h2>
-<p>Ich programmiere Software in meiner Freizeit zum Spaﬂ und ohne kommerzielles 
+<h2 id="Achtung" style="text-decoration: underline;">Achtung:</h2>
+<p>Ich programmiere Software in meiner Freizeit zum Spa&szlig; und ohne kommerzielles 
 Interesse. Diese Software stelle ich unter den Bedingungen der Gnu Public 
 License (GPL) zur Verf&uuml;gung. Es gibt keine Garantie f&uuml;r Irgendetwas - Die 
 Benutzung ist auf eigenes Risiko! Ich benutze die Software schon seit Jahren 
@@ -163,7 +162,7 @@ ver&auml;ndern. Beachte, dass du im linken Bereich des Pfades arbeitest der den
 obersten Ordnern entspricht. Es kann genutzt werden um den Namen des 
 Root-Ordners zu &auml;ndern oder um die absoluten Pfadangaben in relative 
 umzuwandeln. Oder man kann den Laufwerksbuchstaben &auml;ndern.<br>
-Auﬂerdem l&auml;sst sich die Reihenfolge der Dateien sortieren. Das ist notwendig, 
+Au&szlig;erdem l&auml;sst sich die Reihenfolge der Dateien sortieren. Das ist notwendig, 
 da die Reihenfolge auch von der Dauer der Hashberechnung abh&auml;ngt. Durch die 
 Sortierung in Kombination mit der Anpassung der Trennzeichen erh&auml;lt man eine 
 Reihenfolge die f&uuml;r den Vergleich verschiedener Collections geeignet ist.<br>
@@ -263,7 +262,7 @@ leer und haben jetzt den gleichen Inhalt!<br>
 <p>
 Im Men&uuml; Gef&auml;hrliche Werkzeuge &raquo; L&ouml;sche Dateien nach Listeneintr&auml;gen 
 ausw&auml;hlen. Im Dialogfenster muss eine Collectiondatei angegeben werden. Zur 
-Sicherheit und um verwechselte Collections auszuschlieﬂen muss der Zielordner 
+Sicherheit und um verwechselte Collections auszuschlie&szlig;en muss der Zielordner 
 angegeben werden, in dem Filecalibur Dateien l&ouml;schen darf. Dieser Ordner muss 
 dem Pfad der Dateien in der Collection entsprechen. Filecalibur l&ouml;scht dann 
 alle Dateien der Collection von dem Datentr&auml;ger.<br>
@@ -290,8 +289,8 @@ einfach alle seine Daten auf einen externen Datentr&auml;ger. Die erste Methode 
 normalerweise schnell, automatisiert und unkompliziert, hat aber den Nachteil, 
 dass man diese Software ben&ouml;tigt, um die Backupdateien zu nutzen. Der zweite 
 Ansatz ist einfach und ben&ouml;tigt keine weitere Software, hat aber den Nachteil, 
-dass man daran denken muss und das Kopieren groﬂer Datenmengen sehr viel Zeit 
-ben&ouml;tigt. Der groﬂe Vorteil ist jedoch, dass das Backup ein zweites Original 
+dass man daran denken muss und das Kopieren gro&szlig;er Datenmengen sehr viel Zeit 
+ben&ouml;tigt. Der gro&szlig;e Vorteil ist jedoch, dass das Backup ein zweites Original 
 ist und sich wie dieses ohne Einschr&auml;nkungen nutzen l&auml;sst.<br>
 Filecalibur kann bei der Erstellung eines Backups des zweiten Types helfen. 
 Wenn man noch kein Backup hat sollte man die Daten einfach auf den externen 
@@ -319,19 +318,19 @@ sollten sich alle drei an einem Ort befinden (um Verlust durch Feuer und
 Katastrophen zu vermeiden).<br>
 Das erste Backup wird wie oben beschrieben durchgef&uuml;hrt. Wichtig ist das 
 Ergebnis der Hashberechnung (die Collectiondatei) auch auf der externen 
-Festplatte zu speichern.<br>
+Festplatte zu speichern.<br><br>
 Bei dem n&auml;chsten Backup sind wir nun wirklich vorsichtig. Es l&auml;uft in vier 
-Schritten ab:<br>
+Schritten ab:<br><br>
 1) Sind die Daten, die wir kopieren wollen noch ok? Dazu berechnen wir die 
 Hashes der Quelldateien (lese hashDeep - Berechne Hashes) und vergleichen es mit 
 der Collectiondatei des alten Backups (lese Collection - Negative 
 Hashberechnung). Nutzt man die neue Collection als Test-Collection und die alte 
 Backupcollection als Hash-Bibliothekcollection, so zeigt Filecalibur uns nur die 
-neuen Dateien an und die Dateien mit &auml;nderungen, die &uuml;berschrieben werden. 
+neuen Dateien an und die Dateien mit &Auml;nderungen, die &uuml;berschrieben werden. 
 Tauscht man die beiden Collections so erh&auml;lt man nur die alten Dateien, welche 
-vom Backup gel&ouml;scht werden, und die Dateien mit &auml;nderungen, die &uuml;berschrieben 
+vom Backup gel&ouml;scht werden, und die Dateien mit &Auml;nderungen, die &uuml;berschrieben 
 werden. Zus&auml;tzlich kann man beide Collections mit WinMerge vergleichen und sich 
-die &auml;nderungen anzeigen lassen, in dem man von Ver&auml;nderung zu Ver&auml;nderung 
+die &Auml;nderungen anzeigen lassen, in dem man von Ver&auml;nderung zu Ver&auml;nderung 
 springt (lese Collection - Vergleiche zwei Dateien). Sind wir mit den 
 Ver&auml;nderungen gl&uuml;cklich (nichts ist ver&auml;ndert, was noch identisch sein sollte, 
 keine Dateien fehlen die noch da sein sollten und nur neue Dateien die von uns 
@@ -343,8 +342,8 @@ fr&uuml;hzeitig auf bevor die Platte ihre Funktion aufgibt. Also berechnen wir d
 Hashes des Mediums (lese hashDeep - Berechne Hashes), wandeln die Pfade in 
 relative um, sortieren die Reihenfolge (lese Collection - &auml;ndere Pfad) und 
 vergleichen es mit der Collectiondatei des alten, gespeicherten Backups mit 
-WinMerge vergleichen und sich die &auml;nderungen anzeigen lassen (lese Collection 
-- Vergleiche zwei Dateien). Alle &auml;nderungen sollten in den Kopfzeilen sein, 
+WinMerge vergleichen und sich die &Auml;nderungen anzeigen lassen (lese Collection 
+- Vergleiche zwei Dateien). Alle &Auml;nderungen sollten in den Kopfzeilen sein, 
 falls nicht hat sich das Backup ver&auml;ndert, was kein gutes Zeichen ist. Falls 
 ja hat man auch &uuml;berpr&uuml;ft, dass das gesamte Backup noch fehlerfrei lesbar 
 war.<br><br>
@@ -352,7 +351,7 @@ war.<br><br>
 externe Medium geschrieben (lese Gef&auml;hrliche Werkzeuge - Rsync Ordner). Sei 
 besonders vorsichtig mit dem Quellen und Zielordner. Falls sie verwechselt 
 werden &uuml;berspielt man sein altes Backup &uuml;ber die neuen Daten und verliert 
-alle &auml;nderungen seit dem Backup.<br><br>
+alle &Auml;nderungen seit dem Backup.<br><br>
 4) Jetzt bleibt wieder die Frage- Sind die Kopien absolut identisch? Um sicher 
 zu sein berechnen wir die Hashes des externen Mediums (lese hashDeep - Berechne 
 Hashes), wandelt die absoluten Pfade in relative um und sortiert die Collection 
@@ -387,10 +386,10 @@ Collections sortiert werden um die gleiche Reihenfolge zu erhalten (lese
 Collection - &auml;ndere Pfad)  und vergleicht sie (lese Collection - Negative 
 Hashberechnung). Nutzt man die "Nachher"-Collection als Test-Collection und 
 die "Ursprung"-Collection als Hash-Bibliothekcollection, so zeigt Filecalibur 
-uns nur die neuen Dateien und die Dateien mit &auml;nderungen an. Tauscht man die 
+uns nur die neuen Dateien und die Dateien mit &Auml;nderungen an. Tauscht man die 
 beiden Collections so erh&auml;lt man nur die alten Dateien, welche gel&ouml;scht werden, 
-und die Dateien mit &auml;nderungen. Zus&auml;tzlich kann man beide Collections mit 
-WinMerge vergleichen und sich die &auml;nderungen anzeigen lassen, in dem man von 
+und die Dateien mit &Auml;nderungen. Zus&auml;tzlich kann man beide Collections mit 
+WinMerge vergleichen und sich die &Auml;nderungen anzeigen lassen, in dem man von 
 Ver&auml;nderung zu Ver&auml;nderung springt (lese Collection - Vergleiche zwei Dateien).
 <br>
 </p>
@@ -440,9 +439,6 @@ mp3-Datei. Wenn sich auch nur ein Bit &auml;ndert, &auml;ndert sich auch der Has
 <a>&nbsp;&nbsp; &nbsp; &nbsp;---&nbsp;
 &nbsp;&nbsp; &nbsp;</a>
 <a href="http://www.untergasser.de/data/impressum.html">Impressum & Disclaimer</a>
-
-
-
 </div>
 
 </body>
