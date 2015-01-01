@@ -81,28 +81,30 @@ Gefährliche Werkzeuge - Lösche leere Ordner
 Im Menü Gefährliche Werkzeuge->Lösche leere Ordner auswählen. Im Dialogfenster muss ein Ordner angegeben werden. Filecalibur wird alle leeren Ordner und Unterordner in diesem Verzeichnis löschen, wenn sie leer sind. Diese Funktion ist praktisch in Kombination mit Lösche Dateien nach Listeneinträgen, da diese Funktion oft leere Ordner zurücklässt. Sind diese entfernt so bleiben nur die Ordner mit Dateien übrig.
 
 
+Anwendungsbeispiele
 
-
-Examples of Usage
-
-In this section we focus on scenarios were Filecalibur might be useful.
+In diesem Abschnitt werden einige Einsatzgebiete für Filecalibur vorgestellt.
 
 Backup
 
-There are two types of backups in this world, one done with advanced programms and the other by copying files to a external drive without any special software. While the first is usually fast, automatized and easy it comes at the disadvantage of the dependency of the software to access the files. The second aproach is easy but you have to do it yourself and copying huge amounts of data may require quite some time. The advantage is a copy of your file system that can be accessed without any further software.
-Filcalibur can help with the second type of backup. If you dont have any backup on the external drive, just copy the files in the regular filmanager - its faster then rsync. Once this is done, you just want to update the changes from your system to your external backup. Here rsync is much faster and will copy only changed files to your external drive (see Dangerous Tools - Rsync Directories).
-Now the question remaining is - Are both copies identical? Therefore we calculate the hashes of each drive/folder (see Hash Calculation). That takes time, but once done it can be saved to the backup drive as well. Now we remove the absolute path part in both files so the path/filename information of both locations is identical. Dont forget to sort the output (see Collection - Modify Path). Last we can compare both files and the only difference should be within the header information (see Collection - Compare Files).
+Es gib zwei grundsätzlich unterschiedliche Methoden, ein Backup zu machen. Entweder kann man darauf spezialisierte Programme verwenden, oder man kopiert einfach alle seine Daten auf eine externen Datenträger. Die erste Methode ist normalerweise schnell, automatisiert und unkompliziert, hat aber den Nachteil, dass man diese Software benötigt, um die Backupdateien zu nutzen. Der zweite Ansatz ist einfach und benötigt keine weitere Software, hat aber den Nachteil, dass man daran denken muss und das kopieren großer Datenmengen sehr viel Zeit benötigt. Der große Vorteil ist jedoch, dass das Backup ein zweites Orginal ist und sich wie dieses ohne Einschänkungen nutzen lässt.
+Filecalibur kann bei der Erstellung eines Backups des zweiten Types helfen. Wenn man noch kein Backup hat sollte man die Daten einfach auf den externen Datenträger kopieren - es ist schneller als rsync. Hat man jedoch ein Backup möchte man eigentlich nur die veränderten Dateien überspielen. Das macht rsync viel schneller in dem es herausfindet was es kopieren muss und nur das überträgt (lese Gefährliche Werkzeuge - Rsync Ordner).
+Aber es bleibt die  Frage offen: Sind beide Kopien absolut identisch? Um sicher zu sein berechnen wir die Hashes des Orginalordners und des Backupordners (lese hashDeep - Berechne Hashes). Das brauch Zeit, aber wenn die Berechnung fertig ist sollte man die Collectiondatei auch im Backup speichern. Jetzt kann man in beiden Collections die absoluten Pfade in relative umwandeln und die Collections sortieren (lese Collection - Ändere Pfad). Zuletzt vergleichen wir die beiden Collections und die einzigen Unterschiede sollten sich in den Kopfzeilen finden (lese Collection - Vergleiche zwei Dateien).
 
 Crazy Ultrasafe Backup
-Imagine we have really valuable data like pictures of the kids when they were young and copies of our diploma. Here we dont want to miss anything ever ever. First we need more than one backup drive, best would be three usb drives from different producers (to avoid processing errors). Store this backups at different places and update them one by one. Never bring them back to the same place (to avoid disasters as fire).
-The very first backup is performed as described in Backup above. Save the result of the hash calculation (the collection file) on the drive as well.
-Next time we perform a backup, we are really careful. This is done in four steps:
-1) Is the data we want to copy still OK? We calculate the hash for the source data (see Hash Calculation). We remove the extra path information (see Collection - Modify Path) and do negative Hashing with the collection file of the old Backup (see Collection - Negative Hashing). Only the new files and the changed files which will be overwritten are displayed using the current collection as test collection and the old backup collection as hash library collection. The old files which will be deleted in the backup as well as the changed files which will be overwritten are displayed using the old backup collection as test collection and the current collection as hash library collection. We can also compare the old collection with the current version using WinMerge and jump from change to change (see Collection - Compare Files). If we are happy with the result (no files modified that should be identical, no files missing that should be there and only new files present which were added by us), we can move to the next step.
-Step 2 and 4 are performed for each hard drive independently:
-2) Are there errors on the data of the external drive. The answer should be no so you might skip this step, but its best to catch errors early. So we calculate the hashes of the drive/folder (see Hash Calculation). Now we remove the absolute path part in the files and sort the output (see Collection - Modify Path). Finally we compare the current files with the old collection saved on the backup volume (see Collection - Compare Files). All difference should be within the header information or the backup was changed during storage, which is not a good sign.
-3) Now we sync the data. We use rsync to copy the changes to your external drive (see Dangerous Tools - Rsync Directories). Be really careful with the source and target folder. If you go wrong you sync your backup to the new folder and loose all new changes.
-4) Again the question remaining is - Is the copies identical? Therefore we calculate the hashes of the external drive/folder (see Hash Calculation), remove the absolute path part in the files and sort the output (see Collection - Modify Path). Now we can compare the eternal drive collection file with the original collection file and the only difference should be within the header information (see Collection - Compare Files). Dont forget to save this file on the external drive for the next backup.
-Using this method for backup a loss of data is almost impossible.
+Stellen wir uns vor wir haben besonders wichtige Daten, wie z. B. Bilder von den Kindern als sie klein waren oder Kopien unserer Zeugnisse. Diese Dateien sollten nie verloren gehen, egal was kommt. Zuerst braucht man mehr als ein Backupmedium, am Besten sind drei USB-Festplatten von verschiedenen Herstellern (um Herstellungsfehler zu vermeiden). Diese Festplatten sollten an drei verschiedenen Orten gelagert werden und einzeln upgedated werden. Niemals sollten sich alle drei an einem Ort befinden (um Verlust durch Feuer und Katastrophen zu vermeiden).
+Das erste Backup wird wie oben beschrieben durchgeführt. Wichtig ist das Ergebnis der Hashberechnung (das Collectionfile) auch auf der externen Festplatte zu speichern.
+Bei dem nächsten Backup sind wir nun wirklich vorsichtig. Es läuft in vier Schritten ab:
+1) Sind die Daten, die wir kopieren wollen noch ok? Dazu berechnen wir die Hashes der Quelldateien (lese hashDeep - Berechne Hashes) und vergleichen es mit der Collectiondatei des alten Backups (lese Collection - Negative Hashberechnung). Nutzt man die neue Colletion als Test-Collection und die alte Backupcollection als Hash-Bibliothekcollection, so zeigt Filecalibur uns nur die neuen Dateien an und die Dateien mit Änderungen, die überschrieben werden. Tauscht man die beiden Collectionen so erhält man nur die alten Dateien, welche vom Backup gelöscht werden, und die Dateien mit Änderungen, die überschrieben werden. Zusätzlich kann man beide Collections mit WinMerge vergleichen und sich die Änderungen anzeigen lassen in dem man von Veränderung zu veränderung springt (lese Collection - Vergleiche zwei Dateien). Sind wir mit den Veränderungen glücklich (nichts ist verändert, was noch identisch sein sollte, keine Dateien fehlen die noch da sein sollten und nur neue Dateien die von uns zugefügt wurden) können wir den nächsten Schritt gehen.
+Schritte 2 bis 4 werden für jedes externe Medium einzeln ausgeführt:
+2) Gibt es Fehler auf dem externen Medium? Die Antwort sollte nein sein und man kann diesen Schritt auch überspringen, aber am besten fallen einem Fehler frühzeitig auf bevor die Platte ihre Funktion aufgibt. Also berechnen wir die Hashes des Mediums (lese hashDeep - Berechne Hashes), wandeln die Pfade in relative um, sortieren die Reihenfolge (lese Collection - Ändere Pfad) und vergleichen es mit der Collectiondatei des alten, gespeicherten Backups mit WinMerge vergleichen und sich die Änderungen anzeigen lassen (lese Collection - Vergleiche zwei Dateien). Alle Änderungen sollten in den Kopfzeilen sein, falls nicht hat sich das Backup verändert, was kein gutes Zeichen ist. Falls ja hat man auch überprüft, dass das gesammte Backup noch fehlerfrei lesbar war.
+3) Jetzt synchonisieren wir die Daten. Mit rsync werden die Dateien auf das externe Medium geschrieben (lese Gefährliche Werkzeuge - Rsync Ordner). Sei besonders vorsichtig mit dem Quellen und Zielordner. Falls sie verwechselt werden überspielt man sein altes Backup über die neuen Daten und verliert alle Änderungen seit dem Backup.
+4) Jetzt bleibt wieder die Frage- Sind die Kopien absolut identisch? Um sicher zu sein berechnen wir die Hashes des externen Mediums (lese hashDeep - Berechne Hashes), wandelt die absoluten Pfade in relative um und sortiert die Collection (lese Collection - Ändere Pfad). Zuletzt vergleichen wir die orginal Collection und die Collection des externen Mediums. Die einzigen Unterschiede sollten sich in den Kopfzeilen finden (lese Collection - Vergleiche zwei Dateien). Diese Datei wird auf dem externen Medium gespeichert für das nächste Backup.
+Mit dieser Methode wird ein Datenverlust fast unmöglich. Der Nachteil ist, dass es einige Tage braucht bis alles am Platz ist. Glücklicherweise ist das meiste Rechenzeit und nur einige Minuten hands-on-time. Ich führe das etwa alle 6 Monate durch oder falls ich neue, wichtige Daten bekomme.
+
+Finde Duplikate
+
+
 
 Find Duplicates
 Many times duplicates excist due to kopied files or folders. To find duplicates, calculate the hash of the folder were you expect duplicates in subfolders (see Hash Calculation). Then keep only the files were a hash was found more than one (see Collection - Find Duplicates). Now you can go through all duplicates.
@@ -115,25 +117,10 @@ Sort the Folder Mess
 Computers have the tendency to get messy and the user the tendency to loose control. Imagine you have pictures from your last vacation. You copied them from your the camera to you computer at home. Some you renamed and modified to change the colors a bit. Then you copied it to the computer at work. Some were changed there in luch break and some were changed at home. A friend gave you some more pics wich were added as well. So how to sort this mess out when you try to merge the folders into one with all the pictures?
 First, I would make a copy of all folders to avoid data loss in case this goes terribly wrong. Then we calculate the hash of each folder and save the collections (see Hash Calculation). Then we do positive matching with the "work" collection using the "camera" collection as hash library collection (see Collection - Positive Hashing). The resulting file contains only files of the "work" collection that are identical to the once in the camera folder, the unchanged ones. We delete them from the storage using the result colletion of the positive matching (see Dangerous Tools - Delete Files from List). If folders remain empty they can be removed as well (see Dangerous Tools - Delete Empty Directories). Now the steps are repeated with the "home" folder instead of the "work" folder. Last the files now present in the "home" folder can be compared in a similar fashion to the files in the "work" folder. As a result, all identical files are gone and only the modified or new files remain in their respective folder. They still need to be viewed and selected by hand to combine them in one folder, but the burden of the duplicate files was removed.
 
-Manage Collections
-
-
-
 
 Frequently Asked Questions - FAQ
 
 The file did not change, why does it have a different hash?
 Mikrosoft Word/Excel, graphics files and mp3 files collect meta infomation additional to the content. So the content may be identical, but maybe some extra notes in word or the artist name in an mp3 file was changed. If only a bit changes, the hash will be totally different.
-
-
-
-
-
-
-
-
-
-
-
 
 
