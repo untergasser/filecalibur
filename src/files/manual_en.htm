@@ -107,7 +107,7 @@ Find Duplicates
 Many times duplicates excist due to kopied files or folders. To find duplicates, calculate the hash of the folder were you expect duplicates in subfolders (see hashDeep - Calculate Hashes). Then keep only the files were a hash was found more than one (see Collection - Find Duplicates). Now you can go through all duplicates.
 
 Find Changes
-Sometimes you want to visualize differences on your file system. Maybe you want to see which files are changed once you run a certain software. You can also use it to visualize the difference between two software package releases.
+Sometimes you want to know if some files changed. Maybe you want to see which files are changed once you run a certain software. You can also use it to visualize the difference between two software package releases.
 First calculate the hash of the drive were you expect changes in subfolders and save the collection as "initial" (see hashDeep - Calculate Hashes). Then do the change or run the software in doubt. Calculate the hash of the drive were you expect changes in subfolders a second time and save the collection as "after" (see hashDeep - Calculate Hashes). Sort the collections to get identical file order in both files (see Collection - Modify Path) and do negative Hashing with the collection file "initial" and collection file "after"  (see Collection - Negative Hashing). Only the new files and the changed files are displayed using the "after" collection as test collection and the "initial" collection as hash library collection. The files which were deleted as well as the changed files are displayed using the "initial" collection as test collection and the "after" collection as hash library collection. We can also compare both collections using WinMerge and jump from change to change (see Collection - Compare Files). 
 
 Sort the Folder Mess
@@ -118,4 +118,4 @@ First, I would make a copy of all folders to avoid data loss in case this goes t
 Frequently Asked Questions - FAQ
 
 The file did not change, why does it have a different hash?
-Mikrosoft Word/Excel, graphics files and mp3 files collect meta infomation additional to the content. So the content may be identical, but maybe some extra notes in word or the artist name in an mp3 file was changed. If only a bit changes, the hash will be totally different.
+Microsoft Word/Excel, graphics files and mp3 files collect meta infomation additional to the content. So the content may be identical, but maybe some extra notes in word or the artist name in an mp3 file was changed. If only a bit changes, the hash will be totally different.
