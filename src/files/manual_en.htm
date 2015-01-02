@@ -80,7 +80,8 @@ called a collision. For this application collisions can be ignored.<br>
 <br>
 Filecalibur can calculate these hashes for all files of a certain folder even 
 including all the files in subfolders. To be accurate, Filecalibur only collects your 
-input and runs a independent software hashdeep which performs the hash 
+input and runs a independent software 
+<a href="http://md5deep.sourceforge.net/">hashDeep</a> which performs the hash 
 calculation and writes its results in a text file, which I name a collection. 
 In this collection, each line corresponds to one file. It has the information 
 on the file size, the different hash information and the filename with the 
@@ -98,14 +99,14 @@ positive and negative matching:<br>
 Positive Matching<br>
 One collection A is checked hash by hash if the hash IS present in collection 
 B. Only if the hash IS present, the file information is written in collection 
-C. This function is useful to identify redundant files between different 
+C. This function is useful to identify identical files between different 
 collections.<br>
 <br>
 Negative Matching<br>
 One collection A is checked hash by hash if the hash is NOT present in 
 collection B. Only if the hash is NOT present, the file information is written 
-in collection C. This function is useful to identify unique files in a 
-collection. Be aware that in the example above we only find files present in 
+in collection C. This function is useful to identify unique files in 
+collection A. Be aware that in the example above we only find files present in 
 collection A but not present in collection B. Files present in collection B 
 that are not present in collection A are lost/ignored. If these files are of 
 interest, the collections have to be switched.<br>
@@ -127,7 +128,9 @@ use this tool since years without any error, but different computers may
 result in strange stuff. Try it out on uncritical data before and use it for 
 anything important only if you are confident it works as intended. If you 
 find bugs contact me with a description so I can reproduce the bug.<br>
-It also uses hashdeep, rsync and WinMerge which are provided under their 
+It also uses <a href="http://md5deep.sourceforge.net/">hashDeep</a>, 
+<a href="http://rsync.samba.org/">rsync</a> and 
+<a href="http://winmerge.org/">WinMerge</a> which are provided under their 
 licenses available in the respective folder of Filecalibur.<br>
 <br>
 </p>
@@ -137,9 +140,11 @@ licenses available in the respective folder of Filecalibur.<br>
 </p>
 <h3 id="hashDeep - Calculate Hashes" style="text-decoration: underline;">hashDeep - Calculate Hashes</h3>
 <p>Select hashDeep &raquo; Calculate Hashes from the menu. In the dialog 
-window you have to provide the folder to hash and the file were to save the 
-collection data. Based on this information hashdeep calculates the hashes. 
-Filecalibur will display the collection once hashdeep is ready. Be aware 
+window you have to provide the folder with the files to hash and the file were to save the 
+collection data. Based on this information 
+<a href="http://md5deep.sourceforge.net/">hashDeep</a> calculates the hashes. 
+Filecalibur will display the collection once 
+<a href="http://md5deep.sourceforge.net/">hashDeep</a> is ready. Be aware 
 that each file has to be read completely to calculate the hash information. 
 If Terabytes of data are processed this calculation may run several hours or 
 days. In this case it may be apropriate to run the hash calculation over night.
@@ -152,7 +157,7 @@ current file. Last the file where to save the collection data needs to be
 provided. The fields in between can be used to modify the path/name information 
 by removing or adding something to it. Keep in mind that you work on the left 
 part of the text which corresponds to the top level folders. This can be used 
-to modify the root folder name or remove it to get relative information. Or 
+to modify the root folder name or remove it to get relative path information. Or 
 the letter of the drive can be changed.<br>
 Finally the order of the files can be sorted. This is useful because files may 
 get out of order due to the time required for hashing. Sorting in combination 
@@ -163,7 +168,7 @@ comparison.<br>
 <p>Select Collection &raquo; Remove Path from the menu. In the dialog window 
 you have to provide the collection file which is usually prefilled with the 
 current file. Last the file where to save the collection data needs to be 
-provided. The fields in the middle you have to provide the path to remove. All 
+provided. The fields in the middle you have to provide with the path to remove. All 
 entries with the same path/name information are removed and only the non matching 
 are saved in the new collection. Usefull to remove a subfolder from a collection 
 and keep the rest.<br>
@@ -172,7 +177,7 @@ and keep the rest.<br>
 <p>Select Collection &raquo; Extract Path from the menu. In the dialog window 
 you have to provide the collection file which is usually prefilled with the 
 current file. Last the file where to save the collection data needs to be 
-provided. The fields in the middle you have to provide the path to extract. 
+provided. The fields in the middle you have to provide with the path to extract. 
 All entries with the same path/name information are saved in the new collection 
 and all non-matching are discarded. Usefull to extract only one subfolder 
 into a new collection.<br>
@@ -187,7 +192,7 @@ Usefull to add a folder to a collection.<br>
 <h3 id="Collection - Positive Hashing" style="text-decoration: underline;">Collection - Positive Hashing</h3>
 <p>Select Collection &raquo; Positive Hashing from the menu. In the dialog 
 window you have to provide the test collection file which is usually prefilled 
-with the current file. Second you provide the hash library collection. Last the 
+with the current file. Second you have to provide the hash library collection. Last the 
 file where to save the collection data needs to be provided. The test collection 
 is checked hash by hash if the hash IS present in hash library collection. Only 
 if the hash IS present, the file information is written in the new collection. 
@@ -196,7 +201,7 @@ Useful to identify identical files between different collections.<br>
 <h3 id="Collection - Negative Hashing" style="text-decoration: underline;">Collection - Negative Hashing</h3>
 <p>Select Collection &raquo; Negative Hashing from the menu. In the dialog window 
 you have to provide the test collection file which is usually prefilled with the 
-current file. Second you provide the hash library collection. Last the file 
+current file. Second you have to provide the hash library collection. Last the file 
 where to save the collection data needs to be provided. The test collection is 
 checked hash by hash if the hash is NOT present in hash library collection. 
 Only if the hash is NOT present, the file information is written in the new 
@@ -219,21 +224,24 @@ collection.<br>
 <p>Select Collection &raquo; Compare Files from the menu. In the dialog window 
 you have to provide one collection file which is usually prefilled with the 
 current file. Additionally a second collection file needs to be provided. Both 
-files are compared by the tool WinMerge. Useful to identify tiny changes between 
+files are compared by the tool 
+<a href="http://winmerge.org/">WinMerge</a>. Useful to identify tiny changes between 
 collections.<br>
 For best success, the path information should be identical. If comparing two 
 folders on different drives, remove first the absolute path information that 
 differs with the Modify Path function to obtain relative path information. Sort 
-also the files before to have the same order in both collections. Now the 
+also the files to have the same order in both collections. Now the 
 comparison is more informative.<br>
 </p>
 <h3 id="Dangerous Tools - Rsync Directories" style="text-decoration: underline;">Dangerous Tools - Rsync Directories</h3>
 <p>Select Dangerous Tools &raquo; Rsync Directories from the menu. In the dialog 
 window you have to provide a source folder and a target folder. Filecalibur 
-will use rsync to copy all files from the source folder to the target folder. 
+will use <a href="http://rsync.samba.org/">rsync</a> to copy all files from 
+the source folder to the target folder. 
 If "Delete Files..." is selected, all the files absent in source are deleted 
 in the target folder. Usefull to sync folders between backups. If only a few 
-files changed rsync is much faster than copying folders.<br>
+files changed <a href="http://rsync.samba.org/">rsync</a> is much faster 
+than copying folders.<br>
 Be extremely cautious with this function, if the folders are confused and an 
 empty folder (now source) is synced to your backup (now target) all your 
 backup data is deleted! Both folders will be in sync as both will be empty 
@@ -266,13 +274,15 @@ and the other by copying files to an external drive without any special software
 While the first is usually fast, automated and easy it comes at the disadvantage 
 of the dependency of the software to access the files. The second approach is 
 easy but you have to do it yourself and copying huge amounts of data may require 
-quite some time. The advantage is that you created a second original of your 
-data with the same usability as the original that can be accessed without any 
+quite some time. The advantage is that you created a second original copy of your 
+data. It has the same usability as the original that can be accessed without any 
 further software.<br>
 Filecalibur can help with the second type of backup. If you don't have any 
-backup on the external drive, just copy the files in the regular file manager - 
-its faster then rsync. Once this is done, you just want to update the changes 
-from your system to your external backup. Here rsync is much faster and will 
+backup on the external drive yet, just copy the files in the regular file manager - 
+its faster then <a href="http://rsync.samba.org/">rsync</a>. Once this is done, 
+you just want to update the changes 
+from your system to your external backup from now on. Here 
+<a href="http://rsync.samba.org/">rsync</a> is much faster and will 
 copy only changed files to your external drive (see Dangerous Tools - Rsync 
 Directories).<br>
 Now the question remaining is - Are both copies identical? Therefore we calculate 
@@ -305,29 +315,30 @@ collection. The old files which will be deleted in the backup as well as the
 changed files which will be overwritten are displayed using the old backup 
 collection as test collection and the current collection as hash library 
 collection. We can also compare the old collection with the current version 
-using WinMerge and jump from change to change (see Collection - Compare Files). 
+using <a href="http://winmerge.org/">WinMerge</a> and jump from change 
+to change (see Collection - Compare Files). 
 If we are happy with the result (no files modified that should be identical, no 
 files missing that should be there and only new files present which were added 
 by us), we can move to the next step.<br><br>
-Step 2 and 4 are performed for each hard drive independently:<br><br>
-2) Are there errors on the data of the external drive? The answer should be no 
+Step 2 and 4 are performed for each external drive independently:<br><br>
+2) Are there errors on the data of the external drive? The answer should be no, 
 so you might skip this step, but its best to catch errors early before the 
 drive stops working. So we calculate the hashes of the drive/folder (see 
-hashDeep - Calculate Hashes). Now we remove the absolute path part in the files 
+hashDeep - Calculate Hashes). Now we remove the absolute path part in the file 
 and sort the output (see Collection - Modify Path). Finally we compare the 
-current files with the old collection saved on the backup volume (see 
+current file with the old collection saved on the backup volume (see 
 Collection - Compare Files). All difference should be within the header 
 information or the backup was changed during storage, which is not a good 
 sign. With this step you also confirmed that the entire backup is still readable 
 without errors.<br><br>
-3) Now we sync the data. We use rsync to copy the changes to your external drive 
+3) Now we sync the data. We use <a href="http://rsync.samba.org/">rsync</a> to copy the changes to your external drive 
 (see Dangerous Tools - Rsync Directories). Be really careful with the source and 
-target folder. If you go wrong you sync your backup to the new folder and loose 
+target folder. If you go wrong, you sync your backup to the new folder and loose 
 all new changes.<br><br>
-4) Again the question remaining is - Is the copies identical? Therefore we 
+4) Again the question remaining is - Is the copy identical? Therefore we 
 calculate the hashes of the external drive/folder (see hashDeep - Calculate 
-Hashes), remove the absolute path part in the files and sort the output (see 
-Collection - Modify Path). Now we can compare the eternal drive collection file 
+Hashes), remove the absolute path part in the file and sort the output (see 
+Collection - Modify Path). Now we can compare the external drive collection file 
 with the original collection file and the only difference should be within the 
 header information (see Collection - Compare Files). Don't forget to save this 
 file on the external drive for the next backup.<br><br>
@@ -359,11 +370,11 @@ the "after" collection as test collection and the "initial" collection as hash
 library collection. The files which were deleted as well as the changed files 
 are displayed using the "initial" collection as test collection and the "after" 
 collection as hash library collection. We can also compare both collections 
-using WinMerge and jump from change to change (see Collection - Compare 
-Files).<br>
+using <a href="http://winmerge.org/">WinMerge</a> and jump from change to 
+change (see Collection - Compare Files).<br>
 </p>
 <h3 id="Sort the Folder Mess" style="text-decoration: underline;">Sort the Folder Mess</h3>
-<p>Computers have the tendency to get messy and the user the tendency to lose 
+<p>Computers have the tendency to get messy and the user has the tendency to lose 
 control. Imagine you have pictures from your last vacation. You copied them from 
 your camera to you computer at home. Some you renamed and modified to change the 
 colors a bit. Then you copied it to the computer at work. Some were changed there 

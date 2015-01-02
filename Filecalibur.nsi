@@ -1,4 +1,4 @@
-!define VERSION "0.6.7"
+!define VERSION "0.7.0"
 !define NAME "Filecalibur"
 !define UNINSTREG "Software\Microsoft\Windows\CurrentVersion\Uninstall\Filecalibur"
 !define QTPATH "C:\Qt\Qt5.3.1\5.3\mingw482_32\bin\"

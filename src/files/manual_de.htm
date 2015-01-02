@@ -50,7 +50,7 @@ padding-left: 35px;
 <h2 id="introduction" style="text-decoration: underline;">Einleitung</h2>
 <p>Filecalibur ist ein Werkzeug mit vielen Anwendungen im Bereich des 
 Dateienmanagements. Der Schl&uuml;ssel zum Verst&auml;ndnis von Filecaliburs F&auml;higkeiten 
-ist die Unterscheidung zwischen Dateien und daraus berechneten Hashwerten:<br>
+ist die Unterscheidung zwischen Dateien und den daraus berechneten Hashwerten:<br>
 <br>
 Datei<br>
 Eine Datei ist eine Ansammlung 0/1 Werte (Bits) in einem Speichersystem. Die 
@@ -62,10 +62,11 @@ Fall wird die Datei fehlerhaft und der Inhalt unlesbar.<br>
 <br>
 Hash<br>
 Man kann sich einen Hashwert (kurz Hash) als einen Fingerabdruck einer Datei 
-vorstellen. Es ist eine mathematische Funktion, welche die gesamte Datei einliest 
+vorstellen. Es ist das Ergebnis einer mathematische Funktion, welche die gesamte 
+Datei einliest 
 und aufsummiert, um daraus eine kryptische Zahlen/Buchstabenkombination zu 
 berechnen. Es gibt verschiedene Rechenmethoden die unterschiedliche Ergebnisse 
-produzieren. Ein Hash der Funktion md5 sieht etwa so aus 
+produzieren. Ein Hash der Funktion md5 sieht z. B. etwa so aus 
 d41d8cd98f00b204e9800998ecf8427e, der der Funktion sha1 so 
 da39a3ee5e6b4b0d3255bfef95601890afd80709.<br>
 <br>
@@ -81,21 +82,22 @@ Hash haben, was man eine Kollision nennt. F&uuml;r unsere Anwendungen hier k&oum
 Kollisionen ignoriert werden.<br>
 <br>
 Filecalibur kann die jeweiligen Hashwerte f&uuml;r alle Dateien in einem bestimmten 
-Ordner berechnen inklusive aller Dateien in Unterordnern. Um genau zu sein sammelt 
-Filecalibur nur die Eingaben und ruft das unabh&auml;ngige Programm hashdeep auf, 
+Ordner berechnen inklusive aller Dateien in den Unterordnern. Um genau zu sein sammelt 
+Filecalibur nur die Eingaben und ruft das unabh&auml;ngige Programm 
+<a href="http://md5deep.sourceforge.net/">hashDeep</a> auf, 
 das die Hashberechnung vornimmt und das Ergebnis in eine Textdatei schreibt. Diese 
 Textdatei nenne ich eine Collection. In dieser Collection entspricht jede Zeile 
 einer Datei. Es stehen dort die Dateigr&ouml;&szlig;e, die verschiedenen Hashes und der 
 Dateiname mit dem zugeh&ouml;rigen Pfad. Die Unabh&auml;ngigkeit dieser Informationen von 
 der Software, die zu der Berechnung benutzt wurde, ist eine praktische 
 Eigenschaft dieser Informationen. Die gleiche Datei wird denselben Hash, Gr&ouml;&szlig;e 
-und Namen/Pfadinformation haben wenn man irgendeine andere Software zu der 
+und Namen/Pfadinformation haben, auch wenn man irgendeine andere Software zu der 
 Berechnung benutzt. Filecalibur stellt die Collectiondateien als Tabelle dar.<br>
 An dieser Stelle kann man aufh&ouml;ren, mit den tats&auml;chlichen Dateien zu arbeiten 
-und sich auf das Textdokument mit den Hashes, die Collection konzentrieren. 
+und sich auf das Textdokument mit den Hashes, die Collection, konzentrieren. 
 Identische Dateien k&ouml;nnen &uuml;ber identische Hashwerte identifiziert werden. 
-Unterordner k&ouml;nnen aus einer Collection extrahiert oder entfernt nur anhand 
-ihrer Pfadinformationen. Das Hauptanwendungsgebiet liegt jedoch dem Vergleich 
+Unterordner k&ouml;nnen aus einer Collection anhand ihrer Pfadinformationen extrahiert 
+oder entfernt werden. Das Hauptanwendungsgebiet liegt jedoch dem Vergleich 
 verschiedener Collections durch Positivmatching und Negativmatching;<br>
 <br>
 Positive Matching<br>
@@ -114,7 +116,7 @@ Collection B sind und nicht in Collection A gehen verloren oder werden
 ignoriert. Sollten diese Dateien von Interesse sein, so muss man die Collections 
 vertauschen.<br>
 <br>
-Die St&auml;rke von Filecalibur liegt in der vielf&auml;ltigen M&ouml;glichkeiten diese 
+Die St&auml;rke von Filecalibur liegt in den vielf&auml;ltigen M&ouml;glichkeiten diese 
 Operationen zu kombinieren, um exakt die Gruppe Dateien zu erhalten, die man 
 sehen m&ouml;chte, selbst bei sehr gro&szlig;en Datenmengen.<br>
 <br>
@@ -134,7 +136,9 @@ die Software erst an unkritischen Daten und verwende sie erst dann f&uuml;r
 irgendetwas wichtiges, wenn du sicher bist, dass sie so funktioniert wie 
 sie soll. Sollte ein Bug auftreten, kontaktiert mich bitte mit einer 
 Beschreibung, so dass ich den Fehler reproduzieren kann.<br>
-Diese Software nutzt hashdeep, rsync und WinMerge, deren Lizenzen in ihrem 
+Diese Software nutzt <a href="http://md5deep.sourceforge.net/">hashDeep</a>, 
+<a href="http://rsync.samba.org/">rsync</a> und 
+<a href="http://winmerge.org/">WinMerge</a>, deren Lizenzen in ihrem 
 Unterordner in Filecalibur zu finden sind.<br>
 <br>
 </p>
@@ -144,10 +148,12 @@ vorgestellt.<br>
 </p>
 <h3 id="hashDeep - Berechne Hashes" style="text-decoration: underline;">hashDeep - Berechne Hashes</h3>
 <p>Im Men&uuml; hashDeep &raquo; Berechne Hashes ausw&auml;hlen. Im Dialogfenster muss der Ordner 
-angegeben werden, in dem die Dateien gehashed werden sollen und eine Datei, in 
+angegeben werden, in dem die Dateien gehashed werden sollen, und eine Datei, in 
 der die Collection gespeichert werden soll. Basierend auf diesen Informationen 
-berechnet hashdeep die Hashes der Dateien. Filecalibur wird das Ergebnis darstellen 
-wenn hashdeep die Berechnung beendet hat. Bedenke, dass jede einzelne Datei 
+berechnet <a href="http://md5deep.sourceforge.net/">hashDeep</a> die Hashes 
+der Dateien. Filecalibur wird das Ergebnis darstellen 
+wenn <a href="http://md5deep.sourceforge.net/">hashDeep</a> die Berechnung 
+beendet hat. Bedenke, dass jede einzelne Datei 
 komplett eingelesen werden muss, um den Hash zu berechnen. Wenn Terabytes an Daten 
 verarbeitet werden m&uuml;ssen kann diese Berechnung schon Tage dauern. In diesem Fall 
 kann es sinnvoll sein, die Berechnung &uuml;ber Nacht laufen zu lassen.<br>
@@ -165,7 +171,7 @@ umzuwandeln. Oder man kann den Laufwerksbuchstaben &auml;ndern.<br>
 Au&szlig;erdem l&auml;sst sich die Reihenfolge der Dateien sortieren. Das ist notwendig, 
 da die Reihenfolge auch von der Dauer der Hashberechnung abh&auml;ngt. Durch die 
 Sortierung in Kombination mit der Anpassung der Trennzeichen erh&auml;lt man eine 
-Reihenfolge die f&uuml;r den Vergleich verschiedener Collections geeignet ist.<br>
+Reihenfolge, die f&uuml;r den Vergleich verschiedener Collections geeignet ist.<br>
 </p>
 <h3 id="Collection - Entferne Pfad" style="text-decoration: underline;">Collection - Entferne Pfad</h3>
 <p>Im Men&uuml; Collection &raquo; Entferne Pfad ausw&auml;hlen. Im Dialogfenster muss die zu 
@@ -203,7 +209,7 @@ gespeichert wird. Alle Hashwerte der Dateien in der Test-Collection werden mit
 den Hashwerten der Hash-Bibliothekcollection verglichen. Nur wenn ein Hashwert 
 in der Hash-Bibliothekcollection vorhanden ist, werden die Dateiinformationen 
 der Test-Collection in der neuen Collection gespeichert. Es ist n&uuml;tzlich, um 
-identische Dateien in verschiedenen Collection zu finden.<br>
+identische Dateien in verschiedenen Collections zu finden.<br>
 </p>
 <h3 id="Collection - Negative Hashberechnung" style="text-decoration: underline;">Collection - Negative Hashberechnung</h3>
 <p>
@@ -218,8 +224,8 @@ Dateiinformationen der Test-Collection in der neuen Collection gespeichert. Es
 ist n&uuml;tzlich, um unbekannte Dateien in der Test-Collection zu finden, die nicht 
 in der Hash-Bibliothekcollection sind. Diese Funktion findet nur Dateien, die 
 in der Test-Collection sind und nicht in der Hash-Bibliothekcollection. Dateien 
-die nur in der Hash-Bibliothekcollection werden ignoriert und finden sich nicht 
-in der Ergebniscollection. Sollten diese gefunden werden muss man die 
+die nur in der Hash-Bibliothekcollection sind werden ignoriert und finden sich nicht 
+in der Ergebniscollection. Sollten diese gefunden werden, muss man die 
 Test-Collection und Hash-Bibliothekcollection vertauschen.<br>
 </p>
 <h3 id="Collection - Finde Duplikate" style="text-decoration: underline;">Collection - Finde Duplikate</h3>
@@ -235,11 +241,11 @@ Es ist n&uuml;tzlich, um Duplikate in einer Collection zu finden.<br>
 <p>
 Im Men&uuml; Collection &raquo; Vergleiche zwei Dateien ausw&auml;hlen. Im Dialogfenster 
 muss die zu bearbeitende Collectiondatei und eine zweite Collectiondatei 
-angegeben werden. Beide Dateien werden mit der Software WinMerge verglichen 
+angegeben werden. Beide Dateien werden mit der Software <a href="http://winmerge.org/">WinMerge</a> verglichen 
 und dargestellt. Es ist n&uuml;tzlich, um Unterschiede in zwei Collections zu finden 
 und zu analysieren.<br>
 Um beste Ergebnisse zu erhalten sollten die Pfadinformationen identisch sein. 
-Falls zwei Ordner auf verschiedenen Laufwerken verglichen werden sollen, so 
+Falls zwei Ordner auf verschiedenen Laufwerken verglichen werden sollen, 
 empfiehlt es sich, die absoluten Pfade in relative Pfade mittels der &auml;ndere 
 Pfad Funktion umzuwandeln. Die Collections sollten auch sortiert werden, damit 
 in beiden Collections die Dateien die gleiche Reihenfolge haben. Nun ist der 
@@ -248,14 +254,14 @@ Vergleich viel Aussagef&auml;higer.<br>
 <h3 id="Gef&auml;hrliche Werkzeuge - Rsync Ordner" style="text-decoration: underline;">Gef&auml;hrliche Werkzeuge - Rsync Ordner</h3>
 <p>
 Im Men&uuml; Gef&auml;hrliche Werkzeuge &raquo; Rsync Ordner ausw&auml;hlen. Im Dialogfenster 
-muss ein Quellordner und ein Zielordner angegeben werden. Filecalibur wird rsync 
+muss ein Quellordner und ein Zielordner angegeben werden. Filecalibur wird <a href="http://rsync.samba.org/">rsync</a> 
 benutzen, um alle Dateien vom Quellordner in den Zielordner zu kopieren. Wenn 
-"L&ouml;sche Dateien..." ausgew&auml;hlt ist, so werden alle Dateien die im Quellordner 
-fehlen auch im Zielordner gel&ouml;scht. Es ist n&uuml;tzlich, um den Inhalt zweier Ordner 
+"L&ouml;sche Dateien..." ausgew&auml;hlt ist, so werden alle Dateien, die im Quellordner 
+fehlen, auch im Zielordner gel&ouml;scht. Es ist n&uuml;tzlich, um den Inhalt zweier Ordner 
 abzugleichen.<br>
 Achtung: Sei sehr vorsichtig mit dieser Funktion. Wenn die Ordner vertauscht 
 werden und ein leerer Ordner als Quellordner und der Originalordner als Zielordner 
-angegeben werden, l&ouml;scht rsync alles in Zielordner! Dadurch werden beide Ordner 
+angegeben werden, l&ouml;scht <a href="http://rsync.samba.org/">rsync</a> alles im Zielordner! Dadurch werden beide Ordner 
 leer und haben jetzt den gleichen Inhalt!<br>
 </p>
 <h3 id="Gef&auml;hrliche Werkzeuge - L&ouml;sche Dateien nach Listeneintr&auml;gen" style="text-decoration: underline;">Gef&auml;hrliche Werkzeuge - L&ouml;sche Dateien nach Listeneintr&auml;gen</h3>
@@ -294,21 +300,23 @@ ben&ouml;tigt. Der gro&szlig;e Vorteil ist jedoch, dass das Backup ein zweites O
 ist und sich wie dieses ohne Einschr&auml;nkungen nutzen l&auml;sst.<br>
 Filecalibur kann bei der Erstellung eines Backups des zweiten Types helfen. 
 Wenn man noch kein Backup hat sollte man die Daten einfach auf den externen 
-Datentr&auml;ger kopieren - es ist schneller als rsync. Hat man jedoch ein Backup 
-m&ouml;chte man eigentlich nur die ver&auml;nderten Dateien &uuml;berspielen. Das macht rsync 
-viel schneller in dem es herausfindet was es kopieren muss und nur das &uuml;bertr&auml;gt 
-(lese Gef&auml;hrliche Werkzeuge - Rsync Ordner).<br>
+Datentr&auml;ger kopieren - es ist schneller als 
+<a href="http://rsync.samba.org/">rsync</a>. Hat man jedoch ein Backup 
+m&ouml;chte man eigentlich nur die ver&auml;nderten Dateien &uuml;berspielen. 
+Das macht <a href="http://rsync.samba.org/">rsync</a> 
+viel schneller, in dem es herausfindet was es kopieren muss und nur das &uuml;bertr&auml;gt 
+(siehe Gef&auml;hrliche Werkzeuge - Rsync Ordner).<br>
 Aber es bleibt die  Frage offen: Sind beide Kopien absolut identisch? Um sicher 
-zu sein berechnen wir die Hashes des Originalordners und des Backupordners (lese 
-hashDeep - Berechne Hashes). Das braucht Zeit, aber wenn die Berechnung fertig 
+zu sein berechnen wir die Hashes des Originalordners und des Backupordners (siehe 
+hashDeep - Berechne Hashes). Das braucht Zeit, wenn die Berechnung fertig 
 ist sollte man die Collectiondatei auch im Backup speichern. Jetzt kann man in 
 beiden Collections die absoluten Pfade in relative umwandeln und die Collections 
-sortieren (lese Collection - &auml;ndere Pfad). Zuletzt vergleichen wir die beiden 
+sortieren (siehe Collection - &auml;ndere Pfad). Zuletzt vergleichen wir die beiden 
 Collections und die einzigen Unterschiede sollten sich in den Kopfzeilen finden 
-(lese Collection - Vergleiche zwei Dateien).<br>
+(siehe Collection - Vergleiche zwei Dateien).<br>
 </p>
 <h3 id="Crazy Ultrasafe Backup" style="text-decoration: underline;">Crazy Ultrasafe Backup</h3>
-<p>Stellen wir uns vor wir haben besonders wichtige Daten, wie z. B. Bilder von 
+<p>Stellen wir uns vor, wir haben besonders wichtige Daten, wie z. B. Bilder von 
 den Kindern als sie klein waren oder Kopien unserer Zeugnisse. Diese Dateien 
 sollten nie verloren gehen, egal was kommt. Zuerst braucht man mehr als ein 
 Backupmedium, am besten sind drei USB-Festplatten von verschiedenen Herstellern 
@@ -321,43 +329,44 @@ Ergebnis der Hashberechnung (die Collectiondatei) auch auf der externen
 Festplatte zu speichern.<br><br>
 Bei dem n&auml;chsten Backup sind wir nun wirklich vorsichtig. Es l&auml;uft in vier 
 Schritten ab:<br><br>
-1) Sind die Daten, die wir kopieren wollen noch ok? Dazu berechnen wir die 
-Hashes der Quelldateien (lese hashDeep - Berechne Hashes) und vergleichen es mit 
-der Collectiondatei des alten Backups (lese Collection - Negative 
+1) Sind die Daten, die wir kopieren wollen, noch ok? Dazu berechnen wir die 
+Hashes der Quelldateien (siehe hashDeep - Berechne Hashes) und vergleichen sie mit 
+der Collectiondatei des alten Backups (siehe Collection - Negative 
 Hashberechnung). Nutzt man die neue Collection als Test-Collection und die alte 
 Backupcollection als Hash-Bibliothekcollection, so zeigt Filecalibur uns nur die 
 neuen Dateien an und die Dateien mit &Auml;nderungen, die &uuml;berschrieben werden. 
 Tauscht man die beiden Collections so erh&auml;lt man nur die alten Dateien, welche 
 vom Backup gel&ouml;scht werden, und die Dateien mit &Auml;nderungen, die &uuml;berschrieben 
-werden. Zus&auml;tzlich kann man beide Collections mit WinMerge vergleichen und sich 
+werden. Zus&auml;tzlich kann man beide Collections mit <a href="http://winmerge.org/">WinMerge</a> vergleichen und sich 
 die &Auml;nderungen anzeigen lassen, in dem man von Ver&auml;nderung zu Ver&auml;nderung 
-springt (lese Collection - Vergleiche zwei Dateien). Sind wir mit den 
+springt (siehe Collection - Vergleiche zwei Dateien). Sind wir mit den 
 Ver&auml;nderungen gl&uuml;cklich (nichts ist ver&auml;ndert, was noch identisch sein sollte, 
-keine Dateien fehlen die noch da sein sollten und nur neue Dateien die von uns 
+keine Dateien fehlen, die noch da sein sollten und nur neue Dateien kamen dazu, die von uns 
 zugef&uuml;gt wurden) k&ouml;nnen wir den n&auml;chsten Schritt gehen.<br><br>
 Schritte 2 bis 4 werden f&uuml;r jedes externe Medium einzeln ausgef&uuml;hrt:<br><br>
 2) Gibt es Fehler auf dem externen Medium? Die Antwort sollte nein sein und man 
 kann diesen Schritt auch &uuml;berspringen, aber am besten fallen einem Fehler 
-fr&uuml;hzeitig auf bevor die Platte ihre Funktion aufgibt. Also berechnen wir die 
-Hashes des Mediums (lese hashDeep - Berechne Hashes), wandeln die Pfade in 
-relative um, sortieren die Reihenfolge (lese Collection - &auml;ndere Pfad) und 
+fr&uuml;hzeitig auf, bevor die Platte ihre Funktion aufgibt. Also berechnen wir die 
+Hashes des Mediums (siehe hashDeep - Berechne Hashes), wandeln die Pfade in 
+relative um, sortieren die Reihenfolge (siehe Collection - &auml;ndere Pfad) und 
 vergleichen es mit der Collectiondatei des alten, gespeicherten Backups mit 
-WinMerge vergleichen und sich die &Auml;nderungen anzeigen lassen (lese Collection 
+<a href="http://winmerge.org/">WinMerge</a> um sich die &Auml;nderungen anzeigen 
+lassen (siehe Collection 
 - Vergleiche zwei Dateien). Alle &Auml;nderungen sollten in den Kopfzeilen sein, 
 falls nicht hat sich das Backup ver&auml;ndert, was kein gutes Zeichen ist. Falls 
-ja hat man auch &uuml;berpr&uuml;ft, dass das gesamte Backup noch fehlerfrei lesbar 
+ja, hat man auch &uuml;berpr&uuml;ft, dass das gesamte Backup noch fehlerfrei lesbar 
 war.<br><br>
-3) Jetzt synchronisieren wir die Daten. Mit rsync werden die Dateien auf das 
-externe Medium geschrieben (lese Gef&auml;hrliche Werkzeuge - Rsync Ordner). Sei 
+3) Jetzt synchronisieren wir die Daten. Mit <a href="http://rsync.samba.org/">rsync</a> werden die Dateien auf das 
+externe Medium geschrieben (siehe Gef&auml;hrliche Werkzeuge - Rsync Ordner). Sei 
 besonders vorsichtig mit dem Quellen und Zielordner. Falls sie verwechselt 
 werden &uuml;berspielt man sein altes Backup &uuml;ber die neuen Daten und verliert 
-alle &Auml;nderungen seit dem Backup.<br><br>
+alle &Auml;nderungen seit dem letzten Backup.<br><br>
 4) Jetzt bleibt wieder die Frage- Sind die Kopien absolut identisch? Um sicher 
-zu sein berechnen wir die Hashes des externen Mediums (lese hashDeep - Berechne 
+zu sein berechnen wir die Hashes des externen Mediums (siehe hashDeep - Berechne 
 Hashes), wandelt die absoluten Pfade in relative um und sortiert die Collection 
-(lese Collection - &auml;ndere Pfad). Zuletzt vergleichen wir die original 
+(siehe Collection - &auml;ndere Pfad). Zuletzt vergleichen wir die original 
 Collection und die Collection des externen Mediums. Die einzigen Unterschiede 
-sollten sich in den Kopfzeilen finden (lese Collection - Vergleiche zwei 
+sollten sich in den Kopfzeilen finden (siehe Collection - Vergleiche zwei 
 Dateien). Diese Datei wird auf dem externen Medium gespeichert f&uuml;r das n&auml;chste 
 Backup.<br><br>
 Mit dieser Methode wird ein Datenverlust fast unm&ouml;glich. Der Nachteil ist, 
@@ -368,8 +377,8 @@ alle 6 Monate durch oder falls ich neue, wichtige Daten bekomme.<br>
 <h3 id="Duplikatsuche" style="text-decoration: underline;">Duplikatsuche</h3>
 <p>Oft gibt es Duplikate durch kopierte Ordner. Diese Duplikate lassen sich 
 mit Filecalibur finden. Dazu berechnen wir die Hashwerte des Ordners in dessen 
-Unterordnern wir Duplikate vermuten (lese hashDeep - Berechne Hashes). Danach 
-behalten wir nur die Duplikate (lese Collection - Finde Duplikate). Jetzt 
+Unterordnern wir Duplikate vermuten (siehe hashDeep - Berechne Hashes). Danach 
+behalten wir nur die Duplikate (siehe Collection - Finde Duplikate). Jetzt 
 k&ouml;nnen wir sie analysieren.<br>
 </p>
 <h3 id="Unterschiede Auffinden" style="text-decoration: underline;">Unterschiede Auffinden</h3>
@@ -378,47 +387,48 @@ man sehen welche Dateien ge&auml;ndert werden, wenn man eine bestimmte Software
 aufruft. Oder man m&ouml;chte die Unterschiede zwischen zwei Softwareversionen 
 identifizieren.<br>
 Dazu berechnen wir die Hashwerte des Ordners in dem wir die Unterschiede 
-vermuten und speichern sie als "Ursprung"-Collection (lese hashDeep - 
+vermuten und speichern sie als "Ursprung"-Collection (siehe hashDeep - 
 Berechne Hashes). Jetzt nutzen wir die zu untersuchende Software. Dann berechnen 
 wir die Hashwerte des Ordners ein zweites Mal und speichern sie als 
-"Nachher"-Collection (lese hashDeep - Berechne Hashes). Jetzt m&uuml;ssen beide 
-Collections sortiert werden um die gleiche Reihenfolge zu erhalten (lese 
-Collection - &auml;ndere Pfad)  und vergleicht sie (lese Collection - Negative 
+"Nachher"-Collection (siehe hashDeep - Berechne Hashes). Jetzt m&uuml;ssen beide 
+Collections sortiert werden um die gleiche Reihenfolge zu erhalten (siehe 
+Collection - &auml;ndere Pfad)  und dann vergleichen wir sie (siehe Collection - Negative 
 Hashberechnung). Nutzt man die "Nachher"-Collection als Test-Collection und 
 die "Ursprung"-Collection als Hash-Bibliothekcollection, so zeigt Filecalibur 
 uns nur die neuen Dateien und die Dateien mit &Auml;nderungen an. Tauscht man die 
-beiden Collections so erh&auml;lt man nur die alten Dateien, welche gel&ouml;scht werden, 
+beiden Collections, so erh&auml;lt man nur die alten Dateien, welche gel&ouml;scht werden, 
 und die Dateien mit &Auml;nderungen. Zus&auml;tzlich kann man beide Collections mit 
-WinMerge vergleichen und sich die &Auml;nderungen anzeigen lassen, in dem man von 
-Ver&auml;nderung zu Ver&auml;nderung springt (lese Collection - Vergleiche zwei Dateien).
+<a href="http://winmerge.org/">WinMerge</a> vergleichen und sich die 
+&Auml;nderungen anzeigen lassen, in dem man von 
+Ver&auml;nderung zu Ver&auml;nderung springt (siehe Collection - Vergleiche zwei Dateien).
 <br>
 </p>
 <h3 id="Chaos in Ordnern aufr&auml;umen" style="text-decoration: underline;">Chaos in Ordnern aufr&auml;umen</h3>
 <p>Computer haben die Eigenschaft im Chaos zu versinken und der Anwender die 
 Neigung die Kontrolle zu verlieren. Stellen wir uns vor wir haben Bilder von 
 unserem letzten Urlaub. Diese Bilder wurden von der Kamera auf den Computer 
-zu Hause kopiert und einige umbenannt und bearbeitet um die Farben 
+zu Hause kopiert und einige umbenannt bzw. bearbeitet um die Farben 
 aufzuh&uuml;bschen. Dann wurden sie auf den Arbeitscomputer kopiert und auch dort 
 einige in der Mittagspause bearbeitet. Ein Freund hat noch ein paar passende 
-Bilder beigesteuert die sich nun auch in dem Ordner befinden. Wie kann man 
+Bilder beigesteuert, die sich nun auch in dem Ordner befinden. Wie kann man 
 dieses Chaos sortieren und die Ordner zusammenf&uuml;gen ohne sich jedes einzelne 
 Bild anzuschauen?<br>
-Zuerst w&uuml;rde ich eine Kopie aller Ordner machen um keine Daten zu verlieren, 
+Zuerst w&uuml;rde ich eine Kopie aller Ordner machen, um keine Daten zu verlieren, 
 falls das total schief l&auml;uft. Dann berechnen wir die Hashwerte jedes einzelnen 
-Ordners (lese hashDeep - Berechne Hashes). Danach machen wir ein 
+Ordners (siehe hashDeep - Berechne Hashes). Danach machen wir ein 
 Positivmatching mit dem "Arbeit"-Ordner als Test-Collection und dem 
-"Kamera"-Ordner als Hash-Bibliothekcollection (lese Collection - Positive 
+"Kamera"-Ordner als Hash-Bibliothekcollection (siehe Collection - Positive 
 Hashberechnung). Die resultierenden Dateien sind im "Kamera"-Ordner und im 
-"Arbeit"-Ordner identisch, es sind die unver&auml;nderten. Wir l&ouml;schen sie vom 
-"Arbeit"-Ordner indem das Ergebnis des Positivmatching nutzen (lese Gef&auml;hrliche 
-Werkzeuge - L&ouml;sche Dateien nach Listeneintr&auml;gen). Falls Ordner nun leer sind 
-k&ouml;nnen sie auch entfernt werden (lese Gef&auml;hrliche Werkzeuge - L&ouml;sche leere 
+"Arbeit"-Ordner identisch, es sind die Unver&auml;nderten. Wir l&ouml;schen sie vom 
+"Arbeit"-Ordner indem das Ergebnis des Positivmatching nutzen (siehe Gef&auml;hrliche 
+Werkzeuge - L&ouml;sche Dateien nach Listeneintr&auml;gen). Falls Ordner nun leer sind, 
+k&ouml;nnen sie auch entfernt werden (siehe Gef&auml;hrliche Werkzeuge - L&ouml;sche leere 
 Ordner). Diese Schritte k&ouml;nnen mit dem "zu Hause"-Ordner anstelle des 
 "Arbeit"-Ordners wiederholt werden. Zuletzt kann man die Dateien des 
 "zu Hause"-Ordner mit dem "Arbeit"-Ordner auf die gleiche Weise verglichen 
 werden. Als Ergebnis wurden alle identischen Dateien in den Ordnern gel&ouml;scht 
 und die neuen oder ver&auml;nderten Dateien bleiben in ihren Ordnern. Sie m&uuml;ssen 
-immer noch einzeln betrachtet werden um sie zu einem Ordner zu verschmelzen, 
+immer noch einzeln betrachtet werden, um sie zu einem Ordner zu verschmelzen, 
 aber man ist die Last der identischen Bilder los.<br>
 </p>
 
