@@ -1,0 +1,19 @@
+1) A) Hash core and copy folder
+   B) Make relative Path and sort
+   C) Compare with excisting hash results
+
+2) A) Do Negative Hasing
+   B) Compare with excisting hash results
+
+3) A) Do Positive Hasing
+   B) Compare with excisting hash results
+
+4) A) Do Duplicate Search
+   B) Compare with excisting hash results
+
+5) A) rsync core to traget folder
+   B) Hash target folder
+   C) Make relative Path and sort
+   D) Compare with excisting hash results
+   E) Delete all files in taret folder using dangerous tools
+
