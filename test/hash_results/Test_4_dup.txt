@@ -1,0 +1,14 @@
+%%%% HASHDEEP-1.0
+%%%% size,md5,sha1,filename
+## Invoked from: C:\Program Files (x86)\Filecalibur\winmerge
+## C:\Program Files (x86)\Filecalibur\winmerge> C:\Program Files (x86)\Filecalibur\hashdeep\hashdeep.exe -r -c md5,sha1 C:/_progs/test/core_folder
+## 
+7,376db79840d2f5cc4939c2a528944f9a,d9a57edc26f4090c8e3142fc845a94f999bdf6bd,double.txt
+7,376db79840d2f5cc4939c2a528944f9a,d9a57edc26f4090c8e3142fc845a94f999bdf6bd,one.txt
+7,376db79840d2f5cc4939c2a528944f9a,d9a57edc26f4090c8e3142fc845a94f999bdf6bd,subfolder\one.txt
+7,376db79840d2f5cc4939c2a528944f9a,d9a57edc26f4090c8e3142fc845a94f999bdf6bd,subfolder\subfolder\one.txt
+7,dd242c0ecf1cc1851bdd23a7c1aa7c49,994acbfbe77dfd43d235c0796a79dafbe61493e8,subfolder\subfolder\two.txt
+9,4d7077b01ed1516cd42851e1b59762e2,29080b3bbefe3c470a3160dba1900a18f69bfc6a,subfolder\three.txt
+7,dd242c0ecf1cc1851bdd23a7c1aa7c49,994acbfbe77dfd43d235c0796a79dafbe61493e8,subfolder\two.txt
+9,4d7077b01ed1516cd42851e1b59762e2,29080b3bbefe3c470a3160dba1900a18f69bfc6a,three.txt
+7,dd242c0ecf1cc1851bdd23a7c1aa7c49,994acbfbe77dfd43d235c0796a79dafbe61493e8,two.txt

@@ -1,0 +1,8 @@
+%%%% HASHDEEP-1.0
+%%%% size,md5,sha1,filename
+## Invoked from: C:\Program Files (x86)\Filecalibur\winmerge
+## C:\Program Files (x86)\Filecalibur\winmerge> C:\Program Files (x86)\Filecalibur\hashdeep\hashdeep64.exe -r -c md5,sha1 C:/_progs/test/copy_two_changes
+## 
+7,a09c745bff2a67dd2b6c72d0e1727d51,c302ef6d9d236453b37d9654c3c0d1f6ac4dc99a,subfolder\subfolder\two.txt
+7,a09c745bff2a67dd2b6c72d0e1727d51,c302ef6d9d236453b37d9654c3c0d1f6ac4dc99a,subfolder\two.txt
+7,a09c745bff2a67dd2b6c72d0e1727d51,c302ef6d9d236453b37d9654c3c0d1f6ac4dc99a,two.txt
