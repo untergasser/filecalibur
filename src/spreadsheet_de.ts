@@ -401,7 +401,8 @@ ACHTUNG: Dieses Tool ändert die Daten auf der Festplatte und es gibt keine Undo
     <name>DialogFindDuplicates</name>
     <message>
         <location filename="dialogfindduplicates.ui" line="14"/>
-        <source>Find Doublicates</source>
+        <source>Find Duplicates</source>
+        <oldsource>Find Doublicates</oldsource>
         <translation>Finde Duplikate</translation>
     </message>
     <message>
@@ -576,6 +577,14 @@ ACHTUNG: Dieses Tool ändert die Daten auf der Festplatte und es gibt keine Undo
         <location filename="dialogjoinfiles.cpp" line="135"/>
         <source>Join Files detected untypical input files.</source>
         <translation>Kombiniere Dateien: Fehler aufgrund des untypischen Dateiformates.</translation>
+    </message>
+</context>
+<context>
+    <name>DialogManual</name>
+    <message>
+        <location filename="dialogmanual.ui" line="14"/>
+        <source>Manual</source>
+        <translation>Manual</translation>
     </message>
 </context>
 <context>
@@ -1292,130 +1301,147 @@ Damit Hashwerte berechnet werden können, müssen alle Dateien komplett gelesen 
         <translation type="vanished">Dateiarbeiter</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="93"/>
+        <location filename="mainwindow.ui" line="95"/>
         <source>Collection</source>
         <translation>Collection</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="118"/>
+        <location filename="mainwindow.ui" line="120"/>
         <source>Open</source>
         <translation>Öffnen</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="123"/>
+        <location filename="mainwindow.ui" line="125"/>
         <source>Calculate Hashes</source>
         <translation>Berechne Hashes</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="128"/>
+        <location filename="mainwindow.ui" line="130"/>
         <source>Exit</source>
         <translation>Beenden</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="133"/>
+        <location filename="mainwindow.ui" line="135"/>
         <source>Close</source>
         <translation>Schließen</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="138"/>
+        <location filename="mainwindow.ui" line="140"/>
         <source>Settings</source>
         <translation>Einstellungen</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="143"/>
+        <location filename="mainwindow.ui" line="145"/>
         <source>Positive Matching</source>
         <translation>Positivvergleich</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="148"/>
+        <location filename="mainwindow.ui" line="150"/>
         <source>Negative Matching</source>
         <translation>Negativvergleich</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="153"/>
+        <location filename="mainwindow.ui" line="155"/>
         <source>Rsync Directories</source>
         <translation>Rsync Ordner</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="158"/>
+        <location filename="mainwindow.ui" line="160"/>
         <source>About</source>
         <translation>Über</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="163"/>
-        <location filename="mainwindow.ui" line="238"/>
         <source>Tutorials</source>
-        <translation>Anleitungen</translation>
+        <translation type="vanished">Anleitungen</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="168"/>
+        <location filename="mainwindow.ui" line="165"/>
         <source>Modify Path</source>
         <translation>Ändere Pfad</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="173"/>
+        <location filename="mainwindow.ui" line="170"/>
         <source>Remove Path</source>
         <translation>Entferne Pfad</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="178"/>
+        <location filename="mainwindow.ui" line="175"/>
         <source>Join Files</source>
         <translation>Kombiniere Dateien</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="183"/>
+        <location filename="mainwindow.ui" line="180"/>
         <source>Extract Path</source>
         <translation>Extrahiere Pfad</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="188"/>
+        <location filename="mainwindow.ui" line="185"/>
         <source>Compare Files</source>
         <translation>Vergleiche zwei Dateien</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="193"/>
+        <location filename="mainwindow.ui" line="190"/>
         <source>Positive Hashing</source>
         <translation>Positive Hashberechnung</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="198"/>
+        <location filename="mainwindow.ui" line="195"/>
         <source>Negative Hashing</source>
         <translation>Negative Hashberechnung</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="203"/>
+        <location filename="mainwindow.ui" line="200"/>
         <source>Find Duplicates</source>
         <translation>Finde Duplikate</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="208"/>
+        <location filename="mainwindow.ui" line="205"/>
         <source>Delete Files from List</source>
         <translation>Lösche Dateien nach Listeneinträgen</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="213"/>
+        <location filename="mainwindow.ui" line="210"/>
         <source>Delete Empty Directories</source>
         <translation>Lösche leere Ordner</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="218"/>
+        <location filename="mainwindow.ui" line="215"/>
         <source>Hashdeep</source>
         <translation>HashDeep</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="223"/>
+        <location filename="mainwindow.ui" line="220"/>
         <source>Rsync</source>
         <translation>Rsync</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="228"/>
+        <location filename="mainwindow.ui" line="225"/>
         <source>WinMerge</source>
         <translation>Merge</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="233"/>
+        <location filename="mainwindow.ui" line="230"/>
+        <source>Check for Updates</source>
+        <translation>Nach Updates suchen</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="235"/>
+        <source>Manual Online</source>
+        <translation>Manual Online</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="240"/>
+        <source>Filecalibur at Souceforge</source>
+        <translation>Filecalibur bei Souceforge</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="245"/>
+        <source>Manual</source>
+        <translation>Manual</translation>
+    </message>
+    <message>
         <source>Support</source>
-        <translation>Support</translation>
+        <translation type="vanished">Support</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="85"/>
