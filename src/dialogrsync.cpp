@@ -71,6 +71,8 @@ void DialogRsync::on_buttonBox_accepted()
 
     command << "-rtv";
 
+    command << "--chmod=ugo=rwX";
+
     if (ui->checkDelete->isChecked() == true) {
         command << "--delete";
     }
