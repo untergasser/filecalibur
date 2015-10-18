@@ -27,7 +27,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-    programVersion = "Version 0.7.0 BETA";
+    programVersion = "Version 0.7.1 BETA";
 
     ui->setupUi(this);
 
@@ -285,6 +285,16 @@ void MainWindow::on_actionFind_Duplicates_triggered()
     findDuplicates->show();
 }
 
+
+void MainWindow::on_actionFind_Long_Names_triggered()
+{
+    findLongName = new DialogFindLongName(this);
+    findLongName->setErrDB(error);
+    findLongName->setLoadFile(hashdeep_saveFile);
+    findLongName->show();
+}
+
+
 void MainWindow::on_actionCompare_Files_triggered()
 {
     diffTool = new DialogDiffTool(this);
@@ -403,4 +413,3 @@ void MainWindow::on_tableView_doubleClicked(const QModelIndex &index)
         QDesktopServices::openUrl(QUrl(urlFile, QUrl::TolerantMode));
     }
 }
-

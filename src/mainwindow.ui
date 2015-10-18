@@ -105,6 +105,7 @@
     <addaction name="actionNegative_Hashing"/>
     <addaction name="separator"/>
     <addaction name="actionFind_Duplicates"/>
+    <addaction name="actionFind_Long_Names"/>
     <addaction name="separator"/>
     <addaction name="actionCompare_Files"/>
    </widget>
@@ -243,6 +244,11 @@
   <action name="actionManual">
    <property name="text">
     <string>Manual</string>
+   </property>
+  </action>
+  <action name="actionFind_Long_Names">
+   <property name="text">
+    <string>Find Long Names</string>
    </property>
   </action>
  </widget>

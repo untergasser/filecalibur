@@ -44,7 +44,8 @@ SOURCES += main.cpp\
     dialogdeletefiles.cpp \
     dialogdelemptdir.cpp \
     dialogabout.cpp \
-    dialogmanual.cpp
+    dialogmanual.cpp \
+    dialogfindlongname.cpp
 
 HEADERS  += mainwindow.h \
     dialogcalchash.h \
@@ -67,7 +68,8 @@ HEADERS  += mainwindow.h \
     dialogdeletefiles.h \
     dialogdelemptdir.h \
     dialogabout.h \
-    dialogmanual.h
+    dialogmanual.h \
+    dialogfindlongname.h
 
 FORMS    += mainwindow.ui \
     dialogcalchash.ui \
@@ -89,7 +91,8 @@ FORMS    += mainwindow.ui \
     dialogdeletefiles.ui \
     dialogdelemptdir.ui \
     dialogabout.ui \
-    dialogmanual.ui
+    dialogmanual.ui \
+    dialogfindlongname.ui
 
 TRANSLATIONS    += spreadsheet_de.ts
 

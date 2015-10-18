@@ -41,6 +41,7 @@
 #include "dialogpositivehashing.h"
 #include "dialognegativehashing.h"
 #include "dialogfindduplicates.h"
+#include "dialogfindlongname.h"
 #include "dialogdifftool.h"
 #include "dialogrsync.h"
 #include "dialogdeletefiles.h"
@@ -111,6 +112,8 @@ private slots:
     void on_actionFilecalibur_at_Souceforge_triggered();
     void on_actionManual_triggered();
 
+    void on_actionFind_Long_Names_triggered();
+
 private:
     Ui::MainWindow *ui;
     DialogOptionen *optionen;
@@ -127,6 +130,7 @@ private:
     DialogPositiveHashing *positiveHashing;
     DialogNegativeHashing *negativeHashing;
     DialogFindDuplicates *findDuplicates;
+    DialogFindLongName *findLongName;
     DialogDeleteFiles *deleteFiles;
     DialogDelEmptDir *delEmptDir;
 
