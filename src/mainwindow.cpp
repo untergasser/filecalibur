@@ -344,7 +344,7 @@ void MainWindow::on_actionWinmerge_triggered()
 
 void MainWindow::on_actionFilecalibur_at_Souceforge_triggered()
 {
-    QUrl urlLink("http://sourceforge.net/projects/filecalibur/");
+    QUrl urlLink("https://github.com/untergasser/filecalibur/");
     QDesktopServices::openUrl(urlLink);
 }
 

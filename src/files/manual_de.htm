@@ -43,7 +43,7 @@ padding-left: 35px;
 <p><img src="Logo_128.png" alt="Logo"></p>
 <p>
 <a href="http://sourceforge.net/projects/filecalibur/files/">Download Filecalibur</a><br><br>
-<a href="http://sourceforge.net/projects/filecalibur/">Filecalibur auf Souceforge</a><br><br>
+<a href="https://github.com/untergasser/filecalibur">Filecalibur Soucecode</a><br><br>
 <a href="http://www.filecalibur.com/">English Version of this Page</a><br>
 </p>
 
@@ -62,10 +62,10 @@ Fall wird die Datei fehlerhaft und der Inhalt unlesbar.<br>
 <br>
 Hash<br>
 Man kann sich einen Hashwert (kurz Hash) als einen Fingerabdruck einer Datei 
-vorstellen. Es ist das Ergebnis einer mathematische Funktion, welche die gesamte 
+vorstellen. Es ist das Ergebnis einer mathematischen Funktion, welche die gesamte 
 Datei einliest 
 und aufsummiert, um daraus eine kryptische Zahlen/Buchstabenkombination zu 
-berechnen. Es gibt verschiedene Rechenmethoden die unterschiedliche Ergebnisse 
+berechnen. Es gibt verschiedene Rechenmethoden, die unterschiedliche Ergebnisse 
 produzieren. Ein Hash der Funktion md5 sieht z. B. etwa so aus 
 d41d8cd98f00b204e9800998ecf8427e, der der Funktion sha1 so 
 da39a3ee5e6b4b0d3255bfef95601890afd80709.<br>
@@ -151,7 +151,7 @@ vorgestellt.<br>
 angegeben werden, in dem die Dateien gehashed werden sollen, und eine Datei, in 
 der die Collection gespeichert werden soll. Basierend auf diesen Informationen 
 berechnet <a href="http://md5deep.sourceforge.net/">hashDeep</a> die Hashes 
-der Dateien. Filecalibur wird das Ergebnis darstellen 
+der Dateien. Filecalibur wird das Ergebnis darstellen, 
 wenn <a href="http://md5deep.sourceforge.net/">hashDeep</a> die Berechnung 
 beendet hat. Bedenke, dass jede einzelne Datei 
 komplett eingelesen werden muss, um den Hash zu berechnen. Wenn Terabytes an Daten 
@@ -364,7 +364,7 @@ alle &Auml;nderungen seit dem letzten Backup.<br><br>
 4) Jetzt bleibt wieder die Frage- Sind die Kopien absolut identisch? Um sicher 
 zu sein berechnen wir die Hashes des externen Mediums (siehe hashDeep - Berechne 
 Hashes), wandelt die absoluten Pfade in relative um und sortiert die Collection 
-(siehe Collection - &auml;ndere Pfad). Zuletzt vergleichen wir die original 
+(siehe Collection - &auml;ndere Pfad). Zuletzt vergleichen wir die originale 
 Collection und die Collection des externen Mediums. Die einzigen Unterschiede 
 sollten sich in den Kopfzeilen finden (siehe Collection - Vergleiche zwei 
 Dateien). Diese Datei wird auf dem externen Medium gespeichert f&uuml;r das n&auml;chste 
@@ -414,7 +414,7 @@ Bilder beigesteuert, die sich nun auch in dem Ordner befinden. Wie kann man
 dieses Chaos sortieren und die Ordner zusammenf&uuml;gen ohne sich jedes einzelne 
 Bild anzuschauen?<br>
 Zuerst w&uuml;rde ich eine Kopie aller Ordner machen, um keine Daten zu verlieren, 
-falls das total schief l&auml;uft. Dann berechnen wir die Hashwerte jedes einzelnen 
+falls das total schiefl&auml;uft. Dann berechnen wir die Hashwerte jedes einzelnen 
 Ordners (siehe hashDeep - Berechne Hashes). Danach machen wir ein 
 Positivmatching mit dem "Arbeit"-Ordner als Test-Collection und dem 
 "Kamera"-Ordner als Hash-Bibliothekcollection (siehe Collection - Positive 
@@ -438,7 +438,7 @@ aber man ist die Last der identischen Bilder los.<br>
 <p>
 Microsoft Word/Excel, Grafikdateien und mp3-Dateien enthalten zus&auml;tzlich zum 
 Inhalt Metainformationen. Auch wenn der Inhalt unver&auml;ndert ist kann sich diese 
-Information &auml;ndern, durch Informationen in Word oder den K&uuml;nstlername in einer 
+Information &auml;ndern, durch Informationen in Word oder den K&uuml;nstlernamen in einer 
 mp3-Datei. Wenn sich auch nur ein Bit &auml;ndert, &auml;ndert sich auch der Hashwert.<br>
 </p>
 

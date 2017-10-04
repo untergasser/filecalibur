@@ -43,7 +43,7 @@ padding-left: 35px;
 <p><img src="Logo_128.png" alt="Logo"></p>
 <p>
 <a href="http://sourceforge.net/projects/filecalibur/files/">Download Filecalibur</a><br><br>
-<a href="http://sourceforge.net/projects/filecalibur/">Filecalibur at Souceforge</a><br><br>
+<a href="https://github.com/untergasser/filecalibur">Filecalibur Souce Code</a><br><br>
 <a href="http://www.filecalibur.de/">Deutsche Version dieser Seite</a><br>
 </p>
 
@@ -62,7 +62,7 @@ case, the file will be corrupt and the content will be useless.<br>
 <br>
 Hash<br>
 I keep things simple here, so let's think of a Hash as a fingerprint of a file. 
-Actually it is a mathematical function that sums up the entire file and the 
+Actually, it is a mathematical function that sums up the entire file and the 
 result is a cryptic number/letter combination. There are several hash functions 
 which return different results, for example a hash with the function md5 might 
 look as d41d8cd98f00b204e9800998ecf8427e and a hash of the function sha1 like 
@@ -80,7 +80,7 @@ called a collision. For this application collisions can be ignored.<br>
 <br>
 Filecalibur can calculate these hashes for all files of a certain folder even 
 including all the files in subfolders. To be accurate, Filecalibur only collects your 
-input and runs a independent software 
+input and runs an independent software 
 <a href="http://md5deep.sourceforge.net/">hashDeep</a> which performs the hash 
 calculation and writes its results in a text file, which I name a collection. 
 In this collection, each line corresponds to one file. It has the information 
@@ -147,7 +147,7 @@ Filecalibur will display the collection once
 <a href="http://md5deep.sourceforge.net/">hashDeep</a> is ready. Be aware 
 that each file has to be read completely to calculate the hash information. 
 If Terabytes of data are processed this calculation may run several hours or 
-days. In this case it may be apropriate to run the hash calculation over night.
+days. In this case it may be appropriate to run the hash calculation overnight.
 <br>
 </p>
 <h3 id="Collection - Modify Path" style="text-decoration: underline;">Collection - Modify Path</h3>
@@ -156,7 +156,7 @@ you have to provide the collection file which is usually prefilled with the
 current file. Last the file where to save the collection data needs to be 
 provided. The fields in between can be used to modify the path/name information 
 by removing or adding something to it. Keep in mind that you work on the left 
-part of the text which corresponds to the top level folders. This can be used 
+part of the text which corresponds to the top-level folders. This can be used 
 to modify the root folder name or remove it to get relative path information. Or 
 the letter of the drive can be changed.<br>
 Finally the order of the files can be sorted. This is useful because files may 
@@ -169,8 +169,8 @@ comparison.<br>
 you have to provide the collection file which is usually prefilled with the 
 current file. Last the file where to save the collection data needs to be 
 provided. The fields in the middle you have to provide with the path to remove. All 
-entries with the same path/name information are removed and only the non matching 
-are saved in the new collection. Usefull to remove a subfolder from a collection 
+entries with the same path/name information are removed and only the non-matching 
+are saved in the new collection. Useful to remove a subfolder from a collection 
 and keep the rest.<br>
 </p>
 <h3 id="Collection - Extract Path" style="text-decoration: underline;">Collection - Extract Path</h3>
@@ -179,7 +179,7 @@ you have to provide the collection file which is usually prefilled with the
 current file. Last the file where to save the collection data needs to be 
 provided. The fields in the middle you have to provide with the path to extract. 
 All entries with the same path/name information are saved in the new collection 
-and all non-matching are discarded. Usefull to extract only one subfolder 
+and all non-matching are discarded. Useful to extract only one subfolder 
 into a new collection.<br>
 </p>
 <h3 id="Collection - Join Files" style="text-decoration: underline;">Collection - Join Files</h3>
@@ -187,7 +187,7 @@ into a new collection.<br>
 have to provide the collection file which is usually prefilled with the current 
 file and a second input file. Last the file where to save the collection data 
 needs to be provided. Both files are joined and saved in the new collection. 
-Usefull to add a folder to a collection.<br>
+Useful to add a folder to a collection.<br>
 </p>
 <h3 id="Collection - Positive Hashing" style="text-decoration: underline;">Collection - Positive Hashing</h3>
 <p>Select Collection &raquo; Positive Hashing from the menu. In the dialog 
@@ -223,7 +223,7 @@ collection.<br>
 <h3 id="Collection - Compare Files" style="text-decoration: underline;">Collection - Compare Files</h3>
 <p>Select Collection &raquo; Compare Files from the menu. In the dialog window 
 you have to provide one collection file which is usually prefilled with the 
-current file. Additionally a second collection file needs to be provided. Both 
+current file. Additionally, a second collection file needs to be provided. Both 
 files are compared by the tool 
 <a href="http://winmerge.org/">WinMerge</a>. Useful to identify tiny changes between 
 collections.<br>
@@ -239,7 +239,7 @@ window you have to provide a source folder and a target folder. Filecalibur
 will use <a href="http://rsync.samba.org/">rsync</a> to copy all files from 
 the source folder to the target folder. 
 If "Delete Files..." is selected, all the files absent in source are deleted 
-in the target folder. Usefull to sync folders between backups. If only a few 
+in the target folder. Useful to sync folders between backups. If only a few 
 files changed <a href="http://rsync.samba.org/">rsync</a> is much faster 
 than copying folders.<br>
 Be extremely cautious with this function, if the folders are confused and an 
@@ -279,25 +279,25 @@ data. It has the same usability as the original that can be accessed without any
 further software.<br>
 Filecalibur can help with the second type of backup. If you don't have any 
 backup on the external drive yet, just copy the files in the regular file manager - 
-its faster then <a href="http://rsync.samba.org/">rsync</a>. Once this is done, 
+its faster than <a href="http://rsync.samba.org/">rsync</a>. Once this is done, 
 you just want to update the changes 
 from your system to your external backup from now on. Here 
 <a href="http://rsync.samba.org/">rsync</a> is much faster and will 
 copy only changed files to your external drive (see Dangerous Tools - Rsync 
 Directories).<br>
-Now the question remaining is - Are both copies identical? Therefore we calculate 
+Now the question remaining is - Are both copies identical? Therefor we calculate 
 the hashes of the original drive/folder as well as the backup drive/folder (see 
 hashDeep - Calculate Hashes). That takes time, but once done it can be saved to 
 the backup drive as well. Now we remove the absolute path part in both files so 
 the path/filename information of both locations is identical. Don't forget to 
-sort the output (see Collection - Modify Path). Last we can compare both files 
+sort the output (see Collection - Modify Path). Last, we can compare both files 
 and the only difference should be within the header information (see Collection 
 - Compare Files).<br>
 </p>
 <h3 id="Crazy Ultrasafe Backup" style="text-decoration: underline;">Crazy Ultrasafe Backup</h3>
 <p>Imagine we have really valuable data like pictures of the kids when they were 
 young and copies of our diploma. Here we don't want to miss anything ever ever. 
-First we need more than one backup drive, best would be three usb drives from 
+First, we need more than one backup drive, best would be three usb drives from 
 different producers (to avoid processing errors). Store these backups at 
 different places and update them one by one. Never bring them back to the 
 same place (to avoid disasters as fire).<br>
@@ -333,9 +333,9 @@ sign. With this step you also confirmed that the entire backup is still readable
 without errors.<br><br>
 3) Now we sync the data. We use <a href="http://rsync.samba.org/">rsync</a> to copy the changes to your external drive 
 (see Dangerous Tools - Rsync Directories). Be really careful with the source and 
-target folder. If you go wrong, you sync your backup to the new folder and loose 
+target folder. If you go wrong, you sync your backup to the new folder and lose 
 all new changes.<br><br>
-4) Again the question remaining is - Is the copy identical? Therefore we 
+4) Again the question remaining is - Is the copy identical? Therefor we 
 calculate the hashes of the external drive/folder (see hashDeep - Calculate 
 Hashes), remove the absolute path part in the file and sort the output (see 
 Collection - Modify Path). Now we can compare the external drive collection file 
@@ -348,8 +348,8 @@ but calculation time. I do this every 6 Month or if I have new important data.
 <br>
 </p>
 <h3 id="Find Duplicates" style="text-decoration: underline;">Find Duplicates</h3>
-<p>Many times duplicates exist due to copied files or folders. To find duplicates, 
-calculate the hash of the folder were you expect duplicates in subfolders (see 
+<p>Many times, duplicates exist due to copied files or folders. To find duplicates, 
+calculate the hash of the folder where you expect duplicates in subfolders (see 
 hashDeep - Calculate Hashes). Then keep only the files were a hash was found 
 more than one (see Collection - Find Duplicates). Now you can go through all 
 duplicates.<br>
@@ -358,9 +358,9 @@ duplicates.<br>
 <p>Sometimes you want to know if some files changed. Maybe you want to see which 
 files are changed once you run certain software. You can also use it to visualize 
 the difference between two software package releases.<br>
-First calculate the hash of the drive were you expect changes in subfolders and 
+First calculate the hash of the drive where you expect changes in subfolders and 
 save the collection as "initial" (see hashDeep - Calculate Hashes). Then do the 
-change or run the software in doubt. Calculate the hash of the drive were you 
+change or run the software in doubt. Calculate the hash of the drive where you 
 expect changes in subfolders a second time and save the collection as "after" 
 (see hashDeep - Calculate Hashes). Sort the collections to get identical file 
 order in both files (see Collection - Modify Path) and do negative Hashing with 
@@ -376,7 +376,7 @@ change (see Collection - Compare Files).<br>
 <h3 id="Sort the Folder Mess" style="text-decoration: underline;">Sort the Folder Mess</h3>
 <p>Computers have the tendency to get messy and the user has the tendency to lose 
 control. Imagine you have pictures from your last vacation. You copied them from 
-your camera to you computer at home. Some you renamed and modified to change the 
+your camera to your computer at home. Some you renamed and modified to change the 
 colors a bit. Then you copied it to the computer at work. Some were changed there 
 in lunch break and some were changed at home. A friend gave you some more pics 
 which were added as well. So how to sort this mess out when you try to merge the 

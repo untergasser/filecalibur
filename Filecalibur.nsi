@@ -96,7 +96,7 @@ Section "Filecalibur" Filecalibur
     WriteRegStr HKLM "${UNINSTREG}" "DisplayName" "${NAME}"
 	WriteRegStr HKLM "${UNINSTREG}" "DisplayVersion" "${VERSION}"
     WriteRegStr HKLM "${UNINSTREG}" "Publisher" "A. Untergasser"
-    WriteRegStr HKLM "${UNINSTREG}" "URLInfoAbout" "http://sourceforge.net/projects/filecalibur/"
+    WriteRegStr HKLM "${UNINSTREG}" "URLInfoAbout" "https://github.com/untergasser/filecalibur/"
     WriteRegStr HKLM "${UNINSTREG}" "DisplayIcon" '"$INSTDIR\Logo_128.ico"'
     WriteRegStr HKLM "${UNINSTREG}" "UninstallString" '"$INSTDIR\uninstall.exe"'
     WriteRegDWORD HKLM "${UNINSTREG}" "NoModify" 1
