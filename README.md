@@ -351,8 +351,8 @@ independently:
 2) Are there errors on the data of the external drive? The 
 answer should be no, so you might skip this step, but its 
 best to catch errors early before the drive stops working. 
-So we calculate the hashes of the drive/folder (see hashDeep 
-- Calculate Hashes). Now we remove the absolute path part in 
+So we calculate the hashes of the drive/folder (see hashDeep - 
+Calculate Hashes). Now we remove the absolute path part in 
 the file and sort the output (see Collection - Modify Path). 
 Finally we compare the current file with the old collection 
 saved on the backup volume (see Collection - Compare Files). 
