@@ -206,21 +206,6 @@ void MainWindow::on_actionCalculate_Hashes_triggered()
     hashIt->show();
 }
 
-void MainWindow::on_actionPositive_Matching_triggered()
-{
-    hashPos = new DialogPosMatch(this);
-    hashPos->setLoadFile(hashdeep_saveFile);
-    hashPos->show();
-}
-
-
-void MainWindow::on_actionNegative_Matching_triggered()
-{
-    hashNeg = new DialogNegMatch(this);
-    hashNeg->setLoadFile(hashdeep_saveFile);
-    hashNeg->show();
-}
-
 void MainWindow::on_actionSync_Directories_triggered()
 {
     DialogRsync *rsync = new DialogRsync();

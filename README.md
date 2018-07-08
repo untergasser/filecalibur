@@ -1,6 +1,22 @@
 Filecalibur
 -----------
 
+Download and Compile
+--------------------
+
+Download and install Git for Windows:
+https://git-scm.com/download/win
+
+Install Qt:
+https://www.qt.io/download
+
+Open Git Bash:
+`git clone https://github.com/untergasser/filecalibur.git filecalibur
+
+Open and compile in Qt:
+filecalibur/src/Filecalibur.pro
+
+
 Introduction
 ------------
 Filecalibur is a tool that can serve many purposes, as long 

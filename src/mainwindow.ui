@@ -59,8 +59,6 @@
      <string>hashDeep</string>
     </property>
     <addaction name="actionCalculate_Hashes"/>
-    <addaction name="actionPositive_Matching"/>
-    <addaction name="actionNegative_Matching"/>
    </widget>
    <widget class="QMenu" name="menuRsync">
     <property name="title">
@@ -139,16 +137,6 @@
   <action name="actionSettings">
    <property name="text">
     <string>Settings</string>
-   </property>
-  </action>
-  <action name="actionPositive_Matching">
-   <property name="text">
-    <string>Positive Matching</string>
-   </property>
-  </action>
-  <action name="actionNegative_Matching">
-   <property name="text">
-    <string>Negative Matching</string>
    </property>
   </action>
   <action name="actionSync_Directories">

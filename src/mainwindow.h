@@ -31,8 +31,6 @@
 #include "dialogoptionen.h"
 #include "dialogerrormessage.h"
 #include "dialogcalchash.h"
-#include "dialogposmatch.h"
-#include "dialognegmatch.h"
 #include "dialogrunhasdeep.h"
 #include "dialogmodifypath.h"
 #include "dialogextractpath.h"
@@ -86,8 +84,6 @@ private slots:
     void setFile(QString file_String);
 
     void on_actionOpen_triggered();
-    void on_actionPositive_Matching_triggered();
-    void on_actionNegative_Matching_triggered();
     void on_actionSync_Directories_triggered();
     void on_actionModify_Path_triggered();
     void on_actionRemove_Path_triggered();
@@ -119,8 +115,6 @@ private:
     DialogOptionen *optionen;
     DialogErrorMessage *error;
     DialogCalcHash *hashIt;
-    DialogPosMatch *hashPos;
-    DialogNegMatch *hashNeg;
     DialogDiffTool *diffTool;
     DialogModifyPath *modifyPath;
     DialogRunHasDeep *hashRun;

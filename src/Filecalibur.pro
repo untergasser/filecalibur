@@ -25,10 +25,8 @@ RESOURCES += resource.qrc
 SOURCES += main.cpp\
     mainwindow.cpp \
     dialogcalchash.cpp \
-    dialogposmatch.cpp \
     dialogerrormessage.cpp \
     filedatamodel.cpp \
-    dialognegmatch.cpp \
     dialogrunhasdeep.cpp \
     dialogrsync.cpp \
     dialogrunrsync.cpp \
@@ -49,10 +47,8 @@ SOURCES += main.cpp\
 
 HEADERS  += mainwindow.h \
     dialogcalchash.h \
-    dialogposmatch.h \
     dialogerrormessage.h \
     filedatamodel.h \
-    dialognegmatch.h \
     dialogrunhasdeep.h \
     dialogrsync.h \
     dialogrunrsync.h \
@@ -73,9 +69,7 @@ HEADERS  += mainwindow.h \
 
 FORMS    += mainwindow.ui \
     dialogcalchash.ui \
-    dialogposmatch.ui \
     dialogerrormessage.ui \
-    dialognegmatch.ui \
     dialogrunhasdeep.ui \
     dialogrsync.ui \
     dialogrunrsync.ui \
