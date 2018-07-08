@@ -69,18 +69,6 @@ void DialogRsync::on_buttonBox_accepted()
 
     bool err = false;
 
-    command << "-rtv";
-
-    command << "--chmod=ugo=rwX";
-
-    if (ui->checkDelete->isChecked() == true) {
-        command << "--delete";
-    }
-    if (ui->checkNoSuper->isChecked() == true) {
-        command << "--no-super";
-    }
-
-
     if (ui->lineEditPathSource->text() == "") {
         err = true;
     }
@@ -93,21 +81,31 @@ void DialogRsync::on_buttonBox_accepted()
     source = ui->lineEditPathSource->text();
     target = ui->lineEditPathTarget->text();
 
-    source_out = "/cygdrive/";
-    source_out.append(source.at(0));
-    source_out.append("/");
-    source_out.append(source.right(source.count() - 3));
-    source_out.append("/");
-    source_out.replace("\\", "/");
-
-    target_out = "/cygdrive/";
-    target_out.append(target.at(0));
-    target_out.append("/");
-    target_out.append(target.right(target.count() - 3));
-    target_out.replace("\\", "/");
-
-    command << source_out;
-    command << target_out;
+#ifdef Q_OS_WIN
+    command << source;
+    command << target;
+    command << "/S";
+    command << "/E";
+    if (ui->checkDelete->isChecked() == true) {
+        command << "/PURGE";
+    }
+    command << "/COPY:DAT";
+    command << "/DCOPY:DAT";
+    command << "/R:3";
+    command << "/W:3";
+    command << "/V";
+#else
+    command << "-rtv";
+    command << "--chmod=ugo=rwX";
+    if (ui->checkDelete->isChecked() == true) {
+        command << "--delete";
+    }
+    if (ui->checkNoSuper->isChecked() == true) {
+        command << "--no-super";
+    }
+    command << source;
+    command << target;
+#endif
 
     if (err == false) {
         DialogRunRsync *runRsync = new DialogRunRsync();

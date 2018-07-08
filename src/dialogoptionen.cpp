@@ -36,12 +36,6 @@ DialogOptionen::DialogOptionen(QWidget *parent) :
     } else {
         ui->lineEditHashdeep->setText(hashprog);
     }
-    QString syncprog = settings.value("rsync").toString();
-    if (syncprog.isEmpty()) {
-        ui->lineEditRsync->setText("C:\\Program Files\\filecalibur\\rsync\\rsync.exe");
-    } else {
-        ui->lineEditRsync->setText(syncprog);
-    }
     QString diffprog = settings.value("diff").toString();
     if (diffprog.isEmpty()) {
         ui->lineEditDiff->setText("C:\\Program Files\\WinMerge\\WinMergeU.exe");
@@ -64,15 +58,6 @@ void DialogOptionen::on_pushButtonHashdeep_clicked()
     ui->lineEditHashdeep->setText(hashprog);
 }
 
-void DialogOptionen::on_pushButtonRsync_clicked()
-{
-    QString syncprog = QFileDialog::getOpenFileName
-                    (this, tr("Select an Executables"),
-                     ui->lineEditRsync->text(), tr("Executables (*.exe);;All Files (*.*)"));
-    syncprog.replace(QString("/"),QString("\\"));
-    ui->lineEditRsync->setText(syncprog);
-}
-
 void DialogOptionen::on_pushButtonDiff_clicked()
 {
     QString diffprog = QFileDialog::getOpenFileName
@@ -89,10 +74,6 @@ void DialogOptionen::on_buttonBox_accepted()
     QString hashprog = ui->lineEditHashdeep->text();
     hashprog.replace(QString("/"),QString("\\"));
     settings.setValue("hashdeep", hashprog);
-
-    QString syncprog = ui->lineEditRsync->text();
-    syncprog.replace(QString("/"),QString("\\"));
-    settings.setValue("rsync", syncprog);
 
     QString diffprog = ui->lineEditDiff->text();
     diffprog.replace(QString("/"),QString("\\"));

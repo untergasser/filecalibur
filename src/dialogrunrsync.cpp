@@ -53,10 +53,18 @@ void DialogRunRsync::setErrDB(DialogErrorMessage *err)
 
 void DialogRunRsync::runRsync()
 {
-    QSettings settings("A. Untergasser", "Filecalibur");
-    QString rsync_binPath = settings.value("rsync").toString();
+#ifdef Q_OS_WIN
+    QString rsync_binPath = "robocopy";
 
-    ui->plainTextEdit->appendPlainText("Hallo");
+
+#else
+    QString rsync_binPath = "rsync";
+#endif
+
+    ui->plainTextEdit->appendPlainText("Command: ");
+    ui->plainTextEdit->appendPlainText(rsync_binPath);
+    ui->plainTextEdit->appendPlainText(" ");
+    ui->plainTextEdit->appendPlainText(command.join(" "));
 
     rsync_running = true;
     rsync_bin.start(rsync_binPath, command);

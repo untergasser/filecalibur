@@ -141,7 +141,7 @@
   </action>
   <action name="actionSync_Directories">
    <property name="text">
-    <string>Rsync Directories</string>
+    <string>Sync Directories</string>
    </property>
   </action>
   <action name="actionAbout">

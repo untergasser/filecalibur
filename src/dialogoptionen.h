@@ -41,7 +41,6 @@ public:
     
 private slots:
     void on_pushButtonHashdeep_clicked();
-    void on_pushButtonRsync_clicked();
     void on_pushButtonDiff_clicked();
     void on_buttonBox_accepted();
 

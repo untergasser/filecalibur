@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>450</width>
-    <height>210</height>
+    <height>159</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -33,32 +33,6 @@
      </item>
      <item>
       <widget class="QPushButton" name="pushButtonHashdeep">
-       <property name="text">
-        <string>Select Executable</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item>
-    <widget class="QLabel" name="label_2">
-     <property name="font">
-      <font>
-       <pointsize>8</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Path to Rsync binary:</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_4">
-     <item>
-      <widget class="QLineEdit" name="lineEditRsync"/>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pushButtonRsync">
        <property name="text">
         <string>Select Executable</string>
        </property>

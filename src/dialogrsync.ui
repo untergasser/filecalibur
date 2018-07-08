@@ -17,7 +17,7 @@
    <item>
     <widget class="QLabel" name="label_2">
      <property name="text">
-      <string>rsync - synchronise files in source directory to files in target directory</string>
+      <string>sync - synchronise files in source directory to files in target directory</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>

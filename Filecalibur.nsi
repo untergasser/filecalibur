@@ -1,7 +1,7 @@
-!define VERSION "0.7.0"
+!define VERSION "0.8.0"
 !define NAME "Filecalibur"
 !define UNINSTREG "Software\Microsoft\Windows\CurrentVersion\Uninstall\Filecalibur"
-!define QTPATH "C:\Qt\5.5\mingw492_32\bin\"
+!define QTPATH "C:\Qt_201806\5.11.1\mingw53_32\bin"
 
 !include "MUI2.nsh"
 !include "logiclib.nsh"
@@ -71,15 +71,6 @@ Section "Filecalibur" Filecalibur
     File progs\hashdeep\tigerdeep64.exe
     File progs\hashdeep\whirlpooldeep.exe
     File progs\hashdeep\whirlpooldeep64.exe
-
-	SetOutPath "$INSTDIR\rsync"
-    File progs\rsync\cygwin1.dll
-    File progs\rsync\cyggcc_s-1.dll
-    File progs\rsync\cygiconv-2.dll
-    File progs\rsync\license.txt
-    File progs\rsync\NEWS.txt
-    File progs\rsync\rsync.exe
-    File progs\rsync\rsync.html
 
 	SetOutPath "$INSTDIR\winmerge"
     File progs\winmerge\WinMerge-2.14.0-Setup.exe
