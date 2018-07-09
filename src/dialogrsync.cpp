@@ -84,7 +84,6 @@ void DialogRsync::on_buttonBox_accepted()
 #ifdef Q_OS_WIN
     command << source;
     command << target;
-    command << "/S";
     command << "/E";
     if (ui->checkDelete->isChecked() == true) {
         command << "/PURGE";
@@ -96,12 +95,8 @@ void DialogRsync::on_buttonBox_accepted()
     command << "/V";
 #else
     command << "-rtv";
-    command << "--chmod=ugo=rwX";
     if (ui->checkDelete->isChecked() == true) {
         command << "--delete";
-    }
-    if (ui->checkNoSuper->isChecked() == true) {
-        command << "--no-super";
     }
     command << source;
     command << target;

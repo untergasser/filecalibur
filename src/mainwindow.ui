@@ -78,7 +78,6 @@
       <string>Required Software</string>
      </property>
      <addaction name="actionHashdeep"/>
-     <addaction name="actionRsync"/>
      <addaction name="actionWinmerge"/>
     </widget>
     <addaction name="actionAbout"/>
@@ -202,11 +201,6 @@
   <action name="actionHashdeep">
    <property name="text">
     <string>Hashdeep</string>
-   </property>
-  </action>
-  <action name="actionRsync">
-   <property name="text">
-    <string>Rsync</string>
    </property>
   </action>
   <action name="actionWinmerge">

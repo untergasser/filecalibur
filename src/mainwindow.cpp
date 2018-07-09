@@ -305,19 +305,13 @@ void MainWindow::on_actionDelete_Empty_Directories_triggered()
 
 void MainWindow::on_actionSupport_triggered()
 {
-    QUrl urlLink("http://sourceforge.net/projects/filecalibur/files/");
+    QUrl urlLink("https://github.com/untergasser/filecalibur/");
     QDesktopServices::openUrl(urlLink);
 }
 
 void MainWindow::on_actionHashdeep_triggered()
 {
-    QUrl urlLink("http://md5deep.sourceforge.net/");
-    QDesktopServices::openUrl(urlLink);
-}
-
-void MainWindow::on_actionRsync_triggered()
-{
-    QUrl urlLink("http://rsync.samba.org/");
+    QUrl urlLink("https://github.com/jessek/hashdeep/");
     QDesktopServices::openUrl(urlLink);
 }
 

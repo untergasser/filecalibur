@@ -98,7 +98,6 @@ private slots:
     void on_actionDelete_Empty_Directories_triggered();
     void on_actionSupport_triggered();
     void on_actionHashdeep_triggered();
-    void on_actionRsync_triggered();
     void on_actionWinmerge_triggered();
     void on_actionTutorials_triggered();
     void on_actionClose_triggered();

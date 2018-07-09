@@ -1,4 +1,4 @@
-#-------------------------------------------------
+-------------------------------------------------
 #
 # Project created by QtCreator 2012-10-30T12:21:53
 #
@@ -13,7 +13,6 @@ TEMPLATE = app
 
 mac {
     ICON = files/Logo_mac.icns
-    QMAKE_INFO_PLIST += Info.plist
 }
 
 win32 {
