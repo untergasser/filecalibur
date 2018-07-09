@@ -1,7 +1,7 @@
 !define VERSION "0.8.0"
 !define NAME "Filecalibur"
 !define UNINSTREG "Software\Microsoft\Windows\CurrentVersion\Uninstall\Filecalibur"
-!define QTPATH "C:\Qt_201806\5.11.1\mingw53_32\bin"
+!define QTPATH "C:\Qt_201806\5.11.1\mingw53_32\bin\"
 
 !include "MUI2.nsh"
 !include "logiclib.nsh"
@@ -33,9 +33,6 @@ FunctionEnd
 ; Copy the files
 Section "Filecalibur" Filecalibur
     SetOutPath "$INSTDIR"
-    File ${QTPATH}icudt54.dll
-    File ${QTPATH}icuin54.dll
-    File ${QTPATH}icuuc54.dll
     File ${QTPATH}libgcc_s_dw2-1.dll
     File ${QTPATH}libstdc++-6.dll
     File ${QTPATH}libwinpthread-1.dll
@@ -44,7 +41,7 @@ Section "Filecalibur" Filecalibur
     File ${QTPATH}Qt5Network.dll
     File ${QTPATH}Qt5Widgets.dll
 
-    File build-Release\release\Filecalibur.exe
+    File build-Filecalibur-Desktop_Qt_5_11_1_MinGW_32bit-Release\release\Filecalibur.exe
     File src\files\Logo_128.ico
     File src\files\license.txt
 

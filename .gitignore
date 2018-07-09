@@ -1,3 +1,5 @@
 build-*
+progs/*
 src/Filecalibur.pro.user
+Filecalibur.exe
 
