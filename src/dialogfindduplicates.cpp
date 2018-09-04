@@ -74,6 +74,7 @@ void DialogFindDuplicates::on_buttonBox_accepted()
     QHash<QString, int> hash;
     int comma = 0;
     bool run = true;
+    bool skipFirst = false;
 
     QString hashToUse = "XXX";
     if (ui->radioMD5->isChecked()) {
@@ -90,6 +91,9 @@ void DialogFindDuplicates::on_buttonBox_accepted()
     }
     if (ui->radioWHIRLPOOL->isChecked()) {
         hashToUse = "whirlpool";
+    }
+    if (ui->checkSkipFirst->isChecked()) {
+        skipFirst = true;
     }
 
     QFile hashFile(ui->lineEditLoadFile->text());
@@ -146,7 +150,11 @@ void DialogFindDuplicates::on_buttonBox_accepted()
             }
             // Now add the selected hash value to the hash table an count the times
             QString keyVal = linStr.mid(leftPos + 1, rightPos - leftPos - 1);
-            hash.insert(keyVal, 1 + hash[keyVal]);
+            if(skipFirst == false) {
+                hash.insert(keyVal, 1 + hash[keyVal]);
+            } else {
+                hash.insert(keyVal, 1);
+            }
         }
         hashFile.close();
     }
@@ -220,6 +228,7 @@ void DialogFindDuplicates::on_buttonBox_accepted()
                 if (result > 1) {
                     sFile.write(line);
                 }
+                hash[linStr.mid(leftPos + 1, rightPos - leftPos -1)] = result + 1;
             }
             sFile.close();
         }
